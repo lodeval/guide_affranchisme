@@ -1030,24 +1030,10 @@
       </div>
     </div>
 
-    <!-- Section commentaires (Disqus) -->
-    <div class="comments">
-      <h2>Partagez vos idées pour l’affranchisme</h2>
-      <div id="disqus_thread"></div>
-      <script>
-        var disqus_config = function () {
-          this.page.url = "https://affranchisme2025.netlify.app";
-          this.page.identifier = "affranchisme-manifeste";
-        };
-        (function () {
-          var d = document,
-            s = d.createElement("script");
-          s.src = "https://affranchisme2025.disqus.com/embed.js";
-          s.setAttribute("data-timestamp", +new Date());
-          (d.head || d.body).appendChild(s);
-        })();
-      </script>
-    </div>
+    <!-- Section commentaires (Commento) -->
+    <h2>Commentaires</h2>
+    <div id="commento"></div>
+    <script src="https://cdn.commento.io/js/commento.js"></script>
 
     <!-- Footer -->
     <footer>
