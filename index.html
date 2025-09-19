@@ -1,437 +1,1061 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Affranchisme 2025 - Révolution Coopérative</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Oswald:wght@500&display=swap">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Oswald:wght@500&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <style>
-        /* Reset et styles généraux */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Roboto', sans-serif;
-        }
-        body {
-            line-height: 1.8;
-            color: #333;
-            background-color: #f9f9f9;
-            font-size: 1.1rem;
-        }
+      /* Reset et styles généraux */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto", sans-serif;
+      }
+      body {
+        line-height: 1.8;
+        color: #333;
+        background-color: #f9f9f9;
+        font-size: 1.1rem;
+      }
 
-        /* Menu responsive */
-        nav {
-            background-color: #2e7d32; /* Vert militant */
-            padding: 1rem;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
+      /* Menu responsive */
+      nav {
+        background-color: #2e7d32; /* Vert militant */
+        padding: 1rem;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+      .menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        color: white;
+        cursor: pointer;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+      }
+      nav ul {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        flex-wrap: wrap;
+      }
+      nav ul li {
+        margin: 0 1.5rem;
+      }
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-family: "Oswald", sans-serif;
+        font-weight: 500;
+        font-size: 1.2rem;
+        transition: color 0.3s;
+      }
+      nav ul li a:hover {
+        color: #ef5350; /* Rouge révolutionnaire */
+      }
+      @media (max-width: 600px) {
         .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: white;
-            cursor: pointer;
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
+          display: block;
         }
         nav ul {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-            flex-wrap: wrap;
+          display: none;
+          flex-direction: column;
+          text-align: center;
+          background-color: #2e7d32;
+          padding: 1rem;
+        }
+        nav ul.active {
+          display: block;
         }
         nav ul li {
-            margin: 0 1.5rem;
+          margin: 0.5rem 0;
         }
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-family: 'Oswald', sans-serif;
-            font-weight: 500;
-            font-size: 1.2rem;
-            transition: color 0.3s;
-        }
-        nav ul li a:hover {
-            color: #ef5350; /* Rouge révolutionnaire */
-        }
-        @media (max-width: 600px) {
-            .menu-toggle {
-                display: block;
-            }
-            nav ul {
-                display: none;
-                flex-direction: column;
-                text-align: center;
-                background-color: #2e7d32;
-                padding: 1rem;
-            }
-            nav ul.active {
-                display: block;
-            }
-            nav ul li {
-                margin: 0.5rem 0;
-            }
-        }
+      }
 
-        /* Bannière pleine largeur */
+      /* Bannière pleine largeur */
+      .banner {
+        position: relative;
+        width: 100%;
+        height: 300px;
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url("https://images.unsplash.com/photo-1504280390367-5f1f0f765558?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80")
+            center/cover no-repeat;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .slogan {
+        transform: rotate(-5deg);
+        background-color: #ef5350;
+        color: white;
+        padding: 1rem 2rem;
+        font-family: "Oswald", sans-serif;
+        font-size: 2rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      }
+      @media (max-width: 600px) {
         .banner {
-            position: relative;
-            width: 100%;
-            height: 300px;
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1504280390367-5f1f0f765558?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+          height: 200px;
         }
         .slogan {
-            transform: rotate(-5deg);
-            background-color: #ef5350;
-            color: white;
-            padding: 1rem 2rem;
-            font-family: 'Oswald', sans-serif;
-            font-size: 2rem;
-            font-weight: 500;
-            text-transform: uppercase;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+          font-size: 1.4rem;
+          padding: 0.5rem 1rem;
         }
-        @media (max-width: 600px) {
-            .banner {
-                height: 200px;
-            }
-            .slogan {
-                font-size: 1.4rem;
-                padding: 0.5rem 1rem;
-            }
-        }
+      }
 
-        /* Contenu principal */
-        .container {
-            max-width: 900px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-        .container p {
-            text-align: justify; /* Justification du texte */
-            margin-bottom: 1.2rem;
-        }
-        h1 {
-            font-family: 'Oswald', sans-serif;
-            font-size: 2.5rem;
-            color: #2e7d32;
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-        .section {
-            margin-bottom: 2rem;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        .section:nth-child(odd) {
-            background-color: #e8f5e9; /* Vert clair */
-        }
-        .section:nth-child(even) {
-            background-color: #ffebee; /* Rouge clair */
-        }
-        .section h2 {
-            font-family: 'Oswald', sans-serif;
-            font-size: 1.8rem;
-            color: #2e7d32;
-            margin-bottom: 1rem;
-        }
-        .section h3 {
-            font-family: 'Oswald', sans-serif;
-            font-size: 1.4rem;
-            color: #2e7d32;
-            margin: 1rem 0;
-        }
-        .quote {
-            font-family: 'Roboto', serif;
-            font-style: italic;
-            border-left: 4px solid #ef5350;
-            padding: 1rem 1.5rem;
-            margin: 1.5rem 0;
-            background-color: #f4f4f9;
-            color: #555;
-        }
-        .styled-list {
-            list-style: none;
-            padding-left: 0;
-        }
-        .styled-list li {
-            display: flex;
-            align-items: center;
-            margin-bottom: 1rem;
-        }
-        .styled-list .icon {
-            font-size: 1.5rem;
-            margin-right: 0.5rem;
-        }
+      /* Contenu principal */
+      .container {
+        max-width: 900px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+      }
+      .container p {
+        text-align: justify; /* Justification du texte */
+        margin-bottom: 1.2rem;
+      }
+      h1 {
+        font-family: "Oswald", sans-serif;
+        font-size: 2.5rem;
+        color: #2e7d32;
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+      .section {
+        margin-bottom: 2rem;
+        padding: 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+      .section:nth-child(odd) {
+        background-color: #e8f5e9; /* Vert clair */
+      }
+      .section:nth-child(even) {
+        background-color: #ffebee; /* Rouge clair */
+      }
+      .section h2 {
+        font-family: "Oswald", sans-serif;
+        font-size: 1.8rem;
+        color: #2e7d32;
+        margin-bottom: 1rem;
+      }
+      .section h3 {
+        font-family: "Oswald", sans-serif;
+        font-size: 1.4rem;
+        color: #2e7d32;
+        margin: 1rem 0;
+      }
+      .quote {
+        font-family: "Roboto", serif;
+        font-style: italic;
+        border-left: 4px solid #ef5350;
+        padding: 1rem 1.5rem;
+        margin: 1.5rem 0;
+        background-color: #f4f4f9;
+        color: #555;
+      }
+      .styled-list {
+        list-style: none;
+        padding-left: 0;
+      }
+      .styled-list li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
+      }
+      .styled-list .icon {
+        font-size: 1.5rem;
+        margin-right: 0.5rem;
+      }
+      img {
+        width: 100%;
+        height: auto;
+        margin: 1rem 0;
+        border-radius: 8px;
+      }
+      @media (max-width: 600px) {
         img {
-            width: 100%;
-            height: auto;
-            margin: 1rem 0;
-            border-radius: 8px;
+          max-height: 150px;
+          object-fit: cover;
         }
-        @media (max-width: 600px) {
-            img {
-                max-height: 150px;
-                object-fit: cover;
-            }
-        }
+      }
 
-        /* Boutons */
-        .buttons {
-            text-align: center;
-            margin: 2rem 0;
-        }
-        .button {
-            display: inline-block;
-            padding: 0.8rem 1.5rem;
-            margin: 0.5rem;
-            border-radius: 5px;
-            text-decoration: none;
-            font-family: 'Oswald', sans-serif;
-            font-weight: 500;
-            transition: transform 0.2s, background-color 0.3s;
-        }
-        .button:hover {
-            transform: translateY(-2px);
-        }
-        .tipeee-button {
-            background-color: #ef5350;
-            color: white;
-        }
-        .tipeee-button:hover {
-            background-color: #d32f2f;
-        }
-        .pdf-button {
-            background-color: #2e7d32;
-            color: white;
-        }
-        .pdf-button:hover {
-            background-color: #1b5e20;
-        }
+      /* Boutons */
+      .buttons {
+        text-align: center;
+        margin: 2rem 0;
+      }
+      .button {
+        display: inline-block;
+        padding: 0.8rem 1.5rem;
+        margin: 0.5rem;
+        border-radius: 5px;
+        text-decoration: none;
+        font-family: "Oswald", sans-serif;
+        font-weight: 500;
+        transition: transform 0.2s, background-color 0.3s;
+      }
+      .button:hover {
+        transform: translateY(-2px);
+      }
+      .tipeee-button {
+        background-color: #ef5350;
+        color: white;
+      }
+      .tipeee-button:hover {
+        background-color: #d32f2f;
+      }
+      .pdf-button {
+        background-color: #2e7d32;
+        color: white;
+      }
+      .pdf-button:hover {
+        background-color: #1b5e20;
+      }
 
-        /* Section commentaires (Disqus) */
-        .comments {
-            max-width: 900px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
+      /* Section commentaires (Disqus) */
+      .comments {
+        max-width: 900px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+      }
 
-        /* Footer */
-        footer {
-            background-color: #2e7d32;
-            color: white;
-            text-align: center;
-            padding: 1rem;
-            margin-top: 2rem;
-        }
-        footer a {
-            color: #ef5350;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        footer a:hover {
-            color: #d32f2f;
-        }
+      /* Footer */
+      footer {
+        background-color: #2e7d32;
+        color: white;
+        text-align: center;
+        padding: 1rem;
+        margin-top: 2rem;
+      }
+      footer a {
+        color: #ef5350;
+        text-decoration: none;
+        font-weight: bold;
+      }
+      footer a:hover {
+        color: #d32f2f;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Menu -->
     <nav aria-label="Menu principal">
-        <button class="menu-toggle" aria-label="Ouvrir le menu">☰</button>
-        <ul class="menu">
-            <li><a href="index.html" aria-current="page">Manifeste</a></li>
-            <li><a href="social-libertarisme.html">Social-Libertarisme</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
+      <button class="menu-toggle" aria-label="Ouvrir le menu">☰</button>
+      <ul class="menu">
+        <li><a href="index.html" aria-current="page">Manifeste</a></li>
+        <li><a href="social-libertarisme.html">Social-Libertarisme</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
     </nav>
     <script>
-        document.querySelector('.menu-toggle').addEventListener('click', () => {
-            document.querySelector('.menu').classList.toggle('active');
-        });
+      document.querySelector(".menu-toggle").addEventListener("click", () => {
+        document.querySelector(".menu").classList.toggle("active");
+      });
     </script>
 
     <!-- Bannière -->
     <div class="banner">
-        <div class="slogan">En route pour la révolution libertaire</div>
+      <div class="slogan">En route pour la révolution libertaire</div>
     </div>
 
     <!-- Contenu principal -->
     <div class="container">
-        <h1>Comment l’affranchisme défie le capitalisme : Un appel à la révolution coopérative</h1>
+      <h1>
+        Comment l’affranchisme défie le capitalisme : Un appel à la révolution
+        coopérative
+      </h1>
 
-        <div class="section">
-            <h2>Introduction</h2>
-            <p>Le temps passe vite, à 20 ans on veut changer le monde. À 40 ans, les promesses du capitalisme s’évanouissent, laissant place au désenchantement. À la faveur d’un licenciement, après six ans d’errance professionnelle, on prend enfin conscience de l’ampleur du problème : un système en crise, aliénant nos vies et détruisant la nature.</p>
-            <p>Mon engagement à la CGT aux côtés des travailleurs précaires et mon retour à la campagne, loin du consumérisme des villes, m’ont permis de reconnecter à l’essentiel. Ce retour salutaire du réel m’a permis d’imaginer une autre voie, plus solidaire et écologique.</p>
-            <p>Appelons cette voie, l’affranchisme, une idéologie révolutionnaire qui vise l’émancipation du marché capitaliste par l’autosuffisance de ses coopératives. Ce modèle décentralisé d’autogestion, non violente mais radicale, remplace la compétition capitaliste par la coopération.</p>
-            <p>Cette révolution systémique et silencieuse, fait primer l’universel sur le global et satisfait les besoins essentiels par des communs non marchands. Partout, des gens ordinaires s’organisent, à leur échelle, pour reprendre le pouvoir. Leurs initiatives sont souvent méconnues mais en pleine croissance.</p>
-            <p>Il ne leur manque qu’une meilleure coordination et une véritable stratégie de substitution au marché capitaliste.</p>
-            <p>Cet appel expose les failles du capitalisme, les solutions de l’affranchisme et leurs défis. Il offre les clés d’une société humaine, solidaire, respectueuse de la planète, redonnant sens à nos vies.</p>
-            <p><strong>Diffusez-le et rejoignez la révolution pacifique ! Premier pas : partagez vos idées sur les réseaux sociaux (#affranchisme2025).</strong></p>
-            <picture>
-                <source srcset="images/hands-1314632.webp" type="image/webp">
-                <img src="images/hands-1314632.jpg" alt="Membres d'une AMAP échangeant des produits locaux dans un marché coopératif" loading="lazy">
-            </picture>
-            <div class="quote">"L’entraide, facteur de l’évolution." – Pierre Kropotkine</div>
+      <div class="section">
+        <h2>Introduction</h2>
+        <p>
+          Le temps passe vite, à 20 ans on veut changer le monde. À 40 ans, les
+          promesses du capitalisme s’évanouissent, laissant place au
+          désenchantement. À la faveur d’un licenciement, après six ans
+          d’errance professionnelle, on prend enfin conscience de l’ampleur du
+          problème : un système en crise, aliénant nos vies et détruisant la
+          nature.
+        </p>
+        <p>
+          Mon engagement à la CGT aux côtés des travailleurs précaires et mon
+          retour à la campagne, loin du consumérisme des villes, m’ont permis de
+          reconnecter à l’essentiel. Ce retour salutaire du réel m’a permis
+          d’imaginer une autre voie, plus solidaire et écologique.
+        </p>
+        <p>
+          Appelons cette voie, l’affranchisme, une idéologie révolutionnaire qui
+          vise l’émancipation du marché capitaliste par l’autosuffisance de ses
+          coopératives. Ce modèle décentralisé d’autogestion, non violente mais
+          radicale, remplace la compétition capitaliste par la coopération,
+          l’exploitation par la réciprocité.
+        </p>
+        <p>
+          Cette révolution systémique et silencieuse, fait primer l’universel
+          sur le global et satisfait les besoins essentiels par des communs non
+          marchands. Partout, des gens ordinaires s’organisent, à leur échelle,
+          pour reprendre le pouvoir. Leurs initiatives sont souvent méconnues
+          mais en pleine croissance.
+        </p>
+        <p>
+          Il ne leur manque qu’une meilleure coordination et une véritable
+          stratégie de substitution au marché capitaliste.
+        </p>
+        <p>
+          Cet appel expose les failles du capitalisme, les solutions de
+          l’affranchisme et leurs défis. Il offre les clés d’une société
+          humaine, solidaire, respectueuse de la planète, redonnant sens à nos
+          vies.
+        </p>
+        <p>
+          <strong
+            >Diffusez-le et rejoignez la révolution pacifique ! Premier pas :
+            partagez vos idées sur les réseaux sociaux
+            (#affranchisme2025).</strong
+          >
+        </p>
+        <picture>
+          <source srcset="images/hands-1314632.webp" type="image/webp" />
+          <img
+            src="images/hands-1314632.jpg"
+            alt="Membres d'une AMAP échangeant des produits locaux dans un marché coopératif"
+            loading="lazy"
+          />
+        </picture>
+        <div class="quote">
+          "L’entraide, facteur de l’évolution." – Pierre Kropotkine
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Partie I : Fondements théoriques de l’affranchisme</h2>
+
+        <h3>1.1. L’impasse du capitalisme</h3>
+        <p>
+          Nos sociétés occidentales regorgent de poubelles pleines de nourriture
+          et de centres commerciaux soldant des vêtements jetables, pendant que
+          d’autres peinent à survivre. Le capitalisme privilégie la quantité à
+          la qualité, produisant des biens d’abord utiles à son développement.
+          Il en résulte une surproduction uniforme motivée par le profit,
+          éclipsant les spécificités locales, les besoins essentiels comme la
+          santé, le logement ou le lien social, et transformant les écosystèmes
+          naturels. Les petits commerces ferment, les identités culturelles
+          s’effacent.
+        </p>
+        <p>
+          La frénésie consumériste, de la fast fashion au click-and-go,
+          privilégie le plaisir immédiat, l’addiction à la nouveauté, au
+          détriment de la réflexion et du temps long. S’ensuit une perte de sens
+          dramatique pour nos sociétés où une consommation très inégale,
+          minimise la solidarité et l’épanouissement. La mondialisation, en
+          intensifiant la précarité et la fuite des capitaux, contribue à des
+          réflexes individualistes et à la baisse de l’engagement dans les
+          organisations solidaires comme les syndicats. Cette dynamique
+          s’accompagne d’une hausse des burn-outs et des accidents du travail,
+          ainsi que d’un recul de la conscience de classe.
+        </p>
+        <p>
+          Paradoxalement, plus le mondialisme exacerbe les tensions sociales,
+          plus le syndicalisme peine à fédérer les travailleurs. En France, le
+          nombre de syndiqués a chuté d’environ 5 millions en 1945 à 1,6 million
+          en 2025, malgré une multiplication des centrales syndicales comme la
+          CFDT, FO ou Sud-Solidaires. Le mondialisme et son idéologie
+          néolibérale, promeut via les médias mainstream un discours où la
+          "liberté" se réduit à surconsommer, souvent à crédit, une
+          surproduction délocalisée, tout en donnant l’illusion d’un choix.
+          L’affranchisme appelle à la révolte et prône une réappropriation du
+          temps et des communs pour refonder une société fragmentée par un
+          individualisme exacerbé.
+        </p>
+        <p>
+          <strong
+            >Rejoignons une AMAP ou un syndicat pour défendre le bien commun
+            !</strong
+          >
+        </p>
+        <picture>
+          <source srcset="images/indulgence-3-1323615.webp" type="image/webp" />
+          <img
+            src="images/indulgence-3-1323615.jpg"
+            alt="Illustration de la surconsommation dans un centre commercial"
+            loading="lazy"
+          />
+        </picture>
+
+        <h3>
+          1.2. Rôle de l’innovation et des institutions dans le capitalisme
+        </h3>
+        <p>
+          A la Révolution française, la bourgeoisie à travers l’État, balaie les
+          corporatismes monarchiques et s’approprie le marché. Les travailleurs
+          précaires s’y retrouvent isolés et livrés à une prédation de
+          ressources, ne pouvant plus racheter leur propre moyen de production
+          et abandonnant progressivement leur statut de producteur à la machine,
+          puis plus tard, au Sud global. Les barrières d’entrée au marché créent
+          des tensions pour trouver les capitaux, obligeant à s’endetter et
+          favorisant la compétition plutôt que la coopération.
+        </p>
+        <p>
+          Mais le financement d’une telle économie par la dette, se paye
+          généralement, en crises systémiques. De la première bulle spéculative
+          avec la crise des tulipes (1637) à la crise covid (2020), l’État va
+          progressivement se porter au secours du système financier, sur le
+          principe du « too big too fail » popularisé, par la crise de 2008.
+          Cela a renforcé les banques dans leur rôle de tiers de confiance dans
+          les échanges, voire d’intermédiaire profiteur, malgré un poids
+          écrasant sur les marchés. Leur activité a permis le bond technologique
+          et productif dans internet que l’on connaît, et la naissance de géants
+          du web, devenus hégémoniques à la fois dans le public et le privé.
+          Leurs plateformes traquent nos données pour des publicités ciblées,
+          marchandisent nos désirs et s’ingèrent dans nos vies, à travers une
+          digitalisation censée optimiser la productivité.
+        </p>
+        <p>
+          Cependant, cette transition numérique a donné les plus grandes fuites
+          de données personnelles de l’histoire (France Travail (2024), piratage
+          de comptes Google, Facebook ou Apple (2025)), etc. Le capitalisme
+          montre son incapacité à sécuriser et à contrôler sa propre innovation.
+          A travers la plateforme en ligne, le marché capitaliste se réinvente
+          et accroît le modèle du dominant possèdant le capital technologique au
+          dominé qui s’en sert, sans le comprendre, hormis les spécialistes. Les
+          échanges s’accélèrent dans des relations d’interdépendances, de plus
+          en plus complexes, fragilisant autant les chaînes d’approvisionnement
+          que le statut des travailleurs. Les échanges se segmentent, les
+          intermédiaires se multiplient et accumulent une part grandissante de
+          la richesse produite, au détriment du consommateur final.
+        </p>
+        <p>
+          L’affranchisme offre une véritable rupture face aux dérives de cette
+          nouvelle caste de privilégiés, que sont les mondialistes. Il canalise
+          le moteur énergivore d’un progrès qui s’emballe, pour servir le bien
+          commun. Il propose de réduire les intermédiaires en relocalisant la
+          production, et de décentraliser les institutions pour redonner aux
+          travailleurs le contrôle sur leur moyen de production, contrairement à
+          ce système qui protège la finance.
+        </p>
+        <div class="quote">
+          "Le peuple ne doit compter que sur lui-même ; il n’a pas d’autre
+          appui." – Michel Bakounine
+        </div>
+        <p>
+          <strong
+            >Investissons nos marchés locaux et créons notre réseau de
+            coopératives affranchistes !</strong
+          >
+        </p>
+
+        <h3>1.3. Sortir de l’impasse</h3>
+        <p>
+          Le capitalisme est un peu comme une équipe d’individualités payées des
+          millions pour gagner un match de foot. Opposons-lui une groupe qui vit
+          bien et qui compense son manque de moyen par son collectif.
+          L’affranchisme forme le socle d’une société juste et harmonieuse,
+          tissant un réseau de solidarité à travers l’espace, le temps et le
+          sens. En fédérant des dispositifs et en harmonisant les synergies,
+          comme le prônait Kropotkine, il surpasse l’assemblage chaotique du
+          capitalisme par une cohésion solidaire. Certains dispositifs sont
+          peut-être à côté de chez vous :
+        </p>
+        <ul class="styled-list">
+          <li>
+            <span class="icon">🌱</span> Coopératives de production pour une
+            autonomie locale, par exemple les SCOP (Société COopérative de
+            Production) en France, où les salariés sont majoritairement les
+            patrons, ou les SCIC (Société Coopérative d’Intérêt Collectif) qui
+            peuvent inclure des acteurs institutionnels.
+          </li>
+          <li>
+            <span class="icon">🌍</span> Réseaux altermondialistes, d’économie
+            sociale et solidaire ou écologistes : AMAP, Coopératives Intégrales
+            (Catalane, du bassin de Tau, de Toulouse, Coopération intégrale du
+            Berry…), Via Campesina, Extinction Rebellion, Attac, Auroville
+            International, forum social mondial, Transition Network... pour un
+            réseau international.
+          </li>
+          <li>
+            <span class="icon">🏛️</span> Initiatives plus politiques comme le
+            localisme qui fédèrent les communes au Rojava (Kurdistan) ou les
+            municipalités au Chiapas (Mexique).
+          </li>
+          <li>
+            <span class="icon">💸</span> Coopératives bancaires non lucratives
+            pour une puissance financière, comme la banque coopérative Banca
+            Etica (Italie) qui compte environs 2,6 milliards euros d’actifs
+            (2024) ou le crédit coopératif (France), avec 18,2 milliards d’euros
+            de dépôts (2024). Certains réseaux, comme l’Union Régionale des
+            SCOP, CRESS ou France Active, en France, peuvent accompagner la
+            création d’une toute première coopérative affranchiste. Néanmoins,
+            le financement indépendant des institutions centralisées reste
+            préférable, avec des avances en comptes courants de coopérateurs,
+            par exemple.
+          </li>
+          <li>
+            <span class="icon">🤝</span> Des communautés autonomes, comme les
+            ordres monastiques (notamment celui de Saint-Benoît), les mouvements
+            ouvriers tels que les Compagnons du Devoir, les syndicats
+            révolutionnaires ou anarchistes (CNT, CGT en Espagne ou en Amérique
+            du Sud), le Syndicat des travailleurs de l’économie populaire en
+            Argentine, ou encore les fédérations de coopératives (CICOPA), ont
+            traversé les siècles grâce à leur discipline organisationnelle et
+            leur légitimité idéologique. Même la communauté amish, souvent
+            caricaturée, incarne ces principes. Toutes visent l’amélioration
+            personnelle et professionnelle à travers un code moral, offrant des
+            modèles concrets pour appliquer les valeurs affranchistes.
+          </li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Partie II : Mise en œuvre pratique de l’affranchisme</h2>
+
+        <h3>2.1. Construire un affranchisme politique</h3>
+        <p>
+          Malgré nos démocraties modernes, construire le compromis s’est
+          généralement fait en centralisant la décision. Des représentants élus
+          discutent de nos intérêts communs ou particuliers, canalisent voire
+          filtrent la revendication populaire puis passent à un autre sujet,
+          malgré des attentes populaires souvent déçues. Cela s’est notamment
+          vu, avec le non des français au référendum sur la Constitution
+          européenne, en 2005, où le parlement national était passé outre, en
+          votant le texte légèrement remanié, quelques années plus tard. Nos
+          constitutions instaurent une bureaucratie d’État carriériste, qui
+          monopolise une décision top-down et garde ainsi la mainmise sur nos
+          institutions. L’affranchisme, entend changer cela, non seulement, en
+          réduisant la centralisation du pouvoir à une gestion des surplus, mais
+          en supprimant l’État. Tout ce qui touche aux coopérateurs
+          affranchistes et à la vie des coopératives est réglé par une charte
+          évolutive et confédérale, sur le principe du volontariat.
+        </p>
+        <p>
+          <strong
+            >Protégeons le bien commun des profiteurs, et partageons
+            équitablement le bien à la communauté (#Affranchisme2025).</strong
+          >
+        </p>
+
+        <h3>2.2. La charte confédérale, cœur du système affranchiste</h3>
+        <p>
+          Neuf fédérations (alimentation, logement, énergie, transport, santé,
+          éducation/culture, services, environnement, justice/sécurité)
+          coordonnent les coopératives par secteur.
+        </p>
+        <p>
+          Annuellement, chaque fédération réunit l’ensemble de ses travailleurs
+          (actifs ou inactifs), en assemblées locales. Ces réunions ont pour
+          mission de :
+        </p>
+        <ul class="styled-list">
+          <li>
+            <span class="icon">💡</span> Discuter des besoins en innovation et
+            prioriser les projets de recherche par scrutin en ligne.
+          </li>
+          <li>
+            <span class="icon">📢</span> Lancer un appel à participation pour
+            les projets retenus.
+          </li>
+          <li>
+            <span class="icon">🔄</span> Partager des connaissances, des
+            innovations ou des pratiques entre coopératives via une plateforme
+            collaborative.
+          </li>
+          <li>
+            <span class="icon">🎓</span> Mettre en place des formations qui
+            déchargent et protègent les coopératives (par exemple : formation à
+            la résistance : sensibilisation aux tactiques de répression
+            (surveillance, lois restrictives), techniques de négociation avec
+            les autorités, ou stratégies de désobéissance civile non violente).
+          </li>
+          <li>
+            <span class="icon">📜</span> Modifier sa partie dans le document
+            unique : une feuille de route appliquant la charte confédérale,
+            présente dans les statuts des coopératives affranchistes.
+          </li>
+        </ul>
+        <p>
+          La charte est rédigée lors d’une assemblée confédérale initiale, avec
+          les contributions de chaque marché coopératif, et adoptée à la
+          majorité qualifiée. Elle peut être amendée, lors des assemblées
+          confédérales triennales, toujours par vote direct des assemblées
+          générales locales.
+        </p>
+        <p>
+          La charte est distribuée à tous les marchés coopératifs sous forme
+          numérique (par mail ou sur un serveur partagé) et physique (imprimée
+          ou affichée dans chaque marché local). Chaque nouveau coopérateur en
+          reçoit une copie, lors de son intégration.
+        </p>
+        <p>
+          La confédération se réunit en assemblée générale locale tous les 4
+          ans. La confédération a essentiellement le rôle de partager
+          l’information entre les fédérations et de représenter les fédérations
+          vis-à-vis des tiers, via des mandataires formés et tirés au sort. Ses
+          missions sont :
+        </p>
+        <ul class="styled-list">
+          <li>
+            <span class="icon">🌐</span> Unir mondialement les organisations
+            affranchistes, en répondant aux besoins exprimés, grâce notamment à
+            un fond d’urgence ou une réserve stratégique de surplus.
+          </li>
+          <li>
+            <span class="icon">🔄</span> Faciliter les échanges interrégionaux,
+            lorsque les ressources ou productions locales sont insuffisantes,
+            tout en veillant à l’application du principe de solidarité : de
+            chacun selon ses capacités, à chacun selon ses besoins.
+          </li>
+          <li>
+            <span class="icon">🤝</span> Coordonner des projets d’envergure
+            nécessitant la collaboration de plusieurs marchés coopératifs.
+          </li>
+          <li>
+            <span class="icon">🔍</span> Réorganiser le réseau affranchiste afin
+            d’éviter toute bureaucratie même décentralisée.
+          </li>
+          <li>
+            <span class="icon">📊</span> Transparence de résultat notamment via
+            des indicateurs de gratuité et de qualité.
+          </li>
+          <li>
+            <span class="icon">🔬</span> Évaluer la recherche et la technologie
+            par un groupe d’experts (reconnus par les pairs et proposés à la
+            mandature tournante), selon plusieurs critères : le temps libre, la
+            réduction des externalités environnementales, le bien-être animal,
+            la cybersécurité et l’esthétique affranchiste (critiques d’art,
+            design de permaculture, logo, slogan, etc.).
+          </li>
+          <li>
+            <span class="icon">📜</span> Modifier la charte par référendum sur
+            proposition locale.
+          </li>
+        </ul>
+        <p>
+          Par exemple, en 2026, l’épicerie collecte des questionnaires révélant
+          un besoin de conserves locales. La fédération lance un appel en ligne,
+          mobilisant 15 bénévoles pour un projet de conserverie coopérative. Une
+          formation sur la transformation alimentaire est organisée, et une
+          coopérative refusant de partager son savoir en la matière, malgré les
+          demandes répétées du porteur de projet, est suspendue après médiation,
+          garantissant ainsi la transparence.
+        </p>
+        <p>
+          <strong
+            >Rejoignons une fédération non lucrative dans nos syndicats ou nos
+            coopératives !</strong
+          >
+        </p>
+        <picture>
+          <source srcset="images/people-2569234.webp" type="image/webp" />
+          <img
+            src="images/people-2569234.jpg"
+            alt="Groupe de militants solidaires dans une ZAD ou un marché coopératif"
+            loading="lazy"
+          />
+        </picture>
+        <div class="quote">
+          "La liberté est le droit de faire tout ce que les lois permettent." –
+          Montesquieu
         </div>
 
-        <div class="section">
-            <h2>Partie I : Fondements théoriques de l’affranchisme</h2>
+        <h3>2.3. Fonctionnement d’un marché coopératif</h3>
+        <p>
+          J’ai rejoint une épicerie coopérative participative, où trois heures
+          de bénévolat par mois donnent accès à des produits bio abordables. Ces
+          coopératives de consommateurs préfigurent les marchés communautaires
+          de demain, mais présentent deux limites : les producteurs restent
+          capitalistes, tout en profitant du bénévolat, ce qui maintient le
+          travail coopératif dans un cadre capitaliste, et les produits bio de
+          qualité restent souvent trop chers pour les précaires, le principal
+          contingent des coopérateurs. L’affranchisme propose des épiceries
+          coopératives échangeant préférentiellement avec des coopératives de
+          production ou des associations appliquant la charte affranchiste.
+          Elles sont donc partiellement non lucratives et réservent une partie
+          de leur production gratuitement aux coopérateurs.
+        </p>
+        <p>
+          Exemple : Une épicerie affranchiste à 40 000 €, financée par 10
+          coopérateurs (4 000 € chacun), fournit des légumes gratuits grâce aux
+          dons d’une AMAP partenaire, réduisant les prix de 30 % dès la première
+          année.
+        </p>
+        <p>
+          <strong
+            >Rejoignez une coopérative affranchiste et construisez un avenir
+            solidaire ! #Affranchisme2025</strong
+          >
+        </p>
+        <p>
+          Chaque marché coopératif local organise son assemblée générale
+          (trimestrielle pour les questions locales, annuelle pour les questions
+          fédérales, triennale pour les confédérales) pour débattre et
+          formaliser les propositions. Ces propositions seront proposées aux
+          bénévoles, sous forme de questionnaires, lors de leur passage à la
+          caisse, pendant 1 mois et disponibles également, en ligne. Le caissier
+          scanne la carte QR code générée à l’adhésion et récupère le
+          questionnaire. Les questionnaires sont ensuite décomptés et la
+          décision est prise à la majorité qualifiée (par exemple, 2/3 ou 75 %
+          des voix au sein de l’assemblée). Le résultat est ensuite envoyé à
+          tous les marchés grâce à une liste de diffusion de mails, dans un
+          format standard, pour faciliter l’agrégation.
+        </p>
+        <p>
+          Par exemple, chaque mois, une AMAP affranchiste s’engage à fournir 100
+          kg de fruits et légumes gratuitement au marché. La coopérative
+          affranchiste de logement loue 3 logements collectifs gracieusement aux
+          coopérateurs les plus actifs.
+        </p>
+        <p>
+          <strong
+            >Que vous soyez agriculteur, cuisinier, communicant ou étudiant,
+            votre temps compte pour construire ce marché.</strong
+          >
+        </p>
+        <p>
+          Une cuisine partagée transforme les produits locaux en conserves,
+          pâtisseries, crêpes ou glaces, tout en offrant des formations aux
+          membres. Certains bénévoles se partagent les invendus pour leur
+          consommation personnelle. Le marché coopératif économise en vue
+          d’investir sur un food truck qui vendra ses produits transformés, des
+          sandwichs et glaces bio pour renforcer l’autonomie. Conformément à la
+          charte, le marché projette d’acquérir une ferme à rénover afin d’y
+          installer une communauté de coopérateurs affranchistes autonome et
+          d’approvisionner gratuitement l’épicerie. Le lieu servira de refuge
+          animalier pour décharger les associations de protection animales
+          locales et des stages de permaculture et de construction en pierre y
+          seront donnés. La comptabilité est assurée par chaque coopérative,
+          jusqu’à ce qu’une coopérative de comptabilité autonome puisse prendre
+          le relais. Adhérer au marché coopératif peut permettre d’atteindre
+          l’autonomie sans besoin d’argent et augmenter significativement la
+          résilience des coopérateurs affranchistes, face aux crises. Cette
+          gratuité partielle est financée par la lucrativité des coopératives
+          auprès des consommateurs capitalistes et a vocation à être intégrale,
+          le jour où le consommateur aura définitivement quitté le marché
+          capitaliste.
+        </p>
+        <p>
+          <strong
+            >Rejoignez l’#Affranchisme2025 et gagnez les millions qui feront
+            vivre la communauté ! Créons le marché coopératif de demain</strong
+          >
+        </p>
 
-            <h3>1.1. L’impasse du capitalisme</h3>
-            <p>Nos sociétés occidentales regorgent de poubelles pleines de nourriture et de centres commerciaux soldant des vêtements jetables, pendant que d’autres peinent à survivre. Le capitalisme privilégie la quantité à la qualité, produisant des biens d’abord utiles à son développement. Il en résulte une surproduction uniforme motivée par le profit, éclipsant les spécificités locales, les besoins essentiels comme la santé, le logement ou le lien social, et transformant les écosystèmes naturels. Les petits commerces ferment, les identités culturelles s’effacent.</p>
-            <p>La frénésie consumériste, de la fast fashion au click-and-go, privilégie le plaisir immédiat, l’addiction à la nouveauté, au détriment de la réflexion et du temps long. S’ensuit une perte de sens dramatique pour nos sociétés où une consommation très inégale, minimise la solidarité et l’épanouissement. La mondialisation, en intensifiant la précarité et la fuite des capitaux, contribue à des réflexes individualistes et à la baisse de l’engagement dans les organisations solidaires comme les syndicats. Cette dynamique s’accompagne d’une hausse des burn-outs et des accidents du travail, ainsi que d’un recul de la conscience de classe.</p>
-            <p>Paradoxalement, plus le mondialisme exacerbe les tensions sociales, plus le syndicalisme peine à fédérer les travailleurs. En France, le nombre de syndiqués a chuté d’environ 5 millions en 1945 à 1,6 million en 2025, malgré une multiplication des centrales syndicales comme la CFDT, FO ou Sud-Solidaires. Le mondialisme et son idéologie néolibérale, promeut via les médias mainstream un discours où la "liberté" se réduit à surconsommer, souvent à crédit, une surproduction délocalisée, tout en donnant l’illusion d’un choix. L’affranchisme appelle à la révolte et prône une réappropriation du temps et des communs pour refonder une société fragmentée par un individualisme exacerbé.</p>
-            <p><strong>Rejoignons une AMAP ou un syndicat pour défendre le bien commun !</strong></p>
-            <picture>
-                <source srcset="images/indulgence-3-1323615.webp" type="image/webp">
-                <img src="images/indulgence-3-1323615.jpg" alt="Illustration de la surconsommation dans un centre commercial" loading="lazy">
-            </picture>
+        <h3>2.4. Restaurer le temps et le sens</h3>
+        <p>
+          La clé de mon engagement militant a été quoi faire de mon temps. Le
+          mettre à disposition d'un intermédiaire qui récupérera le fruit de mon
+          travail ou le donner directement au bien commun ? Notre univers est
+          privatisé et colonisé par la rareté, la complexité et le temps court,
+          sapant les bases de notre émancipation. Le capitalisme vole le temps,
+          suspendant la raison et l’intention de bien faire. La raison est bien
+          connue : pour que certains puissent accumuler toujours plus de
+          richesse. L’affranchisme vise au contraire à « démarchandiser » nos
+          imaginaires collectifs : une charte graphique unifiée avec un label
+          affranchiste, une technologie maîtrisée sous licences libres, une
+          production saine et respectueuse, des partenariats éventuellement
+          marchands avec des experts de l’artisanat, la revendication du temps
+          libre.
+        </p>
+        <p>
+          Il vise également à faire passer l’argent directement du donneur au
+          receveur, sans intermédiaire qui s’enrichit au passage. Comme la
+          Sécurité sociale en France en 1947, où les cotisations retraite
+          étaient directement redistribuées aux retraités via la solidarité
+          intergénérationnelle, sans gonfler les caisses de l’État, les
+          coopératives jouent un rôle analogue. Elles redistribuent une partie
+          de leur production à une épicerie coopérative autonome, sans que
+          quiconque n’intervienne pour conditionner ou influencer le prix.
+        </p>
+        <p>
+          Les coopératives affranchistes, en dehors de l’épicerie, pourront
+          verser des salaires à leurs membres mais devront, toutefois, veiller à
+          l’équilibre entre bénévolat, qui libère du temps pour la coopération
+          et l’autosuffisance, et salariat, qui tout en aidant l’expansion du
+          marché coopératif, risquerait de les enfermer dans des logiques
+          capitalistes.
+        </p>
+        <p>
+          L’affranchisme libère également la culture de l’utilitarisme productif
+          avec une esthétique décroissante du beau et du vrai (jardin potager et
+          d’ornement partagé, urbanisme renaturé, arts collectifs et
+          traditionnels, saveurs simples et naturelles...).
+        </p>
+        <p>
+          <strong
+            >Rejoignons des parcs comestibles, des fab labs ou des cuisines
+            collaboratives pour reconquérir le temps libre !</strong
+          >
+        </p>
+      </div>
 
-            <h3>1.2. Rôle de l’innovation et des institutions dans le capitalisme</h3>
-            <p>A la Révolution française, la bourgeoisie à travers l’État, balaie les corporatismes monarchiques et s’approprie le marché. Les travailleurs précaires s’y retrouvent isolés et livrés à une prédation de ressources, ne pouvant plus racheter leur propre moyen de production et abandonnant progressivement leur statut de producteur à la machine, puis plus tard, au Sud global. Les barrières d’entrée au marché créent des tensions pour trouver les capitaux, obligeant à s’endetter et favorisant la compétition plutôt que la coopération.</p>
-            <p>Mais le financement d’une telle économie par la dette, se paye généralement, en crises systémiques. De la première bulle spéculative avec la crise des tulipes (1637) à la crise covid (2020), l’État va progressivement se porter au secours du système financier, sur le principe du « too big too fail » popularisé, par la crise de 2008. Cela a renforcé les banques dans leur rôle de tiers de confiance dans les échanges, malgré un poids écrasant sur les marchés. Leur activité a permis le bond technologique et productif dans internet que l’on connaît, et la naissance de géants du web, qui rachètent tous les concurrents sérieux. Leurs plateformes traquent nos données pour des publicités ciblées, marchandisent nos désirs et s’ingèrent dans notre vie publique et privée.</p>
-            <p>Parallèlement, l’entreprise et l’état ont embrassé la digitalisation pour optimiser leur productivité. Cependant, cette transition numérique a donné les plus grandes fuites de données personnelles de l’histoire (France Travail (2024), piratage de comptes Google, Facebook ou Apple (2025)), etc. Le capitalisme montre son incapacité à sécuriser et à contrôler sa propre innovation. Les échanges s’accélèrent et se segmentent, complexifiant le marché et fragilisant autant les chaînes d’approvisionnement que le statut des travailleurs. Les produits passent par plusieurs intermédiaires, qui accumulent une part de la richesse produite, au détriment du consommateur final.</p>
-            <p>L’affranchisme offre une véritable rupture face aux dérives de cette nouvelle caste de privilégiés, que sont les mondialistes. Il canalise le moteur énergivore d’un progrès qui s’emballe, pour servir le bien commun. Il propose de réduire les intermédiaires en relocalisant la production, et de décentraliser les institutions pour redonner aux travailleurs le contrôle sur leur moyen de production, contrairement à ce système qui protège la finance.</p>
-            <div class="quote">"Le peuple ne doit compter que sur lui-même ; il n’a pas d’autre appui." – Michel Bakounine</div>
-            <p><strong>Investissons nos marchés locaux et créons notre réseau de coopératives affranchistes !</strong></p>
+      <div class="section">
+        <h2>Partie III : Défis et perspectives de l'affranchisme</h2>
 
-            <h3>1.3. Sortir de l’impasse</h3>
-            <p>Le capitalisme est un peu comme une équipe d’individualités payées des millions pour gagner un match de foot. Opposons-lui une groupe qui vit bien et qui compense son manque de moyen par son collectif. L’affranchisme forme le socle d’une société juste et harmonieuse, tissant un réseau de solidarité à travers l’espace, le temps et le sens. En fédérant des dispositifs et en harmonisant les synergies, comme le prônait Kropotkine, il surpasse l’assemblage chaotique du capitalisme par une cohésion solidaire. Certains dispositifs sont peut-être à côté de chez vous :</p>
-            <ul class="styled-list">
-                <li><span class="icon">🌱</span> Coopératives de production pour une autonomie locale, par exemple les SCOP (Société COopérative de Production) en France, où les salariés sont majoritairement les patrons, ou les SCIC (Société Coopérative d’Intérêt Collectif) qui peuvent inclure des acteurs institutionnels.</li>
-                <li><span class="icon">🌍</span> Réseaux altermondialistes, d’économie sociale et solidaire ou écologistes : AMAP, Coopératives Intégrales (Catalane, du bassin de Tau, de Toulouse, Coopération intégrale du Berry…), Via Campesina, Extinction Rebellion, Attac, Auroville International, forum social mondial, Transition Network... pour un réseau international.</li>
-                <li><span class="icon">🏛️</span> Initiatives plus politiques comme le localisme qui fédèrent les communes au Rojava (Kurdistan) ou les municipalités au Chiapas (Mexique).</li>
-                <li><span class="icon">💸</span> Coopératives bancaires non lucratives pour une puissance financière, comme la banque coopérative Banca Etica (Italie) qui compte environs 2,6 milliards euros d’actifs (2024) ou le crédit coopératif (France), avec 18,2 milliards d’euros de dépôts (2024). Certains réseaux, comme l’Union Régionale des SCOP, CRESS ou France Active, en France, peuvent accompagner la création d’une toute première coopérative affranchiste. Néanmoins, le financement indépendant des institutions centralisées reste préférable, avec des avances en comptes courants de coopérateurs, par exemple.</li>
-                <li><span class="icon">🤝</span> Des communautés autonomes, comme les ordres monastiques (notamment celui de Saint-Benoît), les mouvements ouvriers tels que les Compagnons du Devoir, les syndicats révolutionnaires ou anarchistes (CNT, CGT en Espagne ou en Amérique du Sud), le Syndicat des travailleurs de l’économie populaire en Argentine, ou encore les fédérations de coopératives (CICOPA), ont traversé les siècles grâce à leur discipline organisationnelle et leur légitimité idéologique. Même la communauté amish, souvent caricaturée, incarne ces principes. Toutes visent l’amélioration personnelle et professionnelle à travers un code moral, offrant des modèles concrets pour appliquer les valeurs affranchistes.</li>
-            </ul>
+        <h3>3.1. Résistances structurelles</h3>
+        <p>
+          Souvent par manque de capital, les coopératives de production peu
+          compétitives ont été largement éclipsées par les coopératives de
+          consommation, plus abordables. Malheureusement, les coopérateurs
+          achètent ce que le système capitaliste produit à moindre coût, ce qui
+          a pour effet d’entretenir la machine capitaliste, sans s’y soustraire
+          complètement. Or la dépendance au capitalisme est la principale source
+          d’inégalité. L’affranchisme valorise au contraire la production des
+          coopératives, malgré un cadre capitaliste amené à disparaître. À plus
+          de productivité, l’affranchisme répond par plus de coopération. Le but
+          étant de travailler moins tout en étant plus productif que le
+          capitalisme, sur les besoins d’abord essentiels puis universels,
+          lorsque l’autosuffisance du marché coopératif sera atteinte.
+        </p>
+        <p>
+          L’affranchisme dispose d’un atout majeur : une organisation
+          décentralisée parfaitement adaptée au prochain monde multipolaire et
+          plus résiliente face aux crises, grâce à des réseaux distribués
+          mondiaux. Contrairement aux bureaucraties capitalistes, la gouvernance
+          de ce système reste horizontale, avec un document unique qui sert de
+          base aux 3 instances participatives, avec suffisamment de marge pour
+          être adapté localement : le local (pour gérer la solidarité
+          nationale), le fédéral qui se contente de rassembler les savoirs et
+          d’améliorer la production sectorielle par des formations, et le
+          confédéral (pour gérer la solidarité internationale), minimisant la
+          centralisation de la décision. Les coopératives locales et leur marché
+          hybride en partie gratuit, sont le moteur de cette résistance.
+        </p>
+        <p>
+          <strong
+            >Refusons la passivité citoyenne et soutenons la démocratie
+            participative des coopératives !</strong
+          >
+        </p>
+        <picture>
+          <source
+            srcset="
+              images/political-crisis-for-philippine-president-continues-1666818.webp
+            "
+            type="image/webp"
+          />
+          <img
+            src="images/political-crisis-for-philippine-president-continues-1666818.jpg"
+            alt="Manifestation solidaire pour une cause sociale"
+            loading="lazy"
+          />
+        </picture>
+        <div class="quote">
+          "La liberté sans le socialisme, c’est le privilège et l’injustice ; le
+          socialisme sans la liberté, c’est l’esclavage et la brutalité." –
+          Michel Bakounine
         </div>
 
-        <div class="section">
-            <h2>Partie II : Mise en œuvre pratique de l’affranchisme</h2>
+        <h3>3.2. Résistances culturelles</h3>
+        <p>
+          Cela m’est arrivé d’acheter de la nourriture à un SDF qui me demandait
+          un euro. Trop peu se disent qu’ils pourraient être à leur place. Notre
+          système social financé par nos cotisations est démantelé dans une
+          relative indifférence. Le capitalisme impose un mode de vie
+          consumériste, valorisant un individualisme sans entrave. Le
+          capitalisme empêche ou coopte les alternatives, comme les monnaies
+          locales qui ne peuvent se substituer aux devises. On voit combien il
+          est difficile de quitter un marché libéral sans retomber dans des
+          blocages juridiques, une dépendance aux banques ou la marginalisation.
+        </p>
+        <p>
+          Les médias mainstream promeuvent un récit bien rodé, présentant le
+          néolibéralisme comme seul vecteur du progrès. Sortir du capitalisme
+          exige une confrontation directe, non pas pour gagner en
+          surconsommation, mais pour réduire volontairement son empreinte
+          matérielle et améliorer la qualité de vie. Cela passe par une
+          syndicalisation massive, un désengagement progressif du salariat
+          jusqu’à sa disparition, un soutien aux ZAD et une formation à
+          l’affranchisme, pour construire une société centrée sur le bien
+          commun.
+        </p>
+        <p>
+          Pour y répondre, engageons des actions autonomistes : boycott des
+          divertissements capitalistes (médias mainstream), passage de la
+          consommation à la production via une formation gratuite et accessible,
+          création de coopératives de journalisme et de communication pour
+          relater les succès affranchistes (recherches internationales, marchés
+          coopératifs ayant atteint la gratuité intégrale...) et déconstruire
+          l’idée d’un capitalisme indépassable, promotion des œuvres
+          affranchistes nées du temps libre et de la coopération (un film, une
+          chanson, une œuvre d’art...)... Et, à mon sens, le plus crucial :
+          créer un modèle local fonctionnel qui puisse servir d’exemple
+          contagieux.
+        </p>
+        <p>
+          <strong
+            >Refusons le modèle inégalitaire prôné par nos institutions
+            mondialistes ou militons pour les quitter !</strong
+          >
+        </p>
 
-            <h3>2.1. Construire un affranchisme politique</h3>
-            <p>Malgré nos démocraties modernes, construire le compromis s’est généralement fait en centralisant la décision. Des représentants élus discutent de nos intérêts communs ou particuliers, canalisent voire filtrent la revendication populaire puis passent à un autre sujet, malgré des attentes populaires souvent déçues. Cela s’est notamment vu, avec le non des français au référendum sur la Constitution européenne, en 2005, où le parlement national était passé outre, en votant le texte légèrement remanié, quelques années plus tard. Nos constitutions instaurent une bureaucratie d’État carriériste, qui monopolise une décision top-down et garde ainsi la mainmise sur nos institutions. L’affranchisme, entend changer cela, non seulement, en réduisant la centralisation du pouvoir à la gestion des surplus, mais en supprimant l’État. Tout ce qui touche aux coopérateurs affranchistes et à la vie des coopératives est réglé par une charte évolutive et confédérale, sur le principe du volontariat.</p>
-            <p><strong>Protégeons le bien commun des profiteurs, et partageons équitablement le bien à la communauté (#Affranchisme2025).</strong></p>
+        <h3>3.3. Vers une adoption systémique de l’affranchisme</h3>
+        <p>
+          Nous sommes à un moment clé de notre histoire, les crises capitalistes
+          (climat, inégalités) vont immanquablement fragiliser les institutions
+          garantes de notre stabilité, ouvrant la voie au totalitarisme ou à
+          l’affranchisme. Notre épicerie affranchiste n’est ni plus ni moins
+          qu’une plateforme du marché coopératif par qui la révolution
+          culturelle va arriver. Les marges de l’épicerie financeront tout un
+          écosystème de coopératives d’emblée affranchistes. Ces dernières
+          reverseront un don en nature à l’épicerie qui permettra aux
+          coopérateurs de subvenir à leurs besoins prioritaires (nourriture,
+          logement,...) et d’aider ces coopératives à produire moins cher par
+          leur bénévolat. Le marché de la gratuité finira par s’étendre jusqu’à
+          permettre à un nombre grandissant de sortir du marché.
+        </p>
+        <p>
+          La bascule se fera à deux niveaux : d’abord un travail de sape du
+          marché financier qui perdra progressivement sa capacité à endetter un
+          prolétariat vivant de plus en plus sans argent, ensuite la force
+          productive trouvera plus avantageux de donner sa force de travail à un
+          marché plus valorisant et pérenne, soutenu par des réseaux
+          transnationaux de solidarité (inspirés des ZAD ou de Via Campesina).
+          Ce modèle, insensible aux crises capitalistes, attirera les masses à
+          la première crise d’ampleur, tout en résistant à la répression
+          étatique grâce à sa gouvernance horizontale et à des actions radicales
+          comme les grèves et les blocages.
+        </p>
+        <p>
+          5 ans suffisent pour atteindre un écosystème complet et autonome de
+          coopératives dans une ville moyenne de 10000 habitants : 1 à 2 ans
+          pour atteindre la viabilité (alimentaire, agriculture, énergie,
+          transports) où les agriculteurs vendent à une épicerie, qui utilise
+          l’énergie et le transport, financés par croissance organique ou
+          éventuellement via une avance en comptes courants ou des dons en
+          ligne. Si on ajoute, une fois cet écosystème établi, le logement, la
+          santé et l’éducation, l’écosystème devient autosuffisant, répond à la
+          plupart des besoins et emploie entre 200 et 300 personnes.
+        </p>
+        <p>
+          <strong
+            >Créons notre marché coopératif et proposons à nos coopératives et
+            associations locales de participer à la charte affranchiste
+            !</strong
+          >
+        </p>
+        <p>
+          Trop longtemps le capitalisme s’est servi du politique pour asseoir sa
+          domination sur le marché, par des réglementations et une violence
+          d’État, rendant les victoires sociales toujours plus rares et
+          difficiles. L’affranchisme change la donne. Contre l’affranchisme, le
+          capitalisme devra surmonter plusieurs obstacles. Sa principale arme,
+          celle de la productivité, aura fort à faire, face à la concurrence
+          affranchiste, puisque le marché coopératif tendra à la gratuité. Quant
+          aux tentations de coopter l’affranchisme en centralisant la décision,
+          par exemple, par de l’entrisme ou des lois restrictives, elles se
+          heurteront aux mécanismes internes des coopératives affranchistes.
+        </p>
+        <p>
+          Les statuts des coopératives affranchistes assurent une gouvernance
+          affranchiste horizontale, et son rôle de base arrière à l’action
+          radicale, facilite la remobilisation et la réinformation des couches
+          les plus vulnérables, les plus isolées et nombreuses du prolétariat.
+          La charte encourage explicitement les coopératives à investir dans une
+          croissance organique, s’affranchissant ainsi du financement des
+          banques et du marché capitaliste. Si une coopérative s’écartait de la
+          charte affranchiste, elle s’auto-excluerait d’un mécanisme de
+          solidarité, qui lui assure un avantage compétitif sur le capitalisme.
+        </p>
+        <p>
+          L’autonomie alimentaire et de logement, ainsi gagnée, le réseau de
+          producteurs affranchistes sera une aide précieuse pour lutter
+          financièrement contre le capitalisme avec des travaux de plus en plus
+          grands à mesure que le réseau s’étend, soutenir les luttes sociales
+          par des formations (cryptomonnaies autogérées pour plus de démocratie
+          directe et de transparence, sensibilisation aux luttes sociales
+          internationales (ZAD, Rojava...), création de projets
+          affranchistes...) et désamorcer le chantage au salaire par l’activisme
+          politique, les grèves générales et les blocages.
+        </p>
+        <p>
+          À travers une charte universelle et une esthétique décroissante du
+          beau et du vrai, l’affranchisme privilégie la qualité à la quantité,
+          il libère le temps et la culture de l’utilitarisme et restaure le sens
+          de nos actions. Sa portée universelle se traduira par des échanges
+          avec tous ceux qui se reconnaîtront dans les valeurs de
+          l’affranchisme, en échangeant les excédents, en visant
+          l’autosuffisance de chaque marché coopératif dans le monde. La
+          technologie, si elle libère du temps libre au travail, sera
+          développée, mais en prenant soin d’avoir une solution de rechange
+          rudimentaire, pour ne pas exclure le prolétariat, pas encore initié à
+          l’usage éclairé de la technologie.
+        </p>
+        <p>
+          Ce modèle se doit d’exceller par son organisation et sa mutualisation,
+          pour transcender les clivages et gagner, in fine, la lutte des
+          classes. Les piliers de la gratuité du système affranchiste reposent
+          sur des besoins de la vie quotidienne : des paniers, des logements, ou
+          des formations. L’affranchisme est un mouvement solidaire, porté par
+          des gens ordinaires qui, à l’occasion d’un retour à la campagne ou
+          d’un engagement militant, reprennent le contrôle de leur temps et de
+          leur production. Ensemble, par la force de l’organisation et la
+          cohérence de nos idées, nous pouvons faire de l’affranchisme une
+          révolution systémique, où le temps redevient un espace de liberté, de
+          création et de solidarité.
+        </p>
+        <p>
+          <strong
+            >Le premier pas est simple : partagez cette vision, agissez
+            localement, et semez les graines d’un avenir plus humain.
+            #Affranchisme2025</strong
+          >
+        </p>
+      </div>
 
-            <h3>2.2. La charte confédérale, cœur du système affranchiste</h3>
-            <p>Neuf fédérations (alimentation, logement, énergie, transport, santé, éducation/culture, services, environnement, justice/sécurité) coordonnent les coopératives par secteur.</p>
-            <p>Annuellement, chaque fédération réunit l’ensemble de ses travailleurs (actifs ou inactifs), en assemblées locales. Ces réunions ont pour mission de :</p>
-            <ul class="styled-list">
-                <li><span class="icon">💡</span> Discuter des besoins en innovation et prioriser les projets de recherche par scrutin en ligne.</li>
-                <li><span class="icon">📢</span> Lancer un appel à participation pour les projets retenus.</li>
-                <li><span class="icon">🔄</span> Partager des connaissances, des innovations ou des pratiques entre coopératives via une plateforme collaborative.</li>
-                <li><span class="icon">🎓</span> Mettre en place des formations qui déchargent et protègent les coopératives (par exemple : formation à la résistance : sensibilisation aux tactiques de répression (surveillance, lois restrictives), techniques de négociation avec les autorités, ou stratégies de désobéissance civile non violente).</li>
-                <li><span class="icon">📜</span> Modifier sa partie dans le document unique : une feuille de route appliquant la charte confédérale, présente dans les statuts des coopératives affranchistes.</li>
-            </ul>
-            <p>La charte est rédigée lors d’une assemblée confédérale initiale, avec les contributions de chaque marché coopératif, et adoptée à la majorité qualifiée. Elle peut être amendée lors des assemblées confédérales triennales, toujours par vote direct des assemblées générales locales.</p>
-            <p>La charte est distribuée à tous les marchés coopératifs sous forme numérique (par mail ou sur un serveur partagé) et physique (imprimée ou affichée dans chaque marché local). Chaque nouveau coopérateur en reçoit une copie lors de son intégration.</p>
-            <p>La confédération se réunit en assemblée générale locale tous les 4 ans. La confédération a essentiellement le rôle de partager l’information entre les fédérations et de représenter les fédérations vis-à-vis des tiers, via des mandataires formés et tirés au sort. Ses missions sont :</p>
-            <ul class="styled-list">
-                <li><span class="icon">🌐</span> Unir mondialement les organisations affranchistes, en répondant aux besoins exprimés, grâce notamment à un fond d’urgence ou une réserve stratégique de surplus.</li>
-                <li><span class="icon">🔄</span> Faciliter les échanges interrégionaux, lorsque les ressources ou productions locales sont insuffisantes, tout en veillant à l’application du principe de solidarité : de chacun selon ses capacités, à chacun selon ses besoins.</li>
-                <li><span class="icon">🤝</span> Coordonner des projets d’envergure nécessitant la collaboration de plusieurs marchés coopératifs.</li>
-                <li><span class="icon">🔍</span> Réorganiser le réseau affranchiste afin d’éviter toute bureaucratie même décentralisée.</li>
-                <li><span class="icon">📊</span> Transparence de résultat notamment via des indicateurs de gratuité et de qualité.</li>
-                <li><span class="icon">🔬</span> Évaluer la recherche et la technologie par un groupe d’experts (reconnus par les pairs et proposés à la mandature tournante), selon plusieurs critères : le temps libre, la réduction des externalités environnementales, le bien-être animal, la cybersécurité et l’esthétique affranchiste (critiques d’art, design de permaculture, logo, slogan, etc.).</li>
-                <li><span class="icon">📜</span> Modifier la charte par référendum sur proposition locale.</li>
-            </ul>
-            <p>Par exemple, en 2026, l’épicerie collecte des questionnaires révélant un besoin de conserves locales. La fédération lance un appel en ligne, mobilisant 15 bénévoles pour un projet de conserverie coopérative. Une formation sur la transformation alimentaire est organisée, et une coopérative refusant de partager son savoir en la matière, malgré les demandes répétées du porteur de projet, est suspendue après médiation, garantissant ainsi la transparence.</p>
-            <p><strong>Rejoignons une fédération non lucrative dans nos syndicats ou nos coopératives !</strong></p>
-            <picture>
-                <source srcset="images/people-2569234.webp" type="image/webp">
-                <img src="images/people-2569234.jpg" alt="Groupe de militants solidaires dans une ZAD ou un marché coopératif" loading="lazy">
-            </picture>
-            <div class="quote">"La liberté est le droit de faire tout ce que les lois permettent." – Montesquieu</div>
-
-            <h3>2.3. Fonctionnement d’un marché coopératif</h3>
-            <p>J’ai rejoint une épicerie coopérative participative, où trois heures de bénévolat par mois donnent accès à des produits bio abordables. Ces coopératives de consommateurs préfigurent les marchés communautaires de demain, mais présentent deux limites : les producteurs restent capitalistes, tout en profitant du bénévolat, ce qui maintient le travail coopératif dans un cadre capitaliste, et les produits bio de qualité restent souvent trop chers pour les précaires, le principal contingent des coopérateurs. L’affranchisme propose des épiceries coopératives échangeant préférentiellement avec des coopératives de production ou des associations appliquant la charte affranchiste. Elles sont donc partiellement non lucratives et réservent une partie de leur production gratuitement aux coopérateurs.</p>
-            <p>Exemple : Une épicerie affranchiste à 40 000 €, financée par 10 coopérateurs (4 000 € chacun), fournit des légumes gratuits grâce aux dons d’une AMAP partenaire, réduisant les prix de 30 % dès la première année.</p>
-            <p><strong>Rejoignez une coopérative affranchiste et construisez un avenir solidaire ! #Affranchisme2025</strong></p>
-            <p>Chaque marché coopératif local organise son assemblée générale (trimestrielle pour les questions locales, annuelle pour les questions fédérales, triennale pour les confédérales) pour débattre et formaliser les propositions. Ces propositions seront proposées aux bénévoles, sous forme de questionnaires, lors de leur passage à la caisse, pendant 1 mois et disponibles également, en ligne. Le caissier scanne la carte QR code générée à l’adhésion et récupère le questionnaire. Les questionnaires sont ensuite décomptés et la décision est prise à la majorité qualifiée (par exemple, 2/3 ou 75 % des voix au sein de l’assemblée). Le résultat est ensuite envoyé à tous les marchés grâce à une liste de diffusion de mails, dans un format standard, pour faciliter l’agrégation.</p>
-            <p>Par exemple, chaque mois, une AMAP affranchiste s’engage à fournir 100 kg de fruits et légumes gratuitement au marché. La coopérative affranchiste de logement loue 3 logements collectifs gracieusement aux coopérateurs les plus actifs.</p>
-            <p><strong>Que vous soyez agriculteur, cuisinier, communicant ou étudiant, votre temps compte pour construire ce marché.</strong></p>
-            <p>Une cuisine partagée transforme les produits locaux en conserves, pâtisseries, crêpes ou glaces, tout en offrant des formations aux membres. Certains bénévoles se partagent les invendus pour leur consommation personnelle. Le marché coopératif économise en vue d’investir sur un food truck qui vendra ses produits transformés, des sandwichs et glaces bio pour renforcer l’autonomie. Conformément à la charte, le marché projette d’acquérir une ferme à rénover afin d’y installer une communauté de coopérateurs affranchistes autonome et d’approvisionner l’épicerie. Le lieu servira de refuge animalier pour décharger les associations de protection animales locales et des stages de permaculture et de construction en pierre y seront donnés. La comptabilité est assurée par chaque coopérative, jusqu’à ce qu’une coopérative de comptabilité autonome puisse prendre le relais. Adhérer au marché coopératif peut permettre d’atteindre l’autonomie sans besoin d’argent et augmenter significativement la résilience des coopérateurs affranchistes, face aux crises. Cette gratuité partielle est financée par la lucrativité des coopératives auprès des consommateurs capitalistes et a vocation à être intégrale, le jour où le consommateur aura définitivement quitté le marché capitaliste.</p>
-            <p><strong>Rejoignez l’#Affranchisme2025 et gagnez les millions qui feront vivre la communauté ! Créons le marché coopératif de demain</strong></p>
-
-            <h3>2.4. Restaurer le temps et le sens</h3>
-            <p>La clé de mon engagement militant a été quoi faire de mon temps. Le mettre à disposition de quelqu’un qui récupérera le fruit de mon travail ou le donner directement au bien commun ? Notre univers est privatisé et colonisé par la rareté, la complexité et le temps court, sapant les bases de notre émancipation. Le capitalisme vole le temps, suspendant la raison et l’intention de bien faire. La raison est bien connue : pour que certains puissent accumuler toujours plus de richesse. L’affranchisme vise au contraire à « démarchandiser » nos imaginaires collectifs : une charte graphique unifiée avec un label affranchiste, une technologie maîtrisée sous licences libres, une production saine et respectueuse, des partenariats éventuellement marchands avec des experts de l’artisanat, la revendication du temps libre.</p>
-            <p>Il vise également à faire passer l’argent directement du donneur au receveur, sans intermédiaire qui en profite pour s’accumuler des fortunes. Comme la Sécurité sociale en France en 1947, où les cotisations retraite étaient directement redistribuées aux retraités via la solidarité intergénérationnelle, sans remplir les caisses de l’État, les coopératives jouent un rôle similaire. Elles redistribuent une partie de leur production à une épicerie coopérative affranchie sans qu’aucun intermédiaire ne puisse conditionner ou influer sur le prix.</p>
-            <p>Les coopératives affranchistes, en dehors de l’épicerie, pourront verser des salaires à leurs membres mais devront, toutefois, veiller à l’équilibre entre bénévolat, qui libère du temps pour la coopération et l’autosuffisance, et salariat, qui tout en aidant l’expansion du marché coopératif, risquerait de les enfermer dans des logiques capitalistes.</p>
-            <p>L’affranchisme libère également la culture de l’utilitarisme productif avec une esthétique décroissante du beau et du vrai (jardin potager et d’ornement partagé, urbanisme renaturé, arts collectifs et traditionnels, saveurs simples et naturelles...).</p>
-            <p><strong>Rejoignons des parcs comestibles, des fab labs ou des cuisines collaboratives pour reconquérir le temps libre !</strong></p>
-        </div>
-
-        <div class="section">
-            <h2>Partie III : Défis et perspectives du affranchisme</h2>
-
-            <h3>3.1. Résistances structurelles</h3>
-            <p>Souvent par manque de capital, les coopératives de production peu compétitives ont été largement éclipsées par les coopératives de consommation, plus abordables. Malheureusement, les coopérateurs achètent ce que le système capitaliste produit à moindre coût, ce qui a pour effet d’entretenir la machine capitaliste, sans s’y soustraire complètement. Or la dépendance au capitalisme est la principale source d’inégalité. L’affranchisme valorise au contraire la production des coopératives, malgré un cadre capitaliste amené à disparaître. À plus de productivité, l’affranchisme répond par plus de coopération. Le but étant de travailler moins tout en étant plus productif que le capitalisme, sur les besoins d’abord essentiels puis universels, lorsque l’autosuffisance du marché coopératif sera atteinte.</p>
-            <p>L’affranchisme dispose d’un autre atout : une organisation décentralisée parfaitement adaptée au prochain monde multipolaire et plus résiliente face aux crises, grâce à des réseaux distribués mondiaux. Contrairement aux bureaucraties capitalistes, la gouvernance de ce système reste horizontale, avec un document unique qui sert de base aux 3 instances participatives, avec suffisamment de marge pour être adapté localement : le local (pour gérer la solidarité nationale), le fédéral qui se contente de rassembler les savoirs et d’améliorer la production sectorielle par des formations, et le confédéral (pour gérer la solidarité internationale), minimisant la centralisation de la décision. Les coopératives locales et leur marché hybride en partie gratuit, sont le moteur de cette résistance.</p>
-            <p><strong>Refusons la passivité citoyenne et soutenons la démocratie participative des coopératives !</strong></p>
-            <picture>
-                <source srcset="images/political-crisis-for-philippine-president-continues-1666818.webp" type="image/webp">
-                <img src="images/political-crisis-for-philippine-president-continues-1666818.jpg" alt="Manifestation solidaire pour une cause sociale" loading="lazy">
-            </picture>
-            <div class="quote">"La liberté sans le socialisme, c’est le privilège et l’injustice ; le socialisme sans la liberté, c’est l’esclavage et la brutalité." – Michel Bakounine</div>
-
-            <h3>3.2. Résistances culturelles</h3>
-            <p>Cela m’est arrivé d’acheter de la nourriture à un SDF qui me demandait un euro. Trop peu se disent qu’ils pourraient être à leur place. Notre système social financé par nos cotisations est démantelé dans une relative indifférence. Le capitalisme impose un mode de vie consumériste, valorisant un individualisme sans entrave. Le capitalisme empêche ou coopte les alternatives, comme les monnaies locales qui ne peuvent se substituer aux devises. On voit combien il est difficile de quitter un marché libéral sans retomber dans des blocages juridiques, une dépendance aux banques ou la marginalisation.</p>
-            <p>Les médias mainstream promeuvent un récit bien rodé, présentant le néolibéralisme comme seul vecteur du progrès. Toute alternative est taxée d’utopie ou de retour en arrière illusoire. C’est pourquoi, sortir du capitalisme exige une confrontation directe, non pas pour gagner en surconsommation, mais pour réduire son empreinte matérielle volontairement et gagner en qualité de vie. Cela passe par une syndicalisation massive, un désengagement du salariat jusqu’à sa disparition, un soutien aux ZAD et une formation à l’affranchisme, pour construire une société centrée sur le bien commun.</p>
-            <p>Répondons pour cela, par des actions autonomistes : boycott des divertissements capitalistes (médias mainstream), passage de la consommation à la production par la formation gratuite et facilitée, coopératives de journalisme et de communication, relatant les succès affranchistes (enjeu d’une recherche internationale, marché coopératif ayant atteint la gratuité intégrale…) et déconstruisant l’idée d’un capitalisme indépassable, promouvoir les œuvres affranchistes créées grâce au temps libre et à la coopération (un film, une chanson, une œuvre d’art...)… Et le plus important à mon sens, créer un modèle local fonctionnel qui puisse servir d’exemple contagieux.</p>
-            <p><strong>Refusons le modèle inégalitaire prôné par nos institutions mondialistes ou militons pour les quitter !</strong></p>
-
-            <h3>3.3. Vers une adoption systémique de l’affranchisme</h3>
-            <p>Nous sommes à un moment clé de notre histoire, les crises capitalistes (climat, inégalités) vont immanquablement fragiliser les institutions garantes de notre stabilité, ouvrant la voie au totalitarisme ou à l’affranchisme. Notre épicerie affranchiste n’est ni plus ni moins qu’une plateforme du marché coopératif par qui la révolution culturelle va arriver. Les marges de l’épicerie financeront tout un écosystème de coopératives d’emblée affranchistes. Ces dernières reverseront un don en nature à l’épicerie qui permettra aux coopérateurs de subvenir à leurs besoins prioritaires (nourriture, logement,...) et d’aider ces coopératives à produire moins cher par leur bénévolat. Le marché de la gratuité finira par s’étendre jusqu’à permettre à un nombre grandissant de sortir du marché.</p>
-            <p>La bascule se fera à deux niveaux : d’abord un travail de sape du marché financier qui perdra progressivement sa capacité à endetter un prolétariat vivant de plus en plus sans argent, ensuite la force productive trouvera plus avantageux de donner sa force de travail à un marché plus valorisant et pérenne, soutenu par des réseaux transnationaux de solidarité (inspirés des ZAD ou de Via Campesina). Ce modèle, insensible aux crises capitalistes, attirera les masses à la première crise d’ampleur, tout en résistant à la répression étatique grâce à sa gouvernance horizontale et à des actions radicales comme les grèves et les blocages.</p>
-            <p>5 ans suffisent pour atteindre un écosystème complet et autonome de coopératives dans une ville moyenne de 10000 habitants : 1 à 2 ans pour atteindre la viabilité (alimentaire, agriculture, énergie, transports) où les agriculteurs vendent à une épicerie, qui utilise l’énergie et le transport, financés par croissance organique ou éventuellement via une avance en comptes courants ou des dons en ligne. Si on ajoute, une fois cet écosystème établi, le logement, la santé et l’éducation, l’écosystème devient autosuffisant, répond à la plupart des besoins et emploie entre 200 et 300 personnes.</p>
-            <p><strong>Créons notre marché coopératif et proposons à nos coopératives et associations locales de participer à la charte affranchiste !</strong></p>
-            <p>Trop longtemps le capitalisme s’est servi du politique pour asseoir sa domination sur le marché, par des réglementations et une violence d’État, rendant les victoires sociales toujours plus rares et difficiles. L’affranchisme change la donne. Contre l’affranchisme, le capitalisme devra surmonter plusieurs obstacles. Sa principale arme, celle de la productivité, aura fort à faire, face à la concurrence affranchiste, puisque le marché coopératif tendra à la gratuité. Quant aux tentations de coopter l’affranchisme en centralisant la décision, par exemple, par de l’entrisme ou des lois restrictives, elles se heurteront aux mécanismes internes des coopératives affranchistes.</p>
-            <p>Les statuts des coopératives affranchistes assurent une gouvernance affranchiste horizontale, et son rôle de base arrière à l’action radicale, facilite la remobilisation et la réinformation des couches les plus vulnérables, les plus isolées et nombreuses du prolétariat. La charte encourage explicitement les coopératives à investir dans une croissance organique, s’affranchissant ainsi du financement des banques et du marché capitaliste. Si une coopérative s’écartait de la charte affranchiste, elle s’auto-excluerait d’un mécanisme de solidarité, qui lui assure un avantage compétitif sur le capitalisme.</p>
-            <p>L’autonomie alimentaire et de logement, ainsi gagnée, le réseau de producteurs affranchistes sera une aide précieuse pour lutter financièrement contre le capitalisme avec des travaux de plus en plus grands à mesure que le réseau s’étend, soutenir les luttes sociales par des formations (cryptomonnaies autogérées pour plus de démocratie directe et de transparence, sensibilisation aux luttes sociales internationales (ZAD, Rojava...), création de projets affranchistes...) et désamorcer le chantage au salaire par l’activisme politique, les grèves générales et les blocages.</p>
-            <p>À travers une charte universelle et une esthétique décroissante du beau et du vrai, l’affranchisme privilégie la qualité à la quantité, il libère le temps et la culture de l’utilitarisme et restaure le sens de nos actions. Sa portée universelle se traduira par des échanges avec tous ceux qui se reconnaîtront dans les valeurs de l’affranchisme, en échangeant les excédents, en visant l’autosuffisance de chaque marché coopératif dans le monde. La technologie, si elle libère du temps libre au travail, sera développée, mais en prenant soin d’avoir une solution de rechange rudimentaire, pour ne pas exclure le prolétariat, pas encore initié à l’usage éclairé de la technologie.</p>
-            <p>Ce modèle se doit d’exceller par son organisation et sa mutualisation, pour transcender les clivages et gagner, in fine, la lutte des classes. Les piliers de la gratuité du système affranchiste reposent sur des besoins de la vie quotidienne : des paniers, des logements, ou des formations. L’affranchisme est un mouvement solidaire, porté par des gens ordinaires qui, à l’occasion d’un retour à la campagne ou d’un engagement militant, reprennent le contrôle de leur temps et de leur production. Ensemble, par la force de l’organisation et la cohérence de nos idées, nous pouvons faire de l’affranchisme une révolution systémique, où le temps redevient un espace de liberté, de création et de solidarité.</p>
-            <p><strong>Le premier pas est simple : partagez cette vision, agissez localement, et semez les graines d’un avenir plus humain. #Affranchisme2025</strong></p>
-        </div>
-
-        <!-- Boutons -->
-        <div class="buttons">
-            <a href="https://tipeee.com/affranchisme2025" class="button tipeee-button" target="_blank"><i class="fas fa-heart"></i> Soutenez sur Tipeee</a>
-            <a href="https://drive.google.com/file/d/1w3jw3T5A7RQ5QbKWP1ZyI4o_NM3Iv7b5/view?usp=sharing" class="button pdf-button" target="_blank"><i class="fas fa-file-pdf"></i> Téléchargez le manifeste</a>
-        </div>
+      <!-- Boutons -->
+      <div class="buttons">
+        <a
+          href="https://fr.tipeee.com/affranchisme/"
+          class="button tipeee-button"
+          target="_blank"
+          ><i class="fas fa-heart"></i> Soutenez sur Tipeee</a
+        >
+        <a
+          href="https://drive.google.com/file/d/1zLXn91dpWrtJlhCZwz_kxUIANXG9Mmia/view?usp=sharing"
+          class="button pdf-button"
+          target="_blank"
+          ><i class="fas fa-file-pdf"></i> Téléchargez le manifeste</a
+        >
+      </div>
     </div>
 
     <!-- Section commentaires (Disqus) -->
     <div class="comments">
-        <h2>Partagez vos idées pour l’affranchisme</h2>
-        <div id="disqus_thread"></div>
-        <script>
-            var disqus_config = function () {
-                this.page.url = 'https://affranchisme2025.netlify.app';
-                this.page.identifier = 'affranchisme-manifeste';
-            };
-            (function() {
-                var d = document, s = d.createElement('script');
-                s.src = 'https://affranchisme2025.disqus.com/embed.js';
-                s.setAttribute('data-timestamp', +new Date());
-                (d.head || d.body).appendChild(s);
-            })();
-        </script>
+      <h2>Partagez vos idées pour l’affranchisme</h2>
+      <div id="disqus_thread"></div>
+      <script>
+        var disqus_config = function () {
+          this.page.url = "https://affranchisme2025.netlify.app";
+          this.page.identifier = "affranchisme-manifeste";
+        };
+        (function () {
+          var d = document,
+            s = d.createElement("script");
+          s.src = "https://affranchisme2025.disqus.com/embed.js";
+          s.setAttribute("data-timestamp", +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
     </div>
 
     <!-- Footer -->
     <footer>
-        <p>Contact : <a href="mailto:affranchisme@gmail.com">affranchisme@gmail.com</a> | Rejoignez la révolution : #Affranchisme2025</p>
+      <p>
+        Contact :
+        <a href="mailto:affranchisme@gmail.com">affranchisme@gmail.com</a> |
+        Rejoignez la révolution : #Affranchisme2025
+      </p>
     </footer>
-</body>
+  </body>
 </html>
