@@ -3,14 +3,32 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Découvrez l'affranchisme, une révolution coopérative pour une société solidaire et écologique, contre le capitalisme."
+    />
+    <meta
+      name="keywords"
+      content="affranchisme, révolution coopérative, autosuffisance, écologie, solidarité, anti-capitalisme"
+    />
+    <meta name="author" content="Lodeval" />
+    <meta name="robots" content="index, follow" />
     <title>Affranchisme 2025 - Révolution Coopérative</title>
     <link
-      rel="stylesheet"
+      rel="preload"
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Oswald:wght@500&display=swap"
+      as="style"
+      onload="this.rel='stylesheet';this.media='all'"
     />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      media="print"
+      onload="this.media='all'"
+    />
+    <link
+      rel="canonical"
+      href="https://lodeval.github.io/guide_affranchisme/"
     />
     <style>
       /* Reset et styles généraux */
@@ -40,7 +58,7 @@
         background: none;
         border: none;
         font-size: 1.5rem;
-        color: white;
+        color: #f5f5f5; /* Légère amélioration du contraste */
         cursor: pointer;
         position: absolute;
         top: 1rem;
@@ -56,15 +74,18 @@
         margin: 0 1.5rem;
       }
       nav ul li a {
-        color: white;
+        color: #f5f5f5;
         text-decoration: none;
         font-family: "Oswald", sans-serif;
         font-weight: 500;
         font-size: 1.2rem;
         transition: color 0.3s;
       }
-      nav ul li a:hover {
+      nav ul li a:hover,
+      nav ul li a:focus {
         color: #ef5350; /* Rouge révolutionnaire */
+        outline: 2px solid #ef5350; /* Accessibilité clavier */
+        outline-offset: 2px;
       }
       @media (max-width: 600px) {
         .menu-toggle {
@@ -89,10 +110,11 @@
       .banner {
         position: relative;
         width: 100%;
-        height: 300px;
+        min-height: 300px;
         background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-          url("https://images.unsplash.com/photo-1504280390367-5f1f0f765558?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80")
-            center/cover no-repeat;
+          url("/images/echange_amap.png") center/cover no-repeat;
+        background-size: cover;
+        background-position: center;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -110,7 +132,7 @@
       }
       @media (max-width: 600px) {
         .banner {
-          height: 200px;
+          min-height: 200px;
         }
         .slogan {
           font-size: 1.4rem;
@@ -125,7 +147,7 @@
         padding: 0 1rem;
       }
       .container p {
-        text-align: justify; /* Justification du texte */
+        text-align: justify;
         margin-bottom: 1.2rem;
       }
       h1 {
@@ -140,6 +162,10 @@
         padding: 1.5rem;
         border-radius: 8px;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        transition: box-shadow 0.3s;
+      }
+      .section:hover {
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
       }
       .section:nth-child(odd) {
         background-color: #e8f5e9; /* Vert clair */
@@ -162,11 +188,13 @@
       .quote {
         font-family: "Roboto", serif;
         font-style: italic;
+        font-size: 1.2rem;
         border-left: 4px solid #ef5350;
         padding: 1rem 1.5rem;
         margin: 1.5rem 0;
         background-color: #f4f4f9;
         color: #555;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
       }
       .styled-list {
         list-style: none;
@@ -176,16 +204,40 @@
         display: flex;
         align-items: center;
         margin-bottom: 1rem;
+        padding: 0.5rem;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+      }
+      .styled-list li:hover {
+        background-color: rgba(46, 125, 50, 0.1);
       }
       .styled-list .icon {
-        font-size: 1.5rem;
-        margin-right: 0.5rem;
+        font-size: 1.8rem;
+        margin-right: 0.8rem;
+        color: #ef5350;
       }
       img {
         width: 100%;
         height: auto;
         margin: 1rem 0;
         border-radius: 8px;
+      }
+      strong {
+        display: block;
+        text-align: center;
+        font-weight: bold;
+        font-size: 1.5em;
+        color: #3498db;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        margin: 20px 0;
+        padding: 10px;
+        border-radius: 8px;
+        background-color: rgba(52, 152, 219, 0.1);
+        transition: all 0.3s ease;
+      }
+      strong:hover {
+        color: #e74c3c;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
       }
       @media (max-width: 600px) {
         img {
@@ -209,8 +261,18 @@
         font-weight: 500;
         transition: transform 0.2s, background-color 0.3s;
       }
-      .button:hover {
+      .button i {
+        margin-right: 0.5rem;
+        transition: transform 0.3s;
+      }
+      .button:hover i {
+        transform: scale(1.2);
+      }
+      .button:hover,
+      .button:focus {
         transform: translateY(-2px);
+        outline: 2px solid #ef5350;
+        outline-offset: 2px;
       }
       .tipeee-button {
         background-color: #ef5350;
@@ -227,7 +289,59 @@
         background-color: #1b5e20;
       }
 
-      /* Section commentaires (Disqus) */
+      /* Sommaire */
+      .toc {
+        background-color: #f4f4f9;
+        padding: 1rem;
+        border-radius: 8px;
+        margin-bottom: 2rem;
+      }
+      .toc h2 {
+        font-family: "Oswald", sans-serif;
+        font-size: 1.6rem;
+        color: #2e7d32;
+      }
+      .toc ul {
+        list-style: none;
+      }
+      .toc ul li a {
+        color: #ef5350;
+        text-decoration: none;
+      }
+      .toc ul li a:hover,
+      .toc ul li a:focus {
+        text-decoration: underline;
+        outline: 2px solid #ef5350;
+        outline-offset: 2px;
+      }
+
+      /* Bouton retour en haut */
+      .back-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #2e7d32;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+        cursor: pointer;
+        display: none;
+        transition: opacity 0.3s;
+      }
+      .back-to-top.show {
+        display: block;
+      }
+      .back-to-top:hover,
+      .back-to-top:focus {
+        background-color: #1b5e20;
+        outline: 2px solid #ef5350;
+        outline-offset: 2px;
+      }
+
+      /* Section commentaires (Disqus/Commento) */
       .comments {
         max-width: 900px;
         margin: 2rem auto;
@@ -247,24 +361,40 @@
         text-decoration: none;
         font-weight: bold;
       }
-      footer a:hover {
+      footer a:hover,
+      footer a:focus {
         color: #d32f2f;
+        outline: 2px solid #ef5350;
+        outline-offset: 2px;
       }
     </style>
   </head>
   <body>
     <!-- Menu -->
     <nav aria-label="Menu principal">
-      <button class="menu-toggle" aria-label="Ouvrir le menu">☰</button>
+      <button
+        class="menu-toggle"
+        aria-label="Ouvrir le menu"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
       <ul class="menu">
         <li><a href="index.html" aria-current="page">Manifeste</a></li>
+        <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#fondements">Fondements</a></li>
+        <li><a href="#mise-en-oeuvre">Mise en œuvre</a></li>
+        <li><a href="#defis">Défis</a></li>
         <li><a href="social-libertarisme.html">Social-Libertarisme</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
     <script>
-      document.querySelector(".menu-toggle").addEventListener("click", () => {
-        document.querySelector(".menu").classList.toggle("active");
+      const menuToggle = document.querySelector(".menu-toggle");
+      const menu = document.querySelector(".menu");
+      menuToggle.addEventListener("click", () => {
+        const isExpanded = menu.classList.toggle("active");
+        menuToggle.setAttribute("aria-expanded", isExpanded);
       });
     </script>
 
@@ -280,7 +410,18 @@
         coopérative
       </h1>
 
-      <div class="section">
+      <!-- Sommaire -->
+      <div class="toc">
+        <h2>Sommaire</h2>
+        <ul>
+          <li><a href="#introduction">Introduction</a></li>
+          <li><a href="#fondements">Fondements théoriques</a></li>
+          <li><a href="#mise-en-oeuvre">Mise en œuvre pratique</a></li>
+          <li><a href="#defis">Défis et perspectives</a></li>
+        </ul>
+      </div>
+
+      <div class="section" id="introduction">
         <h2>Introduction</h2>
         <p>
           Le temps passe vite, à 20 ans on veut changer le monde. À 40 ans, les
@@ -328,10 +469,10 @@
           >
         </p>
         <picture>
-          <source srcset="images/hands-1314632.webp" type="image/webp" />
+          <source srcset="/images/en_avant.webp" type="image/webp" />
           <img
-            src="images/hands-1314632.jpg"
-            alt="Membres d'une AMAP échangeant des produits locaux dans un marché coopératif"
+            src="/images/en_avant.png"
+            alt="Membres d'une AMAP partageant des produits locaux lors d'un marché coopératif"
             loading="lazy"
           />
         </picture>
@@ -340,9 +481,8 @@
         </div>
       </div>
 
-      <div class="section">
+      <div class="section" id="fondements">
         <h2>Partie I : Fondements théoriques de l’affranchisme</h2>
-
         <h3>1.1. L’impasse du capitalisme</h3>
         <p>
           Nos sociétés occidentales regorgent de poubelles pleines de nourriture
@@ -373,12 +513,20 @@
           nombre de syndiqués a chuté d’environ 5 millions en 1945 à 1,6 million
           en 2025, malgré une multiplication des centrales syndicales comme la
           CFDT, FO ou Sud-Solidaires. Le mondialisme et son idéologie
-          néolibérale, promeut via les médias mainstream un discours où la
-          "liberté" se réduit à surconsommer, souvent à crédit, une
-          surproduction délocalisée, tout en donnant l’illusion d’un choix.
-          L’affranchisme appelle à la révolte et prône une réappropriation du
-          temps et des communs pour refonder une société fragmentée par un
-          individualisme exacerbé.
+          néolibérale imposent un narratif où la "liberté" des plus riches se
+          confondrait avec celle des plus pauvres, un discours relayé par les
+          médias mainstream qui érige la consommation matérialiste en modèle de
+          réussite. Ce récit occulte les exclusions sociales, une atteinte à la
+          morale et l’individualisme exacerbé qu’il génère, prétendant que le
+          monde aspirerait à rejoindre la grande messe de la surconsommation. Un
+          modèle consumériste, hégémonique et violent socialement qui repose sur
+          le crédit : une sorte d’avance sur le temps qui conférerait le
+          "pouvoir" illusoire aux classes productives, d’acquérir une
+          surproduction délocalisée, éphémère et uniformisée, issue de
+          l’exploitation des travailleurs. L’affranchisme appelle à la révolte
+          contre ce modèle qui marginalise les moins rentables et prône une
+          réappropriation du temps et des communs pour refonder les bases d’une
+          société durable.
         </p>
         <p>
           <strong
@@ -387,9 +535,9 @@
           >
         </p>
         <picture>
-          <source srcset="images/indulgence-3-1323615.webp" type="image/webp" />
+          <source srcset="/images/foule_manifestation.webp" type="image/webp" />
           <img
-            src="images/indulgence-3-1323615.jpg"
+            src="/images/foule_manifestation.jpg"
             alt="Illustration de la surconsommation dans un centre commercial"
             loading="lazy"
           />
@@ -415,25 +563,27 @@
           progressivement se porter au secours du système financier, sur le
           principe du « too big too fail » popularisé, par la crise de 2008.
           Cela a renforcé les banques dans leur rôle de tiers de confiance dans
-          les échanges, voire d’intermédiaire profiteur, malgré un poids
-          écrasant sur les marchés. Leur activité a permis le bond technologique
-          et productif dans internet que l’on connaît, et la naissance de géants
-          du web, devenus hégémoniques à la fois dans le public et le privé.
-          Leurs plateformes traquent nos données pour des publicités ciblées,
-          marchandisent nos désirs et s’ingèrent dans nos vies, à travers une
-          digitalisation censée optimiser la productivité.
+          les échanges, ou plus clairement d’intermédiaire profiteur, malgré un
+          poids écrasant sur les marchés. Leur activité a permis le bond
+          technologique et productif dans internet que l’on connaît, et la
+          naissance de géants du web, devenus hégémoniques à la fois dans le
+          public et le privé. Leurs plateformes traquent nos données pour des
+          publicités ciblées, marchandisent nos désirs et s’ingèrent dans nos
+          vies, à travers une digitalisation censée optimiser la productivité.
         </p>
         <p>
           Cependant, cette transition numérique a donné les plus grandes fuites
-          de données personnelles de l’histoire (France Travail (2024), piratage
-          de comptes Google, Facebook ou Apple (2025)), etc. Le capitalisme
-          montre son incapacité à sécuriser et à contrôler sa propre innovation.
-          A travers la plateforme en ligne, le marché capitaliste se réinvente
-          et accroît le modèle du dominant possèdant le capital technologique au
-          dominé qui s’en sert, sans le comprendre, hormis les spécialistes. Les
-          échanges s’accélèrent dans des relations d’interdépendances, de plus
-          en plus complexes, fragilisant autant les chaînes d’approvisionnement
-          que le statut des travailleurs. Les échanges se segmentent, les
+          de données personnelles de l’histoire: 33 millions de propriétaires de
+          carte vitale, 43 millions d’usagers de France Travail (2024), 16
+          milliards d’identifiants et de mots de passe volés chez des géants du
+          web mis en ligne (2025), etc... Le capitalisme montre son incapacité à
+          sécuriser et à contrôler sa propre innovation. A travers la plateforme
+          en ligne, le marché capitaliste se réinvente et accroît le modèle du
+          dominant possèdant le capital technologique au dominé qui s’en sert,
+          sans vraiment le comprendre, hormis les spécialistes. Les échanges
+          s’accélèrent dans des relations d’interdépendances, de plus en plus
+          complexes, fragilisant autant les chaînes d’approvisionnement que le
+          statut des travailleurs. Les échanges se segmentent, les
           intermédiaires se multiplient et accumulent une part grandissante de
           la richesse produite, au détriment du consommateur final.
         </p>
@@ -486,9 +636,9 @@
             réseau international.
           </li>
           <li>
-            <span class="icon">🏛️</span> Initiatives plus politiques comme le
-            localisme qui fédèrent les communes au Rojava (Kurdistan) ou les
-            municipalités au Chiapas (Mexique).
+            <span class="icon">🏛️</span> initiatives plus politiques comme le
+            communalisme qui fédèrent les communes au Rojava (Kurdistan) ou au
+            Chiapas (Mexique).
           </li>
           <li>
             <span class="icon">💸</span> Coopératives bancaires non lucratives
@@ -518,26 +668,25 @@
         </ul>
       </div>
 
-      <div class="section">
+      <div class="section" id="mise-en-oeuvre">
         <h2>Partie II : Mise en œuvre pratique de l’affranchisme</h2>
-
         <h3>2.1. Construire un affranchisme politique</h3>
         <p>
           Malgré nos démocraties modernes, construire le compromis s’est
           généralement fait en centralisant la décision. Des représentants élus
           discutent de nos intérêts communs ou particuliers, canalisent voire
           filtrent la revendication populaire puis passent à un autre sujet,
-          malgré des attentes populaires souvent déçues. Cela s’est notamment
-          vu, avec le non des français au référendum sur la Constitution
-          européenne, en 2005, où le parlement national était passé outre, en
-          votant le texte légèrement remanié, quelques années plus tard. Nos
-          constitutions instaurent une bureaucratie d’État carriériste, qui
-          monopolise une décision top-down et garde ainsi la mainmise sur nos
-          institutions. L’affranchisme, entend changer cela, non seulement, en
-          réduisant la centralisation du pouvoir à une gestion des surplus, mais
-          en supprimant l’État. Tout ce qui touche aux coopérateurs
-          affranchistes et à la vie des coopératives est réglé par une charte
-          évolutive et confédérale, sur le principe du volontariat.
+          malgré des attentes populaires déçues. Cela s’est notamment vu, avec
+          le non des français au référendum sur la Constitution européenne, en
+          2005, où le parlement national était passé outre, en votant le texte
+          légèrement remanié, quelques années plus tard. Nos constitutions
+          instaurent une bureaucratie d’État carriériste, qui monopolise une
+          décision top-down et garde ainsi la mainmise sur nos institutions.
+          L’affranchisme, entend changer cela, non seulement, en réduisant la
+          centralisation du pouvoir à une gestion des surplus, mais en
+          supprimant l’État. Tout ce qui touche aux coopérateurs affranchistes
+          et à la vie des coopératives est réglé par une charte évolutive et
+          confédérale, sur le principe du volontariat.
         </p>
         <p>
           <strong
@@ -553,9 +702,8 @@
           coordonnent les coopératives par secteur.
         </p>
         <p>
-          Annuellement, chaque fédération réunit l’ensemble de ses travailleurs
-          (actifs ou inactifs), en assemblées locales. Ces réunions ont pour
-          mission de :
+          Chaque fédération réunit l’ensemble de ses travailleurs (actifs ou
+          inactifs), en assemblées locales. Ces réunions ont pour mission de :
         </p>
         <ul class="styled-list">
           <li>
@@ -579,30 +727,27 @@
             les autorités, ou stratégies de désobéissance civile non violente).
           </li>
           <li>
-            <span class="icon">📜</span> Modifier sa partie dans le document
-            unique : une feuille de route appliquant la charte confédérale,
-            présente dans les statuts des coopératives affranchistes.
+            <span class="icon">📜</span> Modifier la feuille de route, appelée
+            document unique, appliquant la charte confédérale.
           </li>
         </ul>
         <p>
           La charte est rédigée lors d’une assemblée confédérale initiale, avec
           les contributions de chaque marché coopératif, et adoptée à la
-          majorité qualifiée. Elle peut être amendée, lors des assemblées
-          confédérales triennales, toujours par vote direct des assemblées
-          générales locales.
+          majorité qualifiée.
         </p>
         <p>
-          La charte est distribuée à tous les marchés coopératifs sous forme
-          numérique (par mail ou sur un serveur partagé) et physique (imprimée
-          ou affichée dans chaque marché local). Chaque nouveau coopérateur en
-          reçoit une copie, lors de son intégration.
+          Elle est présente dans les statuts et est distribuée à tous les
+          marchés coopératifs sous forme numérique (par mail ou sur un serveur
+          partagé) et physique (imprimée ou affichée dans chaque marché local).
+          Chaque nouveau coopérateur en reçoit une copie, lors de son
+          intégration.
         </p>
         <p>
-          La confédération se réunit en assemblée générale locale tous les 4
-          ans. La confédération a essentiellement le rôle de partager
-          l’information entre les fédérations et de représenter les fédérations
-          vis-à-vis des tiers, via des mandataires formés et tirés au sort. Ses
-          missions sont :
+          La confédération, se réunit, également, en assemblée générale locale.
+          Elle a essentiellement le rôle de partager l’information entre les
+          fédérations et de représenter les fédérations vis-à-vis des tiers, via
+          des mandataires formés et tirés au sort. Ses missions sont :
         </p>
         <ul class="styled-list">
           <li>
@@ -625,8 +770,8 @@
             d’éviter toute bureaucratie même décentralisée.
           </li>
           <li>
-            <span class="icon">📊</span> Transparence de résultat notamment via
-            des indicateurs de gratuité et de qualité.
+            <span class="icon">📊</span> Publier les résultats affranchistes
+            notamment via des indicateurs de gratuité et de qualité.
           </li>
           <li>
             <span class="icon">🔬</span> Évaluer la recherche et la technologie
@@ -657,9 +802,9 @@
           >
         </p>
         <picture>
-          <source srcset="images/people-2569234.webp" type="image/webp" />
+          <source srcset="/images/people-2569234.webp" type="image/webp" />
           <img
-            src="images/people-2569234.jpg"
+            src="/images/people-2569234.jpg"
             alt="Groupe de militants solidaires dans une ZAD ou un marché coopératif"
             loading="lazy"
           />
@@ -799,9 +944,8 @@
         </p>
       </div>
 
-      <div class="section">
+      <div class="section" id="defis">
         <h2>Partie III : Défis et perspectives de l'affranchisme</h2>
-
         <h3>3.1. Résistances structurelles</h3>
         <p>
           Souvent par manque de capital, les coopératives de production peu
@@ -823,13 +967,14 @@
           plus résiliente face aux crises, grâce à des réseaux distribués
           mondiaux. Contrairement aux bureaucraties capitalistes, la gouvernance
           de ce système reste horizontale, avec un document unique qui sert de
-          base aux 3 instances participatives, avec suffisamment de marge pour
-          être adapté localement : le local (pour gérer la solidarité
-          nationale), le fédéral qui se contente de rassembler les savoirs et
-          d’améliorer la production sectorielle par des formations, et le
-          confédéral (pour gérer la solidarité internationale), minimisant la
-          centralisation de la décision. Les coopératives locales et leur marché
-          hybride en partie gratuit, sont le moteur de cette résistance.
+          feuille de route aux 3 instances participatives. Ce document unique
+          adapte la charte confédérale localement pour gérer la solidarité
+          territoriale, au niveau fédéral pour rassembler les savoirs et
+          améliorer la production sectorielle par des formations, et au niveau
+          confédéral pour gérer la solidarité internationale et les projets
+          d’envergure, minimisant la centralisation de la décision. Les
+          coopératives locales et leur marché hybride en partie gratuit, sont le
+          moteur de cette résistance.
         </p>
         <p>
           <strong
@@ -840,12 +985,12 @@
         <picture>
           <source
             srcset="
-              images/political-crisis-for-philippine-president-continues-1666818.webp
+              /images/political-crisis-for-philippine-president-continues-1666818.webp
             "
             type="image/webp"
           />
           <img
-            src="images/political-crisis-for-philippine-president-continues-1666818.jpg"
+            src="/images/political-crisis-for-philippine-president-continues-1666818.jpg"
             alt="Manifestation solidaire pour une cause sociale"
             loading="lazy"
           />
@@ -979,7 +1124,7 @@
           politique, les grèves générales et les blocages.
         </p>
         <p>
-          À travers une charte universelle et une esthétique décroissante du
+          A travers une charte universelle et une esthétique décroissante du
           beau et du vrai, l’affranchisme privilégie la qualité à la quantité,
           il libère le temps et la culture de l’utilitarisme et restaure le sens
           de nos actions. Sa portée universelle se traduira par des échanges
@@ -1031,9 +1176,27 @@
     </div>
 
     <!-- Section commentaires (Commento) -->
-    <h2>Commentaires</h2>
-    <div id="commento"></div>
-    <script src="https://cdn.commento.io/js/commento.js"></script>
+    <div class="comments">
+      <h2>Commentaires</h2>
+      <script defer src="https://cdn.commento.io/js/commento.js"></script>
+      <div id="commento"></div>
+    </div>
+
+    <!-- Bouton retour en haut -->
+    <button class="back-to-top" aria-label="Retour en haut">↑</button>
+    <script>
+      window.addEventListener("scroll", () => {
+        const backToTop = document.querySelector(".back-to-top");
+        if (window.scrollY > 300) {
+          backToTop.classList.add("show");
+        } else {
+          backToTop.classList.remove("show");
+        }
+      });
+      document.querySelector(".back-to-top").addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    </script>
 
     <!-- Footer -->
     <footer>
