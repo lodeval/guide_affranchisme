@@ -21,6 +21,12 @@
       onload="this.rel='stylesheet';this.media='all'"
     />
     <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Oswald:wght@500&family=Lora:wght@400;700&display=swap"
+      as="style"
+      onload="this.rel='stylesheet';this.media='all'"
+    />
+    <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
       media="print"
@@ -140,67 +146,75 @@
         }
       }
 
-      /* Encart d'introduction */
+      /* Ajout de la police manuscrite via Google Fonts */
+      @import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap");
+
+      /* Encart d'introduction - Version corrigée */
       .intro-encart {
-        background-color: #f4f4f9; /* Fond gris clair, cohérent avec le site */
-        border-left: 5px solid #ef5350; /* Bordure rouge pour le dynamisme */
-        padding: 2rem;
-        margin: 2rem auto;
+        background: linear-gradient(135deg, #e8f5e9 0%, #ffebee 100%);
+        border-left: 4px solid #ef5350;
+        padding: 1.2rem;
+        margin: 1rem auto;
         max-width: 900px;
         border-radius: 8px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
         transition: box-shadow 0.3s;
-        animation: fadeIn 1s ease-in-out; /* Animation d’apparition */
+        animation: fadeIn 1s ease-in-out;
       }
       .intro-encart:hover {
-        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
       }
       .intro-encart h2 {
         font-family: "Oswald", sans-serif;
         font-size: 2rem;
-        color: #2e7d32; /* Vert militant */
-        margin-bottom: 1rem;
+        color: #2e7d32;
+        margin-bottom: 0.8rem;
         text-align: center;
       }
       .intro-encart p {
-        font-family: "Roboto", sans-serif;
-        font-size: 1.1rem;
-        color: #333;
-        margin-bottom: 1rem;
+        font-family: "Roboto", serif;
+        font-size: 1.2rem;
+        color: #2c2c2c;
+        margin-bottom: 0.6rem;
         text-align: justify;
+        line-height: 1.4;
       }
       .intro-encart ul {
         list-style: none;
         padding-left: 0;
-        margin-bottom: 1.5rem;
+        margin-bottom: 0.8rem;
       }
       .intro-encart ul li {
+        font-family: "Roboto", serif;
         display: flex;
         align-items: flex-start;
-        margin-bottom: 0.8rem;
-        font-size: 1.1rem;
+        margin-bottom: 0.4rem;
+        font-size: 1.2rem;
+        padding-left: 0.5rem;
       }
       .intro-encart ul li::before {
-        content: "➔"; /* Flèche pour dynamisme */
+        content: "➔";
         color: #ef5350;
         margin-right: 0.8rem;
         font-size: 1.2rem;
+        flex-shrink: 0;
       }
       .intro-encart .highlight {
         font-family: "Oswald", sans-serif;
         font-size: 1.3rem;
         color: #ef5350;
         text-align: center;
-        margin: 1.5rem 0;
+        margin: 0.8rem 0;
+        padding: 0.4rem;
       }
       .intro-encart .call-to-action {
         text-align: center;
-        margin-top: 1.5rem;
+        margin-top: 1.5rem; /* Augmenté pour espacer du texte */
       }
       .intro-encart .call-to-action a {
         background-color: #2e7d32;
         color: white;
-        padding: 0.8rem 1.5rem;
+        padding: 0.7rem 1.4rem;
         border-radius: 5px;
         text-decoration: none;
         font-family: "Oswald", sans-serif;
@@ -214,6 +228,74 @@
         outline: 2px solid #ef5350;
         outline-offset: 2px;
       }
+      .intro-encart .profile-container {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        margin-bottom: 0.8rem;
+        background-color: #ffffff; /* Fond blanc pour effet card */
+        border-radius: 8px;
+        padding: 1rem;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        border: 1px solid #e0e0e0;
+      }
+      .intro-encart .actions-list {
+        list-style: none;
+        padding-left: 0;
+        margin-bottom: 0.8rem;
+      }
+      .intro-encart .actions-list li {
+        display: block; /* Remove flex to stack content vertically */
+        margin-bottom: 1rem; /* Add spacing between list items */
+        padding-left: 0.5rem;
+        position: relative; /* For pseudo-element positioning */
+      }
+      .intro-encart .actions-list li::before {
+        content: "➔";
+        color: #ef5350;
+        position: absolute;
+        left: 0;
+        font-size: 1.2rem;
+      }
+      .intro-encart .actions-list strong {
+        font-family: "Roboto", sans-serif; /* Use sans-serif for consistency */
+        display: block;
+        font-weight: 700;
+        font-size: 1.2rem;
+        color: #2e7d32;
+        margin-bottom: 0.3rem; /* Space between strong and span */
+      }
+      .intro-encart .action-description {
+        display: block;
+        font-family: "Roboto", sans-serif;
+        font-size: 1.2rem;
+        color: #2c2c2c;
+        padding-left: 1.5rem; /* Indent to align with text above */
+        line-height: 1.4;
+      }
+      @media (max-width: 600px) {
+        .intro-encart .actions-list li {
+          margin-bottom: 0.8rem;
+          padding-left: 0.3rem;
+        }
+        .intro-encart .actions-list strong,
+        .intro-encart .action-description {
+          font-size: 1.1rem;
+          line-height: 1.3;
+        }
+        .intro-encart .action-description {
+          padding-left: 1.2rem;
+        }
+      }
+
+      .intro-encart .action-description {
+        display: block;
+        font-family: "Roboto", serif;
+        font-size: 1.2rem;
+        color: #2c2c2c;
+        margin-top: 0.2rem;
+        line-height: 1.4;
+      }
       @keyframes fadeIn {
         from {
           opacity: 0;
@@ -226,15 +308,21 @@
       }
       @media (max-width: 600px) {
         .intro-encart {
-          padding: 1.5rem;
-          margin: 1rem;
+          padding: 0.8rem;
+          margin: 0.8rem;
         }
         .intro-encart h2 {
-          font-size: 1.6rem;
+          font-size: 1.5rem;
         }
         .intro-encart p,
+        .intro-encart ul li,
+        .intro-encart .actions-list strong,
+        .intro-encart .action-description {
+          font-size: 1.1rem;
+          line-height: 1.3;
+        }
         .intro-encart ul li {
-          font-size: 1rem;
+          padding-left: 0.3rem;
         }
       }
 
@@ -501,7 +589,6 @@
       <div class="slogan">En route pour la révolution libertaire</div>
     </div>
 
-    <!-- Encart d'introduction -->
     <section class="intro-encart" aria-labelledby="encart-title">
       <i
         class="fas fa-hand-holding-heart"
@@ -510,12 +597,12 @@
           color: #ef5350;
           display: block;
           text-align: center;
-          margin-bottom: 1rem;
+          margin-bottom: 0.8rem;
         "
       ></i>
       <h2 id="encart-title">Vous en avez assez du capitalisme ?</h2>
       <p>Vous ressentez :</p>
-      <ul>
+      <ul class="ressentis-list">
         <li>
           que vous perdez votre temps à scroller sans fin sur des shorts qui
           n’apportent rien.
@@ -549,7 +636,7 @@
         </li>
       </ul>
       <p>Et si, à la place :</p>
-      <ul>
+      <ul class="alternative-list">
         <li>vous travailliez à la carte en étant votre propre patron ?</li>
         <li>vos besoins étaient au cœur même de votre activité ?</li>
         <li>vos rêves de bien commun étaient réalisés par la communauté ?</li>
@@ -559,38 +646,53 @@
         </li>
       </ul>
       <p class="highlight">Cette utopie réaliste s’appelle l’affranchisme.</p>
-      <p>
-        Salut, je m’appelle Laurent. Après avoir donné mon temps et mon énergie
-        à des chefs, je me lance dans l’aventure affranchiste, qui devrait nous
-        aider à nous sortir collectivement de cette matrice routinière. Il
-        suffit de passer à l’action :
-      </p>
-      <ul>
+      <div class="profile-container">
+        <img
+          src="/images/photo_profile.png"
+          alt="Photo de Laurent, initiateur de l'affranchisme, en noir et blanc"
+          class="profile-img"
+        />
+        <div class="profile-text">
+          <p>
+            "Salut, je m’appelle Laurent. Après avoir donné mon temps et mon
+            énergie à des chefs, je me lance dans l’aventure affranchiste, qui
+            devrait nous aider à nous sortir collectivement de cette matrice
+            routinière. Il suffit de passer à l’action :"
+          </p>
+        </div>
+      </div>
+      <ul class="actions-list">
         <li>
           <strong
             >Partagez vos idées sur X, TikTok ou Instagram
             (#affranchisme2025)</strong
           >
-          : Diffusez le concept pour créer un mouvement viral et connecter ceux
-          qui n’attendent qu’un signal.
+          <span class="action-description">
+            : Diffusez le concept pour créer un mouvement viral et connecter
+            ceux qui n’attendent qu’un signal.
+          </span>
         </li>
         <li>
           <strong
             >Rejoignez une AMAP, un syndicat solidaire ou une coopérative
             locale</strong
           >
-          : Plongez dans des réseaux comme une AMAP pour l’alimentation ou la
-          CGT pour défendre le bien commun, et tissez des liens concrets contre
-          l’isolement du capitalisme.
+          <span class="action-description">
+            : Plongez dans des réseaux comme une AMAP pour l’alimentation ou la
+            CGT pour défendre le bien commun, et tissez des liens concrets
+            contre l’isolement du capitalisme.
+          </span>
         </li>
         <li>
           <strong
             >Investissez les marchés locaux et lancez votre premier projet
             coopératif</strong
           >
-          : Soutenez les producteurs du coin, testez une initiative comme une
-          SCOP de services ou un jardin partagé, et bâtissez un réseau
-          d’autosuffisance qui contourne les intermédiaires écrasants.
+          <span class="action-description">
+            : Soutenez les producteurs du coin, testez une initiative comme une
+            SCOP de production ou un jardin partagé, et bâtissez un réseau
+            d’autosuffisance qui contourne les intermédiaires abusifs.
+          </span>
         </li>
       </ul>
       <p>
