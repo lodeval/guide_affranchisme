@@ -240,31 +240,60 @@
         border: 1px solid #e0e0e0;
       }
       .intro-encart .actions-list {
-        list-style: none;
-        padding-left: 0;
-        margin-bottom: 0.8rem;
-      }
-      .intro-encart .actions-list li {
-        display: block; /* Remove flex to stack content vertically */
-        margin-bottom: 1rem; /* Add spacing between list items */
-        padding-left: 0.5rem;
-        position: relative; /* For pseudo-element positioning */
-      }
-      .intro-encart .actions-list li::before {
-        content: "➔";
-        color: #ef5350;
-        position: absolute;
-        left: 0;
-        font-size: 1.2rem;
-      }
-      .intro-encart .actions-list strong {
-        font-family: "Roboto", sans-serif; /* Use sans-serif for consistency */
-        display: block;
-        font-weight: 700;
-        font-size: 1.2rem;
-        color: #2e7d32;
-        margin-bottom: 0.3rem; /* Space between strong and span */
-      }
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0.8rem;
+}
+.intro-encart .actions-list li {
+  display: block; /* Maintain vertical stacking of strong and span */
+  margin-bottom: 1rem; /* Space between list items */
+  padding-left: 2.2rem; /* Space for larger arrow */
+  position: relative; /* For pseudo-element positioning */
+}
+.intro-encart .actions-list li::before {
+  content: "➔";
+  color: #ef5350; /* Red revolutionary color */
+  display: inline; /* Keep arrow in text flow */
+  float: left; /* Position arrow to the left of text */
+  font-size: 1.7rem; /* Larger arrow for prominence */
+  margin-right: 0.6rem; /* Space between arrow and text */
+  line-height: 1.4; /* Match text line height */
+  vertical-align: middle; /* Center with first line of strong */
+  margin-top: 0.2rem; /* Fine-tune vertical alignment */
+}
+.intro-encart .actions-list strong {
+  font-family: "Roboto", sans-serif;
+  display: block;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #2e7d32;
+  margin-bottom: 0.3rem; /* Space between strong and span */
+  line-height: 1.4; /* Consistent line height */
+}
+.intro-encart .action-description {
+  display: block;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.2rem;
+  color: #2c2c2c;
+  padding-left: 0; /* No extra indent for description */
+  line-height: 1.4;
+}
+@media (max-width: 600px) {
+  .intro-encart .actions-list li {
+    margin-bottom: 0.8rem;
+    padding-left: 1.8rem; /* Adjusted for smaller screens */
+  }
+  .intro-encart .actions-list li::before {
+    font-size: 1.4rem; /* Slightly smaller arrow on mobile */
+    margin-right: 0.5rem;
+    margin-top: 0.1rem; /* Fine-tune for mobile */
+  }
+  .intro-encart .actions-list strong,
+  .intro-encart .action-description {
+    font-size: 1.1rem;
+    line-height: 1.3;
+  }
+}
       .intro-encart .action-description {
         display: block;
         font-family: "Roboto", sans-serif;
