@@ -112,6 +112,65 @@
         }
       }
 
+      /* Styles pour le menu déroulant (dropdown) */
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #2e7d32;
+        min-width: 200px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        top: 100%;
+        left: 0;
+        flex-direction: column;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .dropdown:hover .dropdown-content {
+        display: flex;
+      }
+      .dropdown-content li {
+        margin: 0;
+        width: 100%;
+      }
+      .dropdown-content a {
+        color: #f5f5f5;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        font-family: "Oswald", sans-serif;
+        font-weight: 500;
+        font-size: 1rem;
+        transition: color 0.3s, background-color 0.3s;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .dropdown-content a:hover,
+      .dropdown-content a:focus {
+        color: #ef5350;
+        background-color: rgba(255, 255, 255, 0.1);
+        outline: none;
+      }
+      @media (max-width: 600px) {
+        .dropdown-content {
+          position: static;
+          display: none;
+          box-shadow: none;
+          background-color: transparent;
+        }
+        .dropdown:hover .dropdown-content {
+          display: none; /* Pas de hover sur mobile */
+        }
+        nav ul.active .dropdown .dropdown-content {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+
       /* Bannière pleine largeur */
       .banner {
         position: relative;
@@ -135,6 +194,8 @@
         font-weight: 500;
         text-transform: uppercase;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        text-align: center;
+        line-height: 1.2;
       }
       @media (max-width: 600px) {
         .banner {
@@ -209,7 +270,7 @@
       }
       .intro-encart .call-to-action {
         text-align: center;
-        margin-top: 1.5rem; /* Augmenté pour espacer du texte */
+        margin-top: 3rem; /* Augmenté pour espacer du texte */
       }
       .intro-encart .call-to-action a {
         background-color: #2e7d32;
@@ -228,72 +289,300 @@
         outline: 2px solid #ef5350;
         outline-offset: 2px;
       }
-      .intro-encart .profile-container {
+      /* Profile Card */
+      /* === Profile Card Styles === */
+      .profile-container {
         display: flex;
         align-items: flex-start;
+        gap: 1.5rem;
+        padding: 1.5rem;
+        margin: 2rem 0;
+        background: linear-gradient(135deg, #ffffff, #f9f9f9);
+        border-radius: 12px;
+        border: 2px solid #ef5350; /* Bordure rouge révolutionnaire */
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        animation: slideIn 0.8s ease-out;
+      }
+
+      .profile-container:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      }
+
+      /* Profile Image Wrapper */
+      .profile-image-wrapper {
+        flex-shrink: 0;
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 3px solid #2e7d32; /* Vert militant */
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease;
+        line-height: 0; /* Supprime tout espace lié à la ligne de base */
+        display: block; /* Remplace flex pour éviter les comportements inattendus */
+      }
+
+      /* Hover Effect */
+      .profile-image-wrapper:hover {
+        transform: scale(1.05);
+      }
+
+      /* Image */
+      .profile-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        margin: 0; /* Supprime toute marge par défaut */
+      }
+
+      /* Responsive Design */
+      @media (max-width: 600px) {
+        .profile-image-wrapper {
+          width: 100px;
+          height: 100px;
+          border-radius: 50%;
+          overflow: hidden;
+          border: 3px solid #2e7d32;
+          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+          transition: transform 0.3s ease;
+          line-height: 0; /* Assure l'absence d'espace vertical */
+          display: block; /* Conserve display: block pour cohérence */
+          margin-bottom: 1rem;
+        }
+      }
+
+      /* === Content === */
+      .profile-content {
+        flex: 1;
+      }
+
+      .profile-name {
+        font-family: "Oswald", sans-serif;
+        font-size: 1.8rem;
+        color: #2e7d32;
+        margin-bottom: 0.5rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .profile-text {
+        font-family: "Roboto", sans-serif;
+        font-size: 1.1rem;
+        color: #2c2c2c;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+        position: relative;
+        padding-left: 1.5rem;
+      }
+
+      .profile-text::before {
+        content: "“";
+        font-family: "Caveat", cursive;
+        font-size: 2rem;
+        color: #ef5350;
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+
+      /* === Social Links === */
+      .profile-social {
+        display: flex;
         gap: 1rem;
-        margin-bottom: 0.8rem;
-        background-color: #ffffff; /* Fond blanc pour effet card */
-        border-radius: 8px;
-        padding: 1rem;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-        border: 1px solid #e0e0e0;
+        align-items: center;
+      }
+
+      .profile-social a {
+        color: #ef5350;
+        font-size: 1.5rem;
+        transition: color 0.3s ease, transform 0.3s ease;
+      }
+
+      .profile-social a:hover,
+      .profile-social a:focus {
+        color: #2e7d32;
+        transform: scale(1.2);
+        outline: none;
+      }
+
+      /* === Slide-in Animation === */
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translateX(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      /* === Responsive Design === */
+      @media (max-width: 600px) {
+        .profile-container {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          padding: 1rem;
+        }
+
+        .profile-image-wrapper {
+          flex-shrink: 0;
+          width: 120px;
+          height: 120px;
+          border-radius: 50%;
+          overflow: hidden;
+          border: 3px solid #2e7d32; /* Vert militant */
+          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+          transition: transform 0.3s ease;
+          display: flex; /* <--- clé importante */
+          align-items: center;
+          justify-content: center;
+        }
+
+        .profile-name {
+          font-size: 1.5rem;
+        }
+
+        .profile-text {
+          font-size: 1rem;
+          padding-left: 0;
+        }
+
+        .profile-text::before {
+          display: none;
+        }
+
+        .profile-social {
+          justify-content: center;
+        }
+      }
+
+      /* Animation d'entrée */
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translateX(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      /* Responsive */
+      @media (max-width: 600px) {
+        .profile-container {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          padding: 1rem;
+        }
+
+        .profile-image-wrapper {
+          width: 100px;
+          height: 100px;
+          margin-bottom: 1rem;
+        }
+
+        .profile-name {
+          font-size: 1.5rem;
+        }
+
+        .profile-text {
+          font-size: 1rem;
+          padding-left: 0;
+        }
+
+        .profile-text::before {
+          display: none; /* Masquer la citation sur mobile pour plus de clarté */
+        }
+
+        .profile-social {
+          justify-content: center;
+        }
       }
       .intro-encart .actions-list {
-  list-style: none;
-  padding-left: 0;
-  margin-bottom: 0.8rem;
-}
-.intro-encart .actions-list li {
-  display: block; /* Maintain vertical stacking of strong and span */
-  margin-bottom: 1rem; /* Space between list items */
-  padding-left: 2.2rem; /* Space for larger arrow */
-  position: relative; /* For pseudo-element positioning */
-}
-.intro-encart .actions-list li::before {
-  content: "➔";
-  color: #ef5350; /* Red revolutionary color */
-  display: inline; /* Keep arrow in text flow */
-  float: left; /* Position arrow to the left of text */
-  font-size: 1.7rem; /* Larger arrow for prominence */
-  margin-right: 0.6rem; /* Space between arrow and text */
-  line-height: 1.4; /* Match text line height */
-  vertical-align: middle; /* Center with first line of strong */
-  margin-top: 0.2rem; /* Fine-tune vertical alignment */
-}
-.intro-encart .actions-list strong {
-  font-family: "Roboto", sans-serif;
-  display: block;
-  font-weight: 700;
-  font-size: 1.2rem;
-  color: #2e7d32;
-  margin-bottom: 0.3rem; /* Space between strong and span */
-  line-height: 1.4; /* Consistent line height */
-}
-.intro-encart .action-description {
-  display: block;
-  font-family: "Roboto", sans-serif;
-  font-size: 1.2rem;
-  color: #2c2c2c;
-  padding-left: 0; /* No extra indent for description */
-  line-height: 1.4;
-}
-@media (max-width: 600px) {
-  .intro-encart .actions-list li {
-    margin-bottom: 0.8rem;
-    padding-left: 1.8rem; /* Adjusted for smaller screens */
-  }
-  .intro-encart .actions-list li::before {
-    font-size: 1.4rem; /* Slightly smaller arrow on mobile */
-    margin-right: 0.5rem;
-    margin-top: 0.1rem; /* Fine-tune for mobile */
-  }
-  .intro-encart .actions-list strong,
-  .intro-encart .action-description {
-    font-size: 1.1rem;
-    line-height: 1.3;
-  }
-}
+        list-style: none;
+        padding-left: 0;
+        margin-bottom: 0.8rem;
+      }
+      .intro-encart .actions-list li {
+        display: block; /* Maintain vertical stacking of strong and span */
+        margin-bottom: 1rem; /* Space between list items */
+        padding-left: 2.2rem; /* Space for larger arrow */
+        position: relative; /* For pseudo-element positioning */
+      }
+      .intro-encart .actions-list li::before {
+        content: "➔";
+        color: #ef5350; /* Red revolutionary color */
+        display: inline; /* Keep arrow in text flow */
+        float: left; /* Position arrow to the left of text */
+        font-size: 1.7rem; /* Larger arrow for prominence */
+        margin-right: 0.6rem; /* Space between arrow and text */
+        line-height: 1.4; /* Match text line height */
+        vertical-align: middle; /* Center with first line of strong */
+        margin-top: 0.2rem; /* Fine-tune vertical alignment */
+      }
+      .intro-encart .actions-list strong {
+        font-family: "Roboto", sans-serif;
+        display: block;
+        font-weight: 700;
+        font-size: 1.2rem;
+        color: #2e7d32;
+        margin-bottom: 0.3rem; /* Space between strong and span */
+        line-height: 1.4; /* Consistent line height */
+      }
+      .intro-encart .action-description {
+        display: block;
+        font-family: "Roboto", sans-serif;
+        font-size: 1.2rem;
+        color: #2c2c2c;
+        padding-left: 0; /* No extra indent for description */
+        line-height: 1.4;
+      }
+      @media (max-width: 600px) {
+        .intro-encart .actions-list li {
+          margin-bottom: 0.8rem;
+          padding-left: 1.8rem; /* Adjusted for smaller screens */
+        }
+        .intro-encart .actions-list li::before {
+          font-size: 1.4rem; /* Slightly smaller arrow on mobile */
+          margin-right: 0.5rem;
+          margin-top: 0.1rem; /* Fine-tune for mobile */
+        }
+        .intro-encart .actions-list strong,
+        .intro-encart .action-description {
+          font-size: 1.1rem;
+          line-height: 1.3;
+        }
+      }
+      .intro-encart .action-description {
+        display: block;
+        font-family: "Roboto", sans-serif;
+        font-size: 1.2rem;
+        color: #2c2c2c;
+        padding-left: 0; /* No extra indent for description */
+        line-height: 1.4;
+      }
+      @media (max-width: 600px) {
+        .intro-encart .actions-list li {
+          margin-bottom: 0.8rem;
+          padding-left: 1.5rem; /* Adjusted for smaller screens */
+        }
+        .intro-encart .actions-list li::before {
+          font-size: 1.3rem; /* Slightly smaller arrow on mobile */
+          margin-right: 0.5rem;
+        }
+        .intro-encart .actions-list strong,
+        .intro-encart .action-description {
+          font-size: 1.1rem;
+          line-height: 1.3;
+        }
+      }
       .intro-encart .action-description {
         display: block;
         font-family: "Roboto", sans-serif;
@@ -462,47 +751,111 @@
       }
 
       /* Boutons */
-      .buttons {
-        text-align: center;
-        margin: 2rem 0;
-      }
-      .button {
-        display: inline-block;
-        padding: 0.8rem 1.5rem;
-        margin: 0.5rem;
-        border-radius: 5px;
-        text-decoration: none;
-        font-family: "Oswald", sans-serif;
-        font-weight: 500;
-        transition: transform 0.2s, background-color 0.3s;
-      }
-      .button i {
-        margin-right: 0.5rem;
-        transition: transform 0.3s;
-      }
-      .button:hover i {
-        transform: scale(1.2);
-      }
-      .button:hover,
-      .button:focus {
-        transform: translateY(-2px);
-        outline: 2px solid #ef5350;
-        outline-offset: 2px;
-      }
-      .tipeee-button {
-        background-color: #ef5350;
-        color: white;
-      }
-      .tipeee-button:hover {
-        background-color: #d32f2f;
-      }
-      .pdf-button {
-        background-color: #2e7d32;
-        color: white;
-      }
-      .pdf-button:hover {
-        background-color: #1b5e20;
-      }
+      /* Boutons */
+.buttons {
+  text-align: center;
+  margin: 2rem 0;
+  display: flex; /* Utilise flexbox pour contrôler la disposition */
+  justify-content: center; /* Centre les boutons */
+  flex-wrap: wrap; /* Permet le retour à la ligne si nécessaire */
+  gap: 0.5rem; /* Espacement entre les boutons */
+  max-width: 700px; /* Limite la largeur totale des boutons */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1.2rem; /* Réduit le padding pour des boutons plus petits */
+  margin: 0.3rem; /* Réduit la marge */
+  border-radius: 5px;
+  text-decoration: none;
+  font-family: "Oswald", sans-serif;
+  font-weight: 500;
+  font-size: 1rem; /* Taille de police réduite */
+  line-height: 1.4; /* Améliore l'alignement vertical */
+  transition: transform 0.2s, background-color 0.3s, box-shadow 0.3s;
+}
+
+.button i {
+  margin-right: 0.3rem; /* Espacement réduit pour l'icône */
+  font-size: 1rem; /* Taille de l'icône réduite */
+  line-height: 1; /* Évite les décalages verticaux */
+  transition: transform 0.3s;
+}
+
+.button:hover i {
+  transform: scale(1.1);
+}
+
+.button:hover,
+.button:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  outline: 2px solid #ef5350;
+  outline-offset: 2px;
+}
+
+.tipeee-button {
+  background-color: #ef5350;
+  color: white;
+}
+.tipeee-button:hover {
+  background-color: #d32f2f;
+}
+
+.pdf-button {
+  background-color: #2e7d32;
+  color: white;
+}
+.pdf-button:hover {
+  background-color: #1b5e20;
+}
+
+.contact-button {
+  background-color: #0288d1; /* Bleu militant */
+  color: white;
+}
+.contact-button:hover {
+  background-color: #01579b;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .buttons {
+    flex-direction: column; /* Affiche les boutons en colonne sur mobile */
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .button {
+    padding: 0.5rem 1rem; /* Encore plus petit sur mobile */
+    font-size: 0.9rem;
+    width: 100%; /* Occupe la largeur disponible, mais reste compact */
+    max-width: 250px; /* Limite la largeur pour éviter l'étirement */
+  }
+  .button i {
+    font-size: 0.9rem;
+    margin-right: 0.3rem;
+  }
+}
+
+/* Style pour la justification du bouton contact */
+.call-to-action .highlight {
+  font-family: "Oswald", sans-serif;
+  font-size: 1.4rem;
+  color: #ef5350;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+.call-to-action p {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.1rem;
+  color: #2c2c2c;
+  text-align: center;
+  margin-bottom: 1rem;
+}
 
       /* Sommaire */
       .toc {
@@ -595,12 +948,18 @@
         ☰
       </button>
       <ul class="menu">
-        <li><a href="index.html" aria-current="page">Manifeste</a></li>
-        <li><a href="#introduction">Introduction</a></li>
-        <li><a href="#fondements">Fondements</a></li>
-        <li><a href="#mise-en-oeuvre">Mise en œuvre</a></li>
-        <li><a href="#defis">Défis</a></li>
+        <li class="dropdown">
+          <a href="#introduction">Appel</a>
+          <ul class="dropdown-content">
+            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#fondements">Fondements</a></li>
+            <li><a href="#mise-en-oeuvre">Mise en œuvre</a></li>
+            <li><a href="#defis">Défis</a></li>
+          </ul>
+        </li>
+        <li><a href="#projet-pilote">Projet pilote</a></li>
         <li><a href="social-libertarisme.html">Social-Libertarisme</a></li>
+        <li><a href="publication.html">articles</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
@@ -611,11 +970,34 @@
         const isExpanded = menu.classList.toggle("active");
         menuToggle.setAttribute("aria-expanded", isExpanded);
       });
+      
+  // Fermer le menu après un clic sur un lien en mode responsive
+  document.querySelectorAll(".menu a").forEach(link => {
+    link.addEventListener("click", () => {
+      if (window.innerWidth <= 600) {
+        menu.classList.remove("active");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.querySelector("i").classList.add("fa-bars");
+        menuToggle.querySelector("i").classList.remove("fa-times");
+      }
+    });
+  });
+
+  // Toggle du menu déroulant sur clic en mode responsive
+  document.querySelectorAll(".dropdown-toggle").forEach(toggle => {
+    toggle.addEventListener("click", (e) => {
+      if (window.innerWidth <= 600) {
+        e.preventDefault();
+        const dropdownContent = toggle.nextElementSibling;
+        dropdownContent.classList.toggle("active");
+      }
+    });
+  });
     </script>
 
     <!-- Bannière -->
     <div class="banner">
-      <div class="slogan">En route pour la révolution libertaire</div>
+      <div class="slogan">En route pour la<br />révolution libertaire</div>
     </div>
 
     <section class="intro-encart" aria-labelledby="encart-title">
@@ -630,7 +1012,7 @@
         "
       ></i>
       <h2 id="encart-title">Vous en avez assez du capitalisme ?</h2>
-      <p>Vous ressentez :</p>
+      <p>Vous avez l'impression :</p>
       <ul class="ressentis-list">
         <li>
           que vous perdez votre temps à scroller sans fin sur des shorts qui
@@ -655,13 +1037,13 @@
         <li>
           l’envie d’une pause de plusieurs mois, voire années, pour vous
           recentrer, échapper au stress chronique qui perturbe votre sommeil et
-          vous pousse vers les médicaments pour tenir le rythme.
+          vous pousse vers les médicaments pour tenir le coup.
         </li>
         <li>
-          le sentiment d’être un(e) citoyen(ne) de seconde zone, l’impression
-          que sans exiger, vous n’obtiendrez rien, tandis que d’autres, initiés
-          dès le plus jeune âge à cet entre-soi codifié, ont déjà tout et ne
-          partagent pas.
+          le sentiment d’être un(e) citoyen(ne) de seconde zone, que sans
+          exiger, vous n’obtiendrez rien, tandis que d’autres, initiés dès le
+          plus jeune âge à un entre-soi codifié, ont déjà tout et ne partagent
+          pas.
         </li>
       </ul>
       <p>Et si, à la place :</p>
@@ -676,20 +1058,56 @@
       </ul>
       <p class="highlight">Cette utopie réaliste s’appelle l’affranchisme.</p>
       <div class="profile-container">
-        <img
-          src="https://lodeval.github.io/guide_affranchisme/images/photo_profile.png"
-          alt="Photo de Laurent, initiateur de l'affranchisme, en noir et blanc"
-          class="profile-img"
-        />
-        <div class="profile-text">
-          <p>
-            "Salut, je m’appelle Laurent. Après avoir donné mon temps et mon
-            énergie à des chefs, je me lance dans l’aventure affranchiste, qui
-            devrait nous aider à nous sortir collectivement de cette matrice
-            routinière. Il suffit de passer à l’action :"
+        <div class="profile-image-wrapper">
+          <img
+            src="/images/photo_profile.jpg"
+            alt="Photo de Laurent, fondateur de l'affranchisme"
+            class="profile-img"
+          />
+        </div>
+        <div class="profile-content">
+          <h3 class="profile-name">Laurent, fondateur de l'affranchisme</h3>
+          <p class="profile-text">
+            Salut, je m’appelle Laurent. Après avoir donné beaucoup de mon temps
+            et d'énergie à une élite ingrate, j'en ai eu assez de me faire
+            balader pour soi disant combler un besoin, qui change au gré du
+            marché et de la concurrence. J'ai décidé d'arrêter de grimper le mat
+            de cocagne pour tenter de décrocher un succès qui s'éloigne comme
+            l'âge de la retraite. Avec des camarades de la CGT, j'ai conçu
+            l'idéologie affranchiste pour que chacun puisse se dire qu'il n'est
+            pas une machine ou une marchandise, prête à détruire la planète ou
+            du lien social pour prouver sa valeur. Nous sommes de plus en plus
+            nombreux en bas de l'échelle sociale, à nous poser des questions, à
+            interroger le système, il nous suffit de passer à l'action.
+            Rejoignez la grande coalition affranchiste et créons le monde de
+            demain !
           </p>
+          <div class="profile-social">
+            <a
+              href="https://x.com/affranchisme"
+              target="_blank"
+              aria-label="Suivez-nous sur X"
+            >
+              <i class="fab fa-x-twitter"></i>
+            </a>
+            <a
+              href="https://www.tiktok.com/@affranchisme"
+              target="_blank"
+              aria-label="Suivez-nous sur TikTok"
+            >
+              <i class="fab fa-tiktok"></i>
+            </a>
+            <a
+              href="https://www.instagram.com/affranchisme"
+              target="_blank"
+              aria-label="Suivez-nous sur Instagram"
+            >
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
         </div>
       </div>
+
       <ul class="actions-list">
         <li>
           <strong
@@ -729,13 +1147,31 @@
         coordination décentralisée : des coopératives autosuffisantes qui
         priorisent la réciprocité et les besoins essentiels.
       </p>
+      <p>Besoin d'affranchir votre quotidien?</p>
       <p class="call-to-action">
+         <!-- Boutons -->
+      <div class="buttons">
         <a
-          href="mailto:affranchisme@gmail.com"
-          aria-label="Contacter Laurent pour rejoindre l'affranchisme"
-          >Prêt(e) à affranchir votre quotidien ? Contactez-moi pour en discuter
-          !</a
+          href="https://fr.tipeee.com/affranchisme/"
+          class="button tipeee-button"
+          target="_blank"
+          ><i class="fas fa-heart"></i> Soutenez sur Tipeee</a
         >
+        <a
+          href="https://drive.google.com/file/d/1rsgEZ5NaoKrTYvzYUxUvsWOt6MUdQTRc/view?usp=drive_link"
+          class="button pdf-button"
+          target="_blank"
+          ><i class="fas fa-file-pdf"></i> Téléchargez l'appel</a
+        >
+      
+        <a
+          href="mailto:affranchisme@mail.fr"
+          class="button contact-button"
+          target="_blank"
+          aria-label="Contacter Laurent pour rejoindre l'affranchisme"
+          ><i class="fas fa-envelope"></i>Écrivez-moi !</a
+        >
+        </div>
       </p>
     </section>
 
@@ -823,8 +1259,8 @@
           En déléguant la production au Sud global, grâce à la mondialisation,
           les sociétés occidentales sont devenues dépendantes du modèle
           consumériste. Les ménages français, en 2024, sont déjà endettés à plus
-          de 1500 milliards, dont 84 % de crédit immobilier, et souffrent plus
-          indirectement du déficit commercial : 81 milliards d’euros,
+          de 1500 milliards, dont 84 % de crédit immobilier, et souffrent plus
+          indirectement du déficit commercial : 81 milliards d’euros,
           principalement due à la désindustrialisation et aux politiques
           néolibérales, qui précarisent et poussent les consommateurs vers des
           produits de moindre qualité, privilégiant la quantité.
@@ -860,17 +1296,17 @@
         </p>
         <p>
           Le néolibéralisme mondialisé, relayé par les médias mainstream, impose
-          un narratif où la « liberté » des plus riches se confond avec celle
+          un narratif où la « liberté » des plus riches se confond avec celle
           des plus pauvres, vantant la consommation matérialiste comme un idéal
-          universel à travers des campagnes marketing. Ce discours masque les
-          exclusions sociales et repose sur un modèle de crédit alimentant la
-          surconsommation, offrant aux classes productives un pouvoir d’achat
-          illusoire pour acquérir des biens délocalisés, éphémères et
-          standardisés, au prix de l’exploitation des travailleurs du Sud
-          global. L’affranchisme appelle à la révolte contre ce modèle qui
-          marginalise les moins rentables comme les moins protégés, et prône une
-          réappropriation du temps et des communs pour refonder les bases d’une
-          société juste et durable.
+          universel, à coup de campagnes marketing et de mythe du ruissellement.
+          Ce discours masque les exclusions sociales et repose sur un modèle de
+          crédit alimentant la surconsommation, offrant aux classes productives
+          l'illusion d'un "pouvoir" d’achat qui n'est qu'une alinéation pour
+          consommer des biens délocalisés, éphémères et standardisés, au prix de
+          l’exploitation des travailleurs du Sud global. L’affranchisme appelle
+          à la révolte contre ce modèle qui marginalise les moins rentables
+          comme les moins protégés, et prône une réappropriation du temps et des
+          communs pour refonder les bases d’une société juste et durable.
         </p>
         <p>
           <strong
@@ -879,9 +1315,8 @@
           >
         </p>
         <picture>
-          <source srcset="/images/foule_manifestation.webp" type="image/webp" />
           <img
-            src="/images/foule_manifestation.jpg"
+            src="https://lodeval.github.io/guide_affranchisme/images/gens_mains.jpg"
             alt="Illustration de la surconsommation dans un centre commercial"
             loading="lazy"
           />
@@ -918,18 +1353,17 @@
         <p>
           Cependant, cette transition numérique a donné les plus grandes fuites
           de données personnelles de l’histoire: 43 millions d’usagers de France
-          Travail (2024), 16 milliards d’identifiants et de mots de passe volés
-          chez des géants du web mis en ligne (2025), etc... Le capitalisme
-          montre son incapacité à sécuriser et à contrôler sa propre innovation.
-          A travers la plateforme en ligne, le marché capitaliste se réinvente
-          et accroît le modèle du dominant possèdant le capital technologique au
-          dominé qui s’en sert, sans vraiment le comprendre, hormis les
-          spécialistes. Les échanges s’accélèrent dans des relations
-          d’interdépendances, de plus en plus complexes, fragilisant autant les
-          chaînes d’approvisionnement que le statut des travailleurs. Les
-          échanges se segmentent, les intermédiaires se multiplient et
-          accumulent une part grandissante de la richesse produite, au détriment
-          du consommateur final.
+          Travail (2024), 16 milliards d’identifiants de connexion mis en ligne
+          (2025), etc... Le capitalisme montre son incapacité à sécuriser et à
+          contrôler sa propre innovation. A travers la plateforme en ligne, le
+          marché capitaliste se réinvente et accroît le modèle du dominant
+          possèdant le capital technologique au dominé qui s’en sert, sans
+          vraiment le comprendre, hormis les spécialistes. Les échanges
+          s’accélèrent dans des relations d’interdépendances, de plus en plus
+          complexes, fragilisant autant les chaînes d’approvisionnement que le
+          statut des travailleurs. Les échanges se segmentent, les
+          intermédiaires se multiplient et accumulent une part grandissante de
+          la richesse produite, au détriment du consommateur final.
         </p>
         <p>
           L’affranchisme offre une véritable rupture face aux dérives de cette
@@ -981,7 +1415,7 @@
             réseau international.
           </li>
           <li>
-            <span class="icon">🏛️</span> initiatives plus politiques comme le
+            <span class="icon">🏛️</span> Initiatives plus politiques comme le
             communalisme qui fédèrent les communes au Rojava (Kurdistan) ou au
             Chiapas (Mexique).
           </li>
@@ -1011,15 +1445,15 @@
           </li>
         </ul>
         <p>
-          Exemple : Une SCIC épicerie, financée par 10 coopérateurs à 4 000 €
-          chacun, propose des légumes gratuits grâce à une ferme partenaire
-          donnant 10 % de sa récolte (50 kg/mois), renforçant l’autonomie
-          locale.
-        </p>
-        <p>
           <strong
             >Créez ou soutenez une SCIC pour bâtir un réseau solidaire !</strong
           >
+        </p>
+        <p>
+          Exemple : Une SCIC épicerie, financée par 10 coopérateurs à 4 000 €
+          chacun, vend des fruits et légumes 5% moins cher que le marché, grâce
+          à une ferme partenaire donnant 10 % de sa récolte (50 kg/mois) et du
+          bénévolat, renforçant l’autonomie locale.
         </p>
       </div>
 
@@ -1032,28 +1466,28 @@
           discutent de nos intérêts communs ou particuliers, canalisent voire
           filtrent la revendication populaire, la modifie dans la recherche d’un
           compromis, puis passe à un autre sujet, malgré des attentes populaires
-          déçues. Cela s’est notamment vu, avec le non des français au
+          déçues. Ce fut notamment le cas, avec le non des français au
           référendum sur la Constitution européenne, en 2005, ignoré par le
           parlement. Nos constitutions instaurent une bureaucratie d’État
           carriériste, qui monopolise une décision top-down et garde ainsi la
           mainmise sur nos institutions. L’affranchisme, entend changer cela,
-          non seulement, en réduisant la centralisation du pouvoir à une gestion
-          des surplus, mais en supprimant l’État. Tout ce qui touche aux
+          non seulement, en réduisant la centralisation du pouvoir à une
+          coordinnation libre, mais en supprimant l’État. Tout ce qui touche aux
           coopérateurs affranchistes et à la vie des coopératives est réglé par
           une charte évolutive et confédérale, sur le principe du volontariat.
-        </p>
-        <p>
-          Exemple : Une SCIC épicerie associe trois groupes d’associés : usagers
-          (clients cofondateurs), contributeurs (bénévoles), et producteurs
-          (fermes, SCOP). Un agriculteur cofondateur, client et bénévole, donne
-          10 % de sa récolte et vote dans le collège des usagers (40 % des
-          voix).
         </p>
         <p>
           <strong
             >Protégez le bien commun via une gouvernance participative
             (#Affranchisme2025) !
           </strong>
+        </p>
+        <p>
+          Exemple : Une SCIC épicerie compte trois groupes d’associés : usagers
+          (client), contributeurs (bénévoles), et producteurs (fermes, SCOP). Un
+          agriculteur, à la fois client et bénévole, peut voter dans le collège
+          des usagers où il pèsera davantage dans la décision (40 % des voix),
+          recentrant les débats sur les besoins locaux.
         </p>
 
         <h3>2.2. La charte confédérale, cœur du système affranchiste</h3>
@@ -1159,9 +1593,8 @@
           >
         </p>
         <picture>
-          <source srcset="/images/people-2569234.webp" type="image/webp" />
           <img
-            src="/images/people-2569234.jpg"
+            src="https://lodeval.github.io/guide_affranchisme/images/federation.jpg"
             alt="Groupe de militants solidaires dans une ZAD ou un marché coopératif"
             loading="lazy"
           />
@@ -1191,7 +1624,7 @@
           dans les statuts d’une épicerie:
         </p>
         <img
-          src="/images/people-2569234.jpg"
+          src="https://lodeval.github.io/guide_affranchisme/images/tableau_principe.png"
           alt="tableau des principes affranchistes d'une SCIC épicerie"
           loading="lazy"
         />
@@ -1204,7 +1637,7 @@
           Ces derniers restent libres de vendre ailleurs, mais signent une
           convention précisant le don et les contreparties (bénévolat). Les
           bénéfices financent des SCOP de production partenaires, visant
-          l’autosuffisance.La SCIC associe trois collèges (usagers, bénévoles,
+          l’autosuffisance. La SCIC associe trois collèges (usagers, bénévoles,
           producteurs), avec un vote limité à un collège par personne. Les
           conventions de don (10 % ou surplus) précisent les contreparties et la
           clause « dans la mesure des moyens ».
@@ -1235,6 +1668,11 @@
           tous les marchés grâce à une liste de diffusion de mails, dans un
           format standard, pour faciliter l’agrégation.
         </p>
+        <img
+          src="https://lodeval.github.io/guide_affranchisme/images/marche_affranchiste.png"
+          alt="tableau des principes affranchistes d'une SCIC épicerie"
+          loading="lazy"
+        />
         <p>
           Par exemple, chaque mois, une AMAP affranchiste s’engage à fournir 100
           kg de fruits et légumes gratuitement au marché. La coopérative
@@ -1287,7 +1725,7 @@
           certains se frottent les mains à l’idée de profiter d’un futur
           hostile, les plus responsables essaient de montrer qu’une autre voie
           est possible, sur le peu de temps libre qu’il leur reste.
-          L’affranchisme entend « démarchandiser » nos imaginaires collectifs:
+          L’affranchisme entend « démarchandiser » nos imaginaires collectifs:
           une charte graphique unifiée avec un label affranchiste, une
           technologie maîtrisée sous licences libres, une production saine et
           respectueuse, des partenariats éventuellement marchands avec des
@@ -1337,7 +1775,7 @@
           a pour effet d’entretenir la machine capitaliste, sans s’y soustraire
           complètement. Or la dépendance au capitalisme est la principale source
           d’inégalité. L’affranchisme valorise au contraire la production des
-          coopératives, malgré un cadre capitaliste amené à disparaître. À plus
+          coopératives, malgré un cadre capitaliste poussé à disparaître. À plus
           de productivité, l’affranchisme répond par plus de coopération. Le but
           étant de travailler moins tout en étant plus productif que le
           capitalisme, sur les besoins d’abord essentiels puis universels,
@@ -1365,14 +1803,8 @@
           >
         </p>
         <picture>
-          <source
-            srcset="
-              /images/political-crisis-for-philippine-president-continues-1666818.webp
-            "
-            type="image/webp"
-          />
           <img
-            src="/images/political-crisis-for-philippine-president-continues-1666818.jpg"
+            src="https://lodeval.github.io/guide_affranchisme/images/participation.jpg"
             alt="Manifestation solidaire pour une cause sociale"
             loading="lazy"
           />
@@ -1467,18 +1899,17 @@
           5 ans suffisent pour atteindre un écosystème complet et autonome de
           coopératives dans une ville moyenne de 10000 habitants : 1 à 2 ans
           pour atteindre la viabilité (alimentaire, agriculture, énergie,
-          transports) où les agriculteurs vendent à une épicerie, qui utilise
+          logement) où les agriculteurs vendent à une épicerie, qui utilise
           l’énergie et le transport, financés par croissance organique ou
           éventuellement via une avance en comptes courants ou des dons en
-          ligne. Si on ajoute, une fois cet écosystème établi, le logement, la
+          ligne. Si on ajoute, une fois cet écosystème établi, le transport, la
           santé et l’éducation, l’écosystème devient autosuffisant, répond à la
           plupart des besoins et emploie entre 200 et 300 personnes.
         </p>
         <p>
           <strong
-            >Créons notre marché coopératif et proposons à nos coopératives et
-            associations locales de participer à la charte affranchiste
-            !</strong
+            >Créez une SCIC locale et proposez la charte affranchiste à vos
+            partenaires !</strong
           >
         </p>
         <p>
@@ -1507,13 +1938,13 @@
         <p>
           L’autonomie alimentaire et de logement, ainsi gagnée, le réseau de
           producteurs affranchistes sera une aide précieuse pour lutter
-          financièrement contre le capitalisme avec des travaux de plus en plus
-          grands à mesure que le réseau s’étend, soutenir les luttes sociales
-          par des formations (cryptomonnaies autogérées pour plus de démocratie
-          directe et de transparence, sensibilisation aux luttes sociales
-          internationales (ZAD, Rojava...), création de projets
-          affranchistes...) et désamorcer le chantage au salaire par l’activisme
-          politique, les grèves générales et les blocages.
+          financièrement contre le capitalisme, avec des travaux de plus en plus
+          grands, à mesure que le réseau s’étend, pour soutenir les luttes
+          sociales par des formations (cryptomonnaies autogérées pour plus de
+          démocratie directe et de transparence, sensibilisation aux luttes
+          sociales internationales (ZAD, Rojava...), création de projets
+          affranchistes...) et pour désamorcer le chantage au salaire par
+          l’activisme politique, les grèves générales et les blocages.
         </p>
         <p>
           A travers une charte universelle et une esthétique décroissante du
@@ -1523,14 +1954,14 @@
           avec tous ceux qui se reconnaîtront dans les valeurs de
           l’affranchisme, en échangeant les excédents, en visant
           l’autosuffisance de chaque marché coopératif dans le monde. La
-          technologie, si elle libère du temps libre au travail, sera
-          développée, mais en prenant soin d’avoir une solution de rechange
-          rudimentaire, pour ne pas exclure le prolétariat, pas encore initié à
-          l’usage éclairé de la technologie.La révolution coopérative n’est pas
-          insurrectionnelle au sens marxiste du terme, mais elle s’attaque à
-          cette sorte d’impuissance apprise, qui voudrait simplement adoucir ou
-          contourner les règles capitalistes, en ayant trouvé le fameux « bon
-          plan ». Il n’est de bon plan qui ne soit applicable à tous.
+          technologie, si elle libère du temps libre, sera développée, mais en
+          prenant soin d’avoir une solution de rechange rudimentaire, pour ne
+          pas exclure le prolétariat, pas encore initié à l’usage éclairé de la
+          technologie. La révolution coopérative n’est pas insurrectionnelle au
+          sens marxiste du terme, mais elle s’attaque à cette sorte
+          d’impuissance apprise, qui voudrait simplement adoucir ou contourner
+          les règles capitalistes, en ayant trouvé le fameux « bon plan ». Il
+          n’est de bon plan qui ne soit applicable à tous.
         </p>
         <p>
           Ce modèle se doit d’exceller par son organisation et sa mutualisation,
@@ -1563,10 +1994,10 @@
           ><i class="fas fa-heart"></i> Soutenez sur Tipeee</a
         >
         <a
-          href="https://drive.google.com/file/d/1zLXn91dpWrtJlhCZwz_kxUIANXG9Mmia/view?usp=sharing"
+          href="https://drive.google.com/file/d/1rsgEZ5NaoKrTYvzYUxUvsWOt6MUdQTRc/view?usp=drive_link"
           class="button pdf-button"
           target="_blank"
-          ><i class="fas fa-file-pdf"></i> Téléchargez le manifeste</a
+          ><i class="fas fa-file-pdf"></i> Téléchargez l'appel</a
         >
       </div>
     </div>
