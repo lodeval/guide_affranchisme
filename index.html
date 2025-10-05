@@ -28,7 +28,7 @@
     />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
       media="print"
       onload="this.media='all'"
     />
@@ -752,110 +752,110 @@
 
       /* Boutons */
       /* Boutons */
-.buttons {
-  text-align: center;
-  margin: 2rem 0;
-  display: flex; /* Utilise flexbox pour contrôler la disposition */
-  justify-content: center; /* Centre les boutons */
-  flex-wrap: wrap; /* Permet le retour à la ligne si nécessaire */
-  gap: 0.5rem; /* Espacement entre les boutons */
-  max-width: 700px; /* Limite la largeur totale des boutons */
-  margin-left: auto;
-  margin-right: auto;
-}
+      .buttons {
+        text-align: center;
+        margin: 2rem 0;
+        display: flex; /* Utilise flexbox pour contrôler la disposition */
+        justify-content: center; /* Centre les boutons */
+        flex-wrap: wrap; /* Permet le retour à la ligne si nécessaire */
+        gap: 0.5rem; /* Espacement entre les boutons */
+        max-width: 700px; /* Limite la largeur totale des boutons */
+        margin-left: auto;
+        margin-right: auto;
+      }
 
-.button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.6rem 1.2rem; /* Réduit le padding pour des boutons plus petits */
-  margin: 0.3rem; /* Réduit la marge */
-  border-radius: 5px;
-  text-decoration: none;
-  font-family: "Oswald", sans-serif;
-  font-weight: 500;
-  font-size: 1rem; /* Taille de police réduite */
-  line-height: 1.4; /* Améliore l'alignement vertical */
-  transition: transform 0.2s, background-color 0.3s, box-shadow 0.3s;
-}
+      .button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.6rem 1.2rem; /* Réduit le padding pour des boutons plus petits */
+        margin: 0.3rem; /* Réduit la marge */
+        border-radius: 5px;
+        text-decoration: none;
+        font-family: "Oswald", sans-serif;
+        font-weight: 500;
+        font-size: 1rem; /* Taille de police réduite */
+        line-height: 1.4; /* Améliore l'alignement vertical */
+        transition: transform 0.2s, background-color 0.3s, box-shadow 0.3s;
+      }
 
-.button i {
-  margin-right: 0.3rem; /* Espacement réduit pour l'icône */
-  font-size: 1rem; /* Taille de l'icône réduite */
-  line-height: 1; /* Évite les décalages verticaux */
-  transition: transform 0.3s;
-}
+      .button i {
+        margin-right: 0.3rem; /* Espacement réduit pour l'icône */
+        font-size: 1rem; /* Taille de l'icône réduite */
+        line-height: 1; /* Évite les décalages verticaux */
+        transition: transform 0.3s;
+      }
 
-.button:hover i {
-  transform: scale(1.1);
-}
+      .button:hover i {
+        transform: scale(1.1);
+      }
 
-.button:hover,
-.button:focus {
-  transform: translateY(-2px);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  outline: 2px solid #ef5350;
-  outline-offset: 2px;
-}
+      .button:hover,
+      .button:focus {
+        transform: translateY(-2px);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        outline: 2px solid #ef5350;
+        outline-offset: 2px;
+      }
 
-.tipeee-button {
-  background-color: #ef5350;
-  color: white;
-}
-.tipeee-button:hover {
-  background-color: #d32f2f;
-}
+      .tipeee-button {
+        background-color: #ef5350;
+        color: white;
+      }
+      .tipeee-button:hover {
+        background-color: #d32f2f;
+      }
 
-.pdf-button {
-  background-color: #2e7d32;
-  color: white;
-}
-.pdf-button:hover {
-  background-color: #1b5e20;
-}
+      .pdf-button {
+        background-color: #2e7d32;
+        color: white;
+      }
+      .pdf-button:hover {
+        background-color: #1b5e20;
+      }
 
-.contact-button {
-  background-color: #0288d1; /* Bleu militant */
-  color: white;
-}
-.contact-button:hover {
-  background-color: #01579b;
-}
+      .contact-button {
+        background-color: #0288d1; /* Bleu militant */
+        color: white;
+      }
+      .contact-button:hover {
+        background-color: #01579b;
+      }
 
-/* Responsive */
-@media (max-width: 600px) {
-  .buttons {
-    flex-direction: column; /* Affiche les boutons en colonne sur mobile */
-    align-items: center;
-    gap: 0.4rem;
-  }
-  .button {
-    padding: 0.5rem 1rem; /* Encore plus petit sur mobile */
-    font-size: 0.9rem;
-    width: 100%; /* Occupe la largeur disponible, mais reste compact */
-    max-width: 250px; /* Limite la largeur pour éviter l'étirement */
-  }
-  .button i {
-    font-size: 0.9rem;
-    margin-right: 0.3rem;
-  }
-}
+      /* Responsive */
+      @media (max-width: 600px) {
+        .buttons {
+          flex-direction: column; /* Affiche les boutons en colonne sur mobile */
+          align-items: center;
+          gap: 0.4rem;
+        }
+        .button {
+          padding: 0.5rem 1rem; /* Encore plus petit sur mobile */
+          font-size: 0.9rem;
+          width: 100%; /* Occupe la largeur disponible, mais reste compact */
+          max-width: 250px; /* Limite la largeur pour éviter l'étirement */
+        }
+        .button i {
+          font-size: 0.9rem;
+          margin-right: 0.3rem;
+        }
+      }
 
-/* Style pour la justification du bouton contact */
-.call-to-action .highlight {
-  font-family: "Oswald", sans-serif;
-  font-size: 1.4rem;
-  color: #ef5350;
-  text-align: center;
-  margin-bottom: 0.5rem;
-}
-.call-to-action p {
-  font-family: "Roboto", sans-serif;
-  font-size: 1.1rem;
-  color: #2c2c2c;
-  text-align: center;
-  margin-bottom: 1rem;
-}
+      /* Style pour la justification du bouton contact */
+      .call-to-action .highlight {
+        font-family: "Oswald", sans-serif;
+        font-size: 1.4rem;
+        color: #ef5350;
+        text-align: center;
+        margin-bottom: 0.5rem;
+      }
+      .call-to-action p {
+        font-family: "Roboto", sans-serif;
+        font-size: 1.1rem;
+        color: #2c2c2c;
+        text-align: center;
+        margin-bottom: 1rem;
+      }
 
       /* Sommaire */
       .toc {
@@ -970,29 +970,29 @@
         const isExpanded = menu.classList.toggle("active");
         menuToggle.setAttribute("aria-expanded", isExpanded);
       });
-      
-  // Fermer le menu après un clic sur un lien en mode responsive
-  document.querySelectorAll(".menu a").forEach(link => {
-    link.addEventListener("click", () => {
-      if (window.innerWidth <= 600) {
-        menu.classList.remove("active");
-        menuToggle.setAttribute("aria-expanded", "false");
-        menuToggle.querySelector("i").classList.add("fa-bars");
-        menuToggle.querySelector("i").classList.remove("fa-times");
-      }
-    });
-  });
 
-  // Toggle du menu déroulant sur clic en mode responsive
-  document.querySelectorAll(".dropdown-toggle").forEach(toggle => {
-    toggle.addEventListener("click", (e) => {
-      if (window.innerWidth <= 600) {
-        e.preventDefault();
-        const dropdownContent = toggle.nextElementSibling;
-        dropdownContent.classList.toggle("active");
-      }
-    });
-  });
+      // Fermer le menu après un clic sur un lien en mode responsive
+      document.querySelectorAll(".menu a").forEach((link) => {
+        link.addEventListener("click", () => {
+          if (window.innerWidth <= 600) {
+            menu.classList.remove("active");
+            menuToggle.setAttribute("aria-expanded", "false");
+            menuToggle.querySelector("i").classList.add("fa-bars");
+            menuToggle.querySelector("i").classList.remove("fa-times");
+          }
+        });
+      });
+
+      // Toggle du menu déroulant sur clic en mode responsive
+      document.querySelectorAll(".dropdown-toggle").forEach((toggle) => {
+        toggle.addEventListener("click", (e) => {
+          if (window.innerWidth <= 600) {
+            e.preventDefault();
+            const dropdownContent = toggle.nextElementSibling;
+            dropdownContent.classList.toggle("active");
+          }
+        });
+      });
     </script>
 
     <!-- Bannière -->
@@ -1012,7 +1012,7 @@
         "
       ></i>
       <h2 id="encart-title">Vous en avez assez du capitalisme ?</h2>
-      <p>Vous avez l'impression :</p>
+      <p>Vous ressentez :</p>
       <ul class="ressentis-list">
         <li>
           que vous perdez votre temps à scroller sans fin sur des shorts qui
@@ -1148,31 +1148,31 @@
         priorisent la réciprocité et les besoins essentiels.
       </p>
       <p>Besoin d'affranchir votre quotidien?</p>
-      <p class="call-to-action">
-         <!-- Boutons -->
-      <div class="buttons">
-        <a
-          href="https://fr.tipeee.com/affranchisme/"
-          class="button tipeee-button"
-          target="_blank"
-          ><i class="fas fa-heart"></i> Soutenez sur Tipeee</a
-        >
-        <a
-          href="https://drive.google.com/file/d/1rsgEZ5NaoKrTYvzYUxUvsWOt6MUdQTRc/view?usp=drive_link"
-          class="button pdf-button"
-          target="_blank"
-          ><i class="fas fa-file-pdf"></i> Téléchargez l'appel</a
-        >
-      
-        <a
-          href="mailto:affranchisme@mail.fr"
-          class="button contact-button"
-          target="_blank"
-          aria-label="Contacter Laurent pour rejoindre l'affranchisme"
-          ><i class="fas fa-envelope"></i>Écrivez-moi !</a
-        >
+      <div class="call-to-action">
+        <!-- Boutons -->
+        <div class="buttons">
+          <a
+            href="https://fr.tipeee.com/affranchisme/"
+            class="button tipeee-button"
+            target="_blank"
+            ><i class="fas fa-heart"></i> Soutenez sur Tipeee</a
+          >
+          <a
+            href="https://drive.google.com/file/d/1hzMvFqvkZeZCqO-B-JsrdkuBfgVxDXGo/view?usp=sharing"
+            class="button pdf-button"
+            target="_blank"
+            ><i class="fas fa-file-pdf"></i> Téléchargez l'appel</a
+          >
+
+          <a
+            href="mailto:affranchisme@mail.fr"
+            class="button contact-button"
+            target="_blank"
+            aria-label="Contacter Laurent pour rejoindre l'affranchisme"
+            ><i class="fas fa-envelope"></i>Écrivez-moi !</a
+          >
         </div>
-      </p>
+      </div>
     </section>
 
     <!-- Contenu principal -->
@@ -1316,7 +1316,7 @@
         </p>
         <picture>
           <img
-            src="https://lodeval.github.io/guide_affranchisme/images/gens_main.jpg"
+            src="https://lodeval.github.io/guide_affranchisme/images/gens_mains.jpg"
             alt="Illustration de la surconsommation dans un centre commercial"
             loading="lazy"
           />
@@ -1483,24 +1483,21 @@
           </strong>
         </p>
         <p>
-          Exemple : Dans une SCIC épicerie réunissant trois collèges — 
-          usagers (clients), contributeurs (bénévoles) et producteurs 
-          (fermes, SCOP) —, un agriculteur, à la fois producteur, client 
-          et bénévole, choisit de voter dans le collège des usagers, où 
-          il dispose de 40 % des voix. Face à une tension entre les usagers, 
-          qui demandent des légumes bio à prix abordables, et les producteurs, 
-          qui souhaitent préserver leurs marges pour couvrir les coûts de 
-          production, son rôle est décisif. En s’appuyant sur sa double 
-          perspective, l’agriculteur propose des solutions concrètes : 
-          privilégier des cultures de saison moins coûteuses et organiser des 
-          achats groupés pour réduire les frais logistiques. Sa contribution 
-          recentre les débats sur les besoins locaux, aboutissant à une nouvelle 
-          gamme de produits bio à prix réduits, accessible à tous, tout en 
-          maintenant une rentabilité viable pour les producteurs. Cette gouvernance 
-          participative, sans bureaucratie centralisée, illustre comment l’affranchisme 
-          harmonise les énergies collectives pour servir le bien commun (#Affranchisme2025).
-
-
+          Exemple : Dans une SCIC épicerie réunissant trois collèges — usagers
+          (clients), contributeurs (bénévoles) et producteurs (fermes, SCOP) —,
+          avec un vote limité à un collège par personne. Le collège des usagers
+          dispose de 40 % des voix, selon les statuts. Un agriculteur, à la fois
+          producteur et client, choisit de s’impliquer dans le collège des
+          usagers pour défendre des prix plus abordables pour les légumes bio,
+          face aux producteurs soucieux de préserver leurs marges. Il propose
+          d’utiliser le van électrique de la SCIC pour des livraisons directes,
+          avec l’aide temporaire de bénévoles, afin de réduire les coûts de
+          transport. Grâce à son influence dans le collège des usagers et à un
+          vote participatif, la SCIC adopte cette solution, lançant une gamme de
+          produits bio à prix réduits, tout en assurant une rentabilité viable
+          pour les producteurs. Cette gouvernance participative, sans
+          bureaucratie étatique, illustre comment l’affranchisme harmonise les
+          énergies collectives pour servir le bien commun (#Affranchisme2025).
         </p>
 
         <h3>2.2. La charte confédérale, cœur du système affranchiste</h3>
@@ -1558,9 +1555,10 @@
         </p>
         <ul class="styled-list">
           <li>
-            <span class="icon">🌐</span> Unir mondialement les organisations
-            affranchistes, en répondant aux besoins exprimés, grâce notamment à
-            un fond d’urgence ou une réserve stratégique de surplus.
+            <span class="icon">🌐</span> Mutualiser mondialement les ressources
+            entre organisations affranchistes, en répondant aux besoins
+            exprimés, grâce notamment à un fond d’urgence ou une réserve
+            stratégique de surplus.
           </li>
           <li>
             <span class="icon">🔄</span> Faciliter les échanges interrégionaux,
@@ -1630,7 +1628,7 @@
           coopératives échangeant préférentiellement avec des coopératives de
           production ou des associations appliquant la charte affranchiste.
           Elles sont donc partiellement non lucratives et réservent une partie
-          de leur production gratuitement aux coopérateurs.
+          de leur production gratuitement à l'épicerie.
         </p>
         <p>
           Voici quelques principes d’un marché coopératif que l’on retrouverait
@@ -1643,23 +1641,21 @@
         />
         <p>
           Les marchés coopératifs, comme une SCIC épicerie, fonctionnent sans
-          salariés, avec des bénévoles (minimum 1 heure/mois) considérés alors
-          comme travailleurs, et proposent des produits systématiquement en
-          dessous du prix du marché, grâce à des dons (10 % ou surplus) de
-          producteurs partenaires privilégiés (SCOP, AMAP, fermes) ou autres.
-          Ces derniers restent libres de vendre ailleurs, mais signent une
-          convention précisant le don et les contreparties (bénévolat). Les
-          bénéfices financent des SCOP de production partenaires, visant
-          l’autosuffisance. La SCIC associe trois collèges (usagers, bénévoles,
-          producteurs), avec un vote limité à un collège par personne. Les
-          conventions de don (10 % ou surplus) précisent les contreparties et la
-          clause « dans la mesure des moyens ».
+          salariés, avec des bénévoles (minimum 1 heure/mois) considérés comme
+          travailleurs, et proposent des produits systématiquement en dessous du
+          prix du marché, grâce à des dons (10 % ou surplus) de producteurs
+          partenaires privilégiés (SCOP, AMAP, fermes) ou autres. Ces derniers
+          restent libres de vendre ailleurs, mais signent une convention
+          précisant le don et les contreparties (bénévolat). Les bénéfices
+          financent des SCOP de production partenaires, visant l’autosuffisance.
         </p>
         <p>
-          Exemple : Une SCIC épicerie à Toulouse, financée par 15 coopérateurs,
-          reçoit 100 kg de légumes mensuels d’une AMAP partenaire. Des bénévoles
-          aident à la distribution. Les bénéfices permettent de créer une SCOP
-          maraîchère donnant 10 % de sa production, renforçant le réseau.
+          Exemple : Une SCIC épicerie à Toulouse, reçoit 100 kg de légumes
+          mensuels d’une AMAP partenaire. Les conventions de don (10 % ou
+          surplus) précisent les contreparties et la clause « dans la mesure des
+          moyens ». Des bénévoles aident à la distribution. Les bénéfices
+          permettent de créer une SCOP maraîchère donnant 10 % de sa production,
+          renforçant le réseau.
         </p>
         <p>
           <strong
@@ -1686,44 +1682,11 @@
           alt="tableau des principes affranchistes d'une SCIC épicerie"
           loading="lazy"
         />
-        <p>
-          Par exemple, chaque mois, une AMAP affranchiste s’engage à fournir 100
-          kg de fruits et légumes gratuitement au marché. La coopérative
-          affranchiste de logement loue 3 logements collectifs gracieusement aux
-          coopérateurs les plus actifs.
-        </p>
+
         <p>
           <strong
             >Que vous soyez agriculteur, cuisinier, communicant ou étudiant,
             votre temps compte pour construire ce marché.</strong
-          >
-        </p>
-        <p>
-          Une cuisine partagée transforme les produits locaux en conserves,
-          pâtisseries, crêpes ou glaces, tout en offrant des formations aux
-          membres. Certains bénévoles se partagent les invendus pour leur
-          consommation personnelle. Le marché coopératif économise en vue
-          d’investir sur un food truck qui vendra ses produits transformés, des
-          sandwichs et glaces bio pour renforcer l’autonomie. Conformément à la
-          charte, le marché projette d’acquérir une ferme à rénover afin d’y
-          installer une communauté de coopérateurs affranchistes autonome et
-          d’approvisionner gratuitement l’épicerie. Le lieu servira de refuge
-          animalier pour décharger les associations de protection animales
-          locales et des stages de permaculture et de construction en pierre y
-          seront donnés. La comptabilité est assurée par chaque coopérative,
-          jusqu’à ce qu’une coopérative de comptabilité autonome puisse prendre
-          le relais. Adhérer au marché coopératif peut permettre d’atteindre
-          l’autonomie sans besoin d’argent et augmenter significativement la
-          résilience des coopérateurs affranchistes, face aux crises. Cette
-          gratuité partielle est financée par la lucrativité des coopératives
-          auprès des consommateurs capitalistes et a vocation à être intégrale,
-          le jour où le consommateur aura définitivement quitté le marché
-          capitaliste.
-        </p>
-        <p>
-          <strong
-            >Rejoignez l’#Affranchisme2025 et gagnez les millions qui feront
-            vivre la communauté ! Créons le marché coopératif de demain</strong
           >
         </p>
 
@@ -1735,7 +1698,7 @@
           privatisé et colonisé par la rareté, la complexité et le temps court,
           sapant les bases de notre émancipation. Le capitalisme vole le temps,
           suspendant la raison et l’intention de bien faire. Pendant que
-          certains se frottent les mains à l’idée de profiter d’un futur
+          certains se frottent les mains à l’idée de profiter d’un futur rendu
           hostile, les plus responsables essaient de montrer qu’une autre voie
           est possible, sur le peu de temps libre qu’il leur reste.
           L’affranchisme entend « démarchandiser » nos imaginaires collectifs:
@@ -1774,6 +1737,35 @@
             >Rejoignez des parcs comestibles, des fab labs ou des cuisines
             partagées !</strong
           >
+        </p>
+        <p>
+          Par exemple, chaque mois, une AMAP affranchiste s’engage à fournir 100
+          kg de fruits et légumes gratuitement au marché. La coopérative
+          affranchiste de logement loue 3 logements collectifs gracieusement aux
+          coopérateurs les plus actifs. Une cuisine partagée transforme les
+          produits locaux en conserves, pâtisseries, crêpes ou glaces, tout en
+          offrant des formations aux membres. Certains bénévoles se partagent
+          les invendus pour leur consommation personnelle. Le marché coopératif
+          économise en vue d’investir sur un food truck qui vendra ses produits
+          transformés, des sandwichs et glaces bio pour renforcer l’autonomie.
+        </p>
+        <p>
+          Conformément à la charte, le marché projette d’acquérir une ferme à
+          rénover afin d’y installer une communauté de coopérateurs
+          affranchistes autonome et d’approvisionner gratuitement l’épicerie. Le
+          lieu servira de refuge animalier pour décharger les associations de
+          protection animales locales et des stages de permaculture et de
+          construction en pierre ou en brique, y seront donnés. La comptabilité
+          est assurée par chaque coopérative, jusqu’à ce qu’une coopérative de
+          comptabilité autonome puisse prendre le relais.
+        </p>
+        <p>
+          Adhérer au marché coopératif peut permettre d’atteindre l’autonomie
+          sans besoin d’argent et d'augmenter significativement la résilience
+          des coopérateurs affranchistes, face aux crises. Cette gratuité
+          partielle est financée par la lucrativité des coopératives auprès des
+          consommateurs capitalistes et a vocation à être intégrale, le jour où
+          le consommateur aura définitivement quitté le marché capitaliste.
         </p>
       </div>
 
@@ -1863,7 +1855,8 @@
           consommation à la production via une formation gratuite et accessible,
           création de coopératives de journalisme et de communication pour
           relater les succès affranchistes (recherches internationales, marchés
-          coopératifs ayant atteint la gratuité intégrale...) et déconstruire
+          coopératifs ayant atteint la gratuité intégrale...), militantisme pour
+          la sortie d'organisation contraire à l'affranchisme et déconstruire
           l’idée d’un capitalisme indépassable, promotion des œuvres
           affranchistes nées du temps libre et de la coopération (un film, une
           chanson, une œuvre d’art...)... Et, à mon sens, le plus crucial :
@@ -1872,8 +1865,8 @@
         </p>
         <p>
           <strong
-            >Refusons le modèle inégalitaire prôné par nos institutions
-            mondialistes ou militons pour les quitter !</strong
+            >Créez un média affranchiste pour déconstruire le capitalisme
+            !</strong
           >
         </p>
 
@@ -2007,7 +2000,7 @@
           ><i class="fas fa-heart"></i> Soutenez sur Tipeee</a
         >
         <a
-          href="https://drive.google.com/file/d/1rsgEZ5NaoKrTYvzYUxUvsWOt6MUdQTRc/view?usp=drive_link"
+          href="https://drive.google.com/file/d/1hzMvFqvkZeZCqO-B-JsrdkuBfgVxDXGo/view?usp=sharing"
           class="button pdf-button"
           target="_blank"
           ><i class="fas fa-file-pdf"></i> Téléchargez l'appel</a
