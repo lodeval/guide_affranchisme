@@ -51,891 +51,893 @@
         font-size: 1.1rem;
       }
 
-  /* Menu responsive */
-  nav {
-    background-color: #2e7d32; /* Vert militant */
-    padding: 1rem;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
-  .menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    color: #f5f5f5; /* Légère amélioration du contraste */
-    cursor: pointer;
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-  }
-  nav ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    flex-wrap: wrap;
-  }
-  nav ul li {
-    margin: 0 1.5rem;
-  }
-  nav ul li a {
-    color: #f5f5f5;
-    text-decoration: none;
-    font-family: "Oswald", sans-serif;
-    font-weight: 500;
-    font-size: 1.2rem;
-    transition: color 0.3s;
-  }
-  nav ul li a:hover,
-  nav ul li a:focus {
-    color: #ef5350; /* Rouge révolutionnaire */
-    outline: 2px solid #ef5350; /* Accessibilité clavier */
-    outline-offset: 2px;
-  }
-  @media (max-width: 600px) {
-    .menu-toggle {
-      display: block;
-    }
-    nav ul {
-      display: none;
-      flex-direction: column;
-      text-align: center;
-      background-color: #2e7d32;
-      padding: 1rem;
-    }
-    nav ul.active {
-      display: block;
-    }
-    nav ul li {
-      margin: 0.5rem 0;
-    }
-  }
+      /* Menu responsive */
+      nav {
+        background-color: #2e7d32; /* Vert militant */
+        padding: 1rem;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+      .menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        color: #f5f5f5; /* Légère amélioration du contraste */
+        cursor: pointer;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+      }
+      nav ul {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        flex-wrap: wrap;
+      }
+      nav ul li {
+        margin: 0 1.5rem;
+      }
+      nav ul li a {
+        color: #f5f5f5;
+        text-decoration: none;
+        font-family: "Oswald", sans-serif;
+        font-weight: 500;
+        font-size: 1.2rem;
+        transition: color 0.3s;
+      }
+      nav ul li a:hover,
+      nav ul li a:focus {
+        color: #ef5350; /* Rouge révolutionnaire */
+        outline: 2px solid #ef5350; /* Accessibilité clavier */
+        outline-offset: 2px;
+      }
+      @media (max-width: 600px) {
+        .menu-toggle {
+          display: block;
+        }
+        nav ul {
+          display: none;
+          flex-direction: column;
+          text-align: center;
+          background-color: #2e7d32;
+          padding: 1rem;
+        }
+        nav ul.active {
+          display: block;
+        }
+        nav ul li {
+          margin: 0.5rem 0;
+        }
+      }
 
-  /* Styles pour le menu déroulant (dropdown) */
-  .dropdown {
-    position: relative;
-    display: inline-block;
-  }
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #2e7d32;
-    min-width: 200px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    top: 100%;
-    left: 0;
-    flex-direction: column;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  .dropdown:hover .dropdown-content {
-    display: flex;
-  }
-  .dropdown-content li {
-    margin: 0;
-    width: 100%;
-  }
-  .dropdown-content a {
-    color: #f5f5f5;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    font-family: "Oswald", sans-serif;
-    font-weight: 500;
-    font-size: 1rem;
-    transition: color 0.3s, background-color 0.3s;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  }
-  .dropdown-content a:hover,
-  .dropdown-content a:focus {
-    color: #ef5350;
-    background-color: rgba(255, 255, 255, 0.1);
-    outline: none;
-  }
-  @media (max-width: 600px) {
-    .dropdown-content {
-      position: static;
-      display: none;
-      box-shadow: none;
-      background-color: transparent;
-    }
-    .dropdown:hover .dropdown-content {
-      display: none; /* Pas de hover sur mobile */
-    }
-    nav ul.active .dropdown .dropdown-content {
-      display: flex;
-      flex-direction: column;
-    }
-  }
+      /* Styles pour le menu déroulant (dropdown) */
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #2e7d32;
+        min-width: 200px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        top: 100%;
+        left: 0;
+        flex-direction: column;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .dropdown:hover .dropdown-content {
+        display: flex;
+      }
+      .dropdown-content li {
+        margin: 0;
+        width: 100%;
+      }
+      .dropdown-content a {
+        color: #f5f5f5;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        font-family: "Oswald", sans-serif;
+        font-weight: 500;
+        font-size: 1rem;
+        transition: color 0.3s, background-color 0.3s;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .dropdown-content a:hover,
+      .dropdown-content a:focus {
+        color: #ef5350;
+        background-color: rgba(255, 255, 255, 0.1);
+        outline: none;
+      }
+      @media (max-width: 600px) {
+        .dropdown-content {
+          position: static;
+          display: none;
+          box-shadow: none;
+          background-color: transparent;
+        }
+        .dropdown:hover .dropdown-content {
+          display: none; /* Pas de hover sur mobile */
+        }
+        nav ul.active .dropdown .dropdown-content {
+          display: flex;
+          flex-direction: column;
+        }
+      }
 
-  /* Bannière pleine largeur */
-  .banner {
-    position: relative;
-    width: 100%;
-    min-height: 300px;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-      url("/guide_affranchisme/images/echange_amap.png") center/cover no-repeat;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .slogan {
-    transform: rotate(-5deg);
-    background-color: #ef5350;
-    color: white;
-    padding: 1rem 2rem;
-    font-family: "Oswald", sans-serif;
-    font-size: 2rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    text-align: center;
-    line-height: 1.2;
-  }
-  @media (max-width: 600px) {
-    .banner {
-      min-height: 200px;
-    }
-    .slogan {
-      font-size: 1.4rem;
-      padding: 0.5rem 1rem;
-    }
-  }
+      /* Bannière pleine largeur */
+      .banner {
+        position: relative;
+        width: 100%;
+        min-height: 300px;
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url("/guide_affranchisme/images/echange_amap.png") center/cover
+            no-repeat;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .slogan {
+        transform: rotate(-5deg);
+        background-color: #ef5350;
+        color: white;
+        padding: 1rem 2rem;
+        font-family: "Oswald", sans-serif;
+        font-size: 2rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        text-align: center;
+        line-height: 1.2;
+      }
+      @media (max-width: 600px) {
+        .banner {
+          min-height: 200px;
+        }
+        .slogan {
+          font-size: 1.4rem;
+          padding: 0.5rem 1rem;
+        }
+      }
 
-  /* Ajout de la police manuscrite via Google Fonts */
-  @import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap");
+      /* Ajout de la police manuscrite via Google Fonts */
+      @import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap");
 
-  /* Encart d'introduction - Version corrigée */
-  .intro-encart {
-    background: linear-gradient(135deg, #e8f5e9 0%, #ffebee 100%);
-    border-left: 4px solid #ef5350;
-    padding: 1.2rem;
-    margin: 1rem auto;
-    max-width: 900px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    transition: box-shadow 0.3s;
-    animation: fadeIn 1s ease-in-out;
-  }
-  .intro-encart:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
-  }
-  .intro-encart h2 {
-    font-family: "Oswald", sans-serif;
-    font-size: 2rem;
-    color: #2e7d32;
-    margin-bottom: 0.8rem;
-    text-align: center;
-  }
-  .intro-encart p {
-    font-family: "Roboto", serif;
-    font-size: 1.2rem;
-    color: #2c2c2c;
-    margin-bottom: 0.6rem;
-    text-align: justify;
-    line-height: 1.4;
-  }
-  .intro-encart ul {
-    list-style: none;
-    padding-left: 0;
-    margin-bottom: 0.8rem;
-  }
-  .intro-encart ul li {
-    font-family: "Roboto", serif;
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 0.4rem;
-    font-size: 1.2rem;
-    padding-left: 0.5rem;
-  }
-  .intro-encart ul li::before {
-    content: "➔";
-    color: #ef5350;
-    margin-right: 0.8rem;
-    font-size: 1.2rem;
-    flex-shrink: 0;
-  }
-  .intro-encart .highlight {
-    font-family: "Oswald", sans-serif;
-    font-size: 1.3rem;
-    color: #ef5350;
-    text-align: center;
-    margin: 0.8rem 0;
-    padding: 0.4rem;
-  }
-  .intro-encart .call-to-action {
-    text-align: center;
-    margin-top: 3rem; /* Augmenté pour espacer du texte */
-  }
-  .intro-encart .call-to-action a {
-    background-color: #2e7d32;
-    color: white;
-    padding: 0.7rem 1.4rem;
-    border-radius: 5px;
-    text-decoration: none;
-    font-family: "Oswald", sans-serif;
-    font-weight: 500;
-    transition: background-color 0.3s, transform 0.2s;
-  }
-  .intro-encart .call-to-action a:hover,
-  .intro-encart .call-to-action a:focus {
-    background-color: #1b5e20;
-    transform: translateY(-2px);
-    outline: 2px solid #ef5350;
-    outline-offset: 2px;
-  }
-  /* Profile Card */
-  /* === Profile Card Styles === */
-  .profile-container {
-    display: flex;
-    align-items: flex-start;
-    gap: 1.5rem;
-    padding: 1.5rem;
-    margin: 2rem 0;
-    background: linear-gradient(135deg, #ffffff, #f9f9f9);
-    border-radius: 12px;
-    border: 2px solid #ef5350; /* Bordure rouge révolutionnaire */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    animation: slideIn 0.8s ease-out;
-  }
+      /* Encart d'introduction - Version corrigée */
+      .intro-encart {
+        background: linear-gradient(135deg, #e8f5e9 0%, #ffebee 100%);
+        border-left: 4px solid #ef5350;
+        padding: 1.2rem;
+        margin: 1rem auto;
+        max-width: 900px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        transition: box-shadow 0.3s;
+        animation: fadeIn 1s ease-in-out;
+      }
+      .intro-encart:hover {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+      }
+      .intro-encart h2 {
+        font-family: "Oswald", sans-serif;
+        font-size: 2rem;
+        color: #2e7d32;
+        margin-bottom: 0.8rem;
+        text-align: center;
+      }
+      .intro-encart p {
+        font-family: "Roboto", serif;
+        font-size: 1.2rem;
+        color: #2c2c2c;
+        margin-bottom: 0.6rem;
+        text-align: justify;
+        line-height: 1.4;
+      }
+      .intro-encart ul {
+        list-style: none;
+        padding-left: 0;
+        margin-bottom: 0.8rem;
+      }
+      .intro-encart ul li {
+        font-family: "Roboto", serif;
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 0.4rem;
+        font-size: 1.2rem;
+        padding-left: 0.5rem;
+      }
+      .intro-encart ul li::before {
+        content: "➔";
+        color: #ef5350;
+        margin-right: 0.8rem;
+        font-size: 1.2rem;
+        flex-shrink: 0;
+      }
+      .intro-encart .highlight {
+        font-family: "Oswald", sans-serif;
+        font-size: 1.3rem;
+        color: #ef5350;
+        text-align: center;
+        margin: 0.8rem 0;
+        padding: 0.4rem;
+      }
+      .intro-encart .call-to-action {
+        text-align: center;
+        margin-top: 3rem; /* Augmenté pour espacer du texte */
+      }
+      .intro-encart .call-to-action a {
+        background-color: #2e7d32;
+        color: white;
+        padding: 0.7rem 1.4rem;
+        border-radius: 5px;
+        text-decoration: none;
+        font-family: "Oswald", sans-serif;
+        font-weight: 500;
+        transition: background-color 0.3s, transform 0.2s;
+      }
+      .intro-encart .call-to-action a:hover,
+      .intro-encart .call-to-action a:focus {
+        background-color: #1b5e20;
+        transform: translateY(-2px);
+        outline: 2px solid #ef5350;
+        outline-offset: 2px;
+      }
+      /* Profile Card */
+      /* === Profile Card Styles === */
+      .profile-container {
+        display: flex;
+        align-items: flex-start;
+        gap: 1.5rem;
+        padding: 1.5rem;
+        margin: 2rem 0;
+        background: linear-gradient(135deg, #ffffff, #f9f9f9);
+        border-radius: 12px;
+        border: 2px solid #ef5350; /* Bordure rouge révolutionnaire */
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        animation: slideIn 0.8s ease-out;
+      }
 
-  .profile-container:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  }
+      .profile-container:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      }
 
-  /* Profile Image Wrapper */
-  .profile-image-wrapper {
-    flex-shrink: 0;
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 3px solid #2e7d32; /* Vert militant */
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
-    line-height: 0; /* Supprime tout espace lié à la ligne de base */
-    display: block; /* Remplace flex pour éviter les comportements inattendus */
-  }
+      /* Profile Image Wrapper */
+      .profile-image-wrapper {
+        flex-shrink: 0;
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 3px solid #2e7d32; /* Vert militant */
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease;
+        line-height: 0; /* Supprime tout espace lié à la ligne de base */
+        display: block; /* Remplace flex pour éviter les comportements inattendus */
+      }
 
-  /* Hover Effect */
-  .profile-image-wrapper:hover {
-    transform: scale(1.05);
-  }
+      /* Hover Effect */
+      .profile-image-wrapper:hover {
+        transform: scale(1.05);
+      }
 
-  /* Image */
-  .profile-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    margin: 0; /* Supprime toute marge par défaut */
-  }
+      /* Image */
+      .profile-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        margin: 0; /* Supprime toute marge par défaut */
+      }
 
-  /* Responsive Design */
-  @media (max-width: 600px) {
-    .profile-image-wrapper {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      overflow: hidden;
-      border: 3px solid #2e7d32;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-      transition: transform 0.3s ease;
-      line-height: 0; /* Assure l'absence d'espace vertical */
-      display: block; /* Conserve display: block pour cohérence */
-      margin-bottom: 1rem;
-    }
-  }
+      /* Responsive Design */
+      @media (max-width: 600px) {
+        .profile-image-wrapper {
+          width: 100px;
+          height: 100px;
+          border-radius: 50%;
+          overflow: hidden;
+          border: 3px solid #2e7d32;
+          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+          transition: transform 0.3s ease;
+          line-height: 0; /* Assure l'absence d'espace vertical */
+          display: block; /* Conserve display: block pour cohérence */
+          margin-bottom: 1rem;
+        }
+      }
 
-  /* === Content === */
-  .profile-content {
-    flex: 1;
-  }
+      /* === Content === */
+      .profile-content {
+        flex: 1;
+      }
 
-  .profile-name {
-    font-family: "Oswald", sans-serif;
-    font-size: 1.8rem;
-    color: #2e7d32;
-    margin-bottom: 0.5rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
+      .profile-name {
+        font-family: "Oswald", sans-serif;
+        font-size: 1.8rem;
+        color: #2e7d32;
+        margin-bottom: 0.5rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
 
-  .profile-text {
-    font-family: "Roboto", sans-serif;
-    font-size: 1.1rem;
-    color: #2c2c2c;
-    line-height: 1.6;
-    margin-bottom: 1rem;
-    position: relative;
-    padding-left: 1.5rem;
-  }
+      .profile-text {
+        font-family: "Roboto", sans-serif;
+        font-size: 1.1rem;
+        color: #2c2c2c;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+        position: relative;
+        padding-left: 1.5rem;
+      }
 
-  .profile-text::before {
-    content: "“";
-    font-family: "Caveat", cursive;
-    font-size: 2rem;
-    color: #ef5350;
-    position: absolute;
-    left: 0;
-    top: 0;
-  }
+      .profile-text::before {
+        content: "“";
+        font-family: "Caveat", cursive;
+        font-size: 2rem;
+        color: #ef5350;
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
 
-  /* === Social Links === */
-  .profile-social {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-  }
+      /* === Social Links === */
+      .profile-social {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+      }
 
-  .profile-social a {
-    color: #ef5350;
-    font-size: 1.5rem;
-    transition: color 0.3s ease, transform 0.3s ease;
-  }
+      .profile-social a {
+        color: #ef5350;
+        font-size: 1.5rem;
+        transition: color 0.3s ease, transform 0.3s ease;
+      }
 
-  .profile-social a:hover,
-  .profile-social a:focus {
-    color: #2e7d32;
-    transform: scale(1.2);
-    outline: none;
-  }
+      .profile-social a:hover,
+      .profile-social a:focus {
+        color: #2e7d32;
+        transform: scale(1.2);
+        outline: none;
+      }
 
-  /* === Slide-in Animation === */
-  @keyframes slideIn {
-    from {
-      opacity: 0;
-      transform: translateX(-20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
+      /* === Slide-in Animation === */
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translateX(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
 
-  /* === Responsive Design === */
-  @media (max-width: 600px) {
-    .profile-container {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      padding: 1rem;
-    }
+      /* === Responsive Design === */
+      @media (max-width: 600px) {
+        .profile-container {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          padding: 1rem;
+        }
 
-    .profile-image-wrapper {
-      flex-shrink: 0;
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      overflow: hidden;
-      border: 3px solid #2e7d32; /* Vert militant */
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-      transition: transform 0.3s ease;
-      display: flex; /* <--- clé importante */
-      align-items: center;
-      justify-content: center;
-    }
+        .profile-image-wrapper {
+          flex-shrink: 0;
+          width: 120px;
+          height: 120px;
+          border-radius: 50%;
+          overflow: hidden;
+          border: 3px solid #2e7d32; /* Vert militant */
+          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+          transition: transform 0.3s ease;
+          display: flex; /* <--- clé importante */
+          align-items: center;
+          justify-content: center;
+        }
 
-    .profile-name {
-      font-size: 1.5rem;
-    }
+        .profile-name {
+          font-size: 1.5rem;
+        }
 
-    .profile-text {
-      font-size: 1rem;
-      padding-left: 0;
-    }
+        .profile-text {
+          font-size: 1rem;
+          padding-left: 0;
+        }
 
-    .profile-text::before {
-      display: none;
-    }
+        .profile-text::before {
+          display: none;
+        }
 
-    .profile-social {
-      justify-content: center;
-    }
-  }
+        .profile-social {
+          justify-content: center;
+        }
+      }
 
-  /* Animation d'entrée */
-  @keyframes slideIn {
-    from {
-      opacity: 0;
-      transform: translateX(-20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
+      /* Animation d'entrée */
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translateX(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
 
-  /* Responsive */
-  @media (max-width: 600px) {
-    .profile-container {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      padding: 1rem;
-    }
+      /* Responsive */
+      @media (max-width: 600px) {
+        .profile-container {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          padding: 1rem;
+        }
 
-    .profile-image-wrapper {
-      width: 100px;
-      height: 100px;
-      margin-bottom: 1rem;
-    }
+        .profile-image-wrapper {
+          width: 100px;
+          height: 100px;
+          margin-bottom: 1rem;
+        }
 
-    .profile-name {
-      font-size: 1.5rem;
-    }
+        .profile-name {
+          font-size: 1.5rem;
+        }
 
-    .profile-text {
-      font-size: 1rem;
-      padding-left: 0;
-    }
+        .profile-text {
+          font-size: 1rem;
+          padding-left: 0;
+        }
 
-    .profile-text::before {
-      display: none; /* Masquer la citation sur mobile pour plus de clarté */
-    }
+        .profile-text::before {
+          display: none; /* Masquer la citation sur mobile pour plus de clarté */
+        }
 
-    .profile-social {
-      justify-content: center;
-    }
-  }
-  .intro-encart .actions-list {
-    list-style: none;
-    padding-left: 0;
-    margin-bottom: 0.8rem;
-  }
-  .intro-encart .actions-list li {
-    display: block; /* Maintain vertical stacking of strong and span */
-    margin-bottom: 1rem; /* Space between list items */
-    padding-left: 2.2rem; /* Space for larger arrow */
-    position: relative; /* For pseudo-element positioning */
-  }
-  .intro-encart .actions-list li::before {
-    content: "➔";
-    color: #ef5350; /* Red revolutionary color */
-    display: inline; /* Keep arrow in text flow */
-    float: left; /* Position arrow to the left of text */
-    font-size: 1.7rem; /* Larger arrow for prominence */
-    margin-right: 0.6rem; /* Space between arrow and text */
-    line-height: 1.4; /* Match text line height */
-    vertical-align: middle; /* Center with first line of strong */
-    margin-top: 0.2rem; /* Fine-tune vertical alignment */
-  }
-  .intro-encart .actions-list strong {
-    font-family: "Roboto", sans-serif;
-    display: block;
-    font-weight: 700;
-    font-size: 1.2rem;
-    color: #2e7d32;
-    margin-bottom: 0.3rem; /* Space between strong and span */
-    line-height: 1.4; /* Consistent line height */
-  }
-  .intro-encart .action-description {
-    display: block;
-    font-family: "Roboto", sans-serif;
-    font-size: 1.2rem;
-    color: #2c2c2c;
-    padding-left: 0; /* No extra indent for description */
-    line-height: 1.4;
-  }
-  @media (max-width: 600px) {
-    .intro-encart .actions-list li {
-      margin-bottom: 0.8rem;
-      padding-left: 1.8rem; /* Adjusted for smaller screens */
-    }
-    .intro-encart .actions-list li::before {
-      font-size: 1.4rem; /* Slightly smaller arrow on mobile */
-      margin-right: 0.5rem;
-      margin-top: 0.1rem; /* Fine-tune for mobile */
-    }
-    .intro-encart .actions-list strong,
-    .intro-encart .action-description {
-      font-size: 1.1rem;
-      line-height: 1.3;
-    }
-  }
-  .intro-encart .action-description {
-    display: block;
-    font-family: "Roboto", sans-serif;
-    font-size: 1.2rem;
-    color: #2c2c2c;
-    padding-left: 0; /* No extra indent for description */
-    line-height: 1.4;
-  }
-  @media (max-width: 600px) {
-    .intro-encart .actions-list li {
-      margin-bottom: 0.8rem;
-      padding-left: 1.5rem; /* Adjusted for smaller screens */
-    }
-    .intro-encart .actions-list li::before {
-      font-size: 1.3rem; /* Slightly smaller arrow on mobile */
-      margin-right: 0.5rem;
-    }
-    .intro-encart .actions-list strong,
-    .intro-encart .action-description {
-      font-size: 1.1rem;
-      line-height: 1.3;
-    }
-  }
-  .intro-encart .action-description {
-    display: block;
-    font-family: "Roboto", sans-serif;
-    font-size: 1.2rem;
-    color: #2c2c2c;
-    padding-left: 1.5rem; /* Indent to align with text above */
-    line-height: 1.4;
-  }
-  @media (max-width: 600px) {
-    .intro-encart .actions-list li {
-      margin-bottom: 0.8rem;
-      padding-left: 0.3rem;
-    }
-    .intro-encart .actions-list strong,
-    .intro-encart .action-description {
-      font-size: 1.1rem;
-      line-height: 1.3;
-    }
-    .intro-encart .action-description {
-      padding-left: 1.2rem;
-    }
-  }
+        .profile-social {
+          justify-content: center;
+        }
+      }
+      .intro-encart .actions-list {
+        list-style: none;
+        padding-left: 0;
+        margin-bottom: 0.8rem;
+      }
+      .intro-encart .actions-list li {
+        display: block; /* Maintain vertical stacking of strong and span */
+        margin-bottom: 1rem; /* Space between list items */
+        padding-left: 2.2rem; /* Space for larger arrow */
+        position: relative; /* For pseudo-element positioning */
+      }
+      .intro-encart .actions-list li::before {
+        content: "➔";
+        color: #ef5350; /* Red revolutionary color */
+        display: inline; /* Keep arrow in text flow */
+        float: left; /* Position arrow to the left of text */
+        font-size: 1.7rem; /* Larger arrow for prominence */
+        margin-right: 0.6rem; /* Space between arrow and text */
+        line-height: 1.4; /* Match text line height */
+        vertical-align: middle; /* Center with first line of strong */
+        margin-top: 0.2rem; /* Fine-tune vertical alignment */
+      }
+      .intro-encart .actions-list strong {
+        font-family: "Roboto", sans-serif;
+        display: block;
+        font-weight: 700;
+        font-size: 1.2rem;
+        color: #2e7d32;
+        margin-bottom: 0.3rem; /* Space between strong and span */
+        line-height: 1.4; /* Consistent line height */
+      }
+      .intro-encart .action-description {
+        display: block;
+        font-family: "Roboto", sans-serif;
+        font-size: 1.2rem;
+        color: #2c2c2c;
+        padding-left: 0; /* No extra indent for description */
+        line-height: 1.4;
+      }
+      @media (max-width: 600px) {
+        .intro-encart .actions-list li {
+          margin-bottom: 0.8rem;
+          padding-left: 1.8rem; /* Adjusted for smaller screens */
+        }
+        .intro-encart .actions-list li::before {
+          font-size: 1.4rem; /* Slightly smaller arrow on mobile */
+          margin-right: 0.5rem;
+          margin-top: 0.1rem; /* Fine-tune for mobile */
+        }
+        .intro-encart .actions-list strong,
+        .intro-encart .action-description {
+          font-size: 1.1rem;
+          line-height: 1.3;
+        }
+      }
+      .intro-encart .action-description {
+        display: block;
+        font-family: "Roboto", sans-serif;
+        font-size: 1.2rem;
+        color: #2c2c2c;
+        padding-left: 0; /* No extra indent for description */
+        line-height: 1.4;
+      }
+      @media (max-width: 600px) {
+        .intro-encart .actions-list li {
+          margin-bottom: 0.8rem;
+          padding-left: 1.5rem; /* Adjusted for smaller screens */
+        }
+        .intro-encart .actions-list li::before {
+          font-size: 1.3rem; /* Slightly smaller arrow on mobile */
+          margin-right: 0.5rem;
+        }
+        .intro-encart .actions-list strong,
+        .intro-encart .action-description {
+          font-size: 1.1rem;
+          line-height: 1.3;
+        }
+      }
+      .intro-encart .action-description {
+        display: block;
+        font-family: "Roboto", sans-serif;
+        font-size: 1.2rem;
+        color: #2c2c2c;
+        padding-left: 1.5rem; /* Indent to align with text above */
+        line-height: 1.4;
+      }
+      @media (max-width: 600px) {
+        .intro-encart .actions-list li {
+          margin-bottom: 0.8rem;
+          padding-left: 0.3rem;
+        }
+        .intro-encart .actions-list strong,
+        .intro-encart .action-description {
+          font-size: 1.1rem;
+          line-height: 1.3;
+        }
+        .intro-encart .action-description {
+          padding-left: 1.2rem;
+        }
+      }
 
-  .intro-encart .action-description {
-    display: block;
-    font-family: "Roboto", serif;
-    font-size: 1.2rem;
-    color: #2c2c2c;
-    margin-top: 0.2rem;
-    line-height: 1.4;
-  }
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  @media (max-width: 600px) {
-    .intro-encart {
-      padding: 0.8rem;
-      margin: 0.8rem;
-    }
-    .intro-encart h2 {
-      font-size: 1.5rem;
-    }
-    .intro-encart p,
-    .intro-encart ul li,
-    .intro-encart .actions-list strong,
-    .intro-encart .action-description {
-      font-size: 1.1rem;
-      line-height: 1.3;
-    }
-    .intro-encart ul li {
-      padding-left: 0.3rem;
-    }
-  }
+      .intro-encart .action-description {
+        display: block;
+        font-family: "Roboto", serif;
+        font-size: 1.2rem;
+        color: #2c2c2c;
+        margin-top: 0.2rem;
+        line-height: 1.4;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @media (max-width: 600px) {
+        .intro-encart {
+          padding: 0.8rem;
+          margin: 0.8rem;
+        }
+        .intro-encart h2 {
+          font-size: 1.5rem;
+        }
+        .intro-encart p,
+        .intro-encart ul li,
+        .intro-encart .actions-list strong,
+        .intro-encart .action-description {
+          font-size: 1.1rem;
+          line-height: 1.3;
+        }
+        .intro-encart ul li {
+          padding-left: 0.3rem;
+        }
+      }
 
-  /* Contenu principal */
-  .container {
-    max-width: 900px;
-    margin: 2rem auto;
-    padding: 0 1rem;
-  }
-  .container p {
-    text-align: justify;
-    margin-bottom: 1.2rem;
-  }
-  h1 {
-    font-family: "Oswald", sans-serif;
-    font-size: 2.5rem;
-    color: #2e7d32;
-    text-align: center;
-    margin-bottom: 2rem;
-  }
-  .section {
-    margin-bottom: 2rem;
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s;
-  }
-  .section:hover {
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-  }
-  .section:nth-child(odd) {
-    background-color: #e8f5e9; /* Vert clair */
-  }
-  .section:nth-child(even) {
-    background-color: #ffebee; /* Rouge clair */
-  }
-  .section h2 {
-    font-family: "Oswald", sans-serif;
-    font-size: 1.8rem;
-    color: #2e7d32;
-    margin-bottom: 1rem;
-  }
-  .section h3 {
-    font-family: "Oswald", sans-serif;
-    font-size: 1.4rem;
-    color: #2e7d32;
-    margin: 1rem 0;
-  }
-  .quote {
-    font-family: "Roboto", serif;
-    font-style: italic;
-    font-size: 1.2rem;
-    border-left: 4px solid #ef5350;
-    padding: 1rem 1.5rem;
-    margin: 1.5rem 0;
-    background-color: #f4f4f9;
-    color: #555;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  .styled-list {
-    list-style: none;
-    padding-left: 0;
-  }
-  .styled-list li {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1rem;
-    padding: 0.5rem;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-  }
-  .styled-list li:hover {
-    background-color: rgba(46, 125, 50, 0.1);
-  }
-  .styled-list .icon {
-    font-size: 1.8rem;
-    margin-right: 0.8rem;
-    color: #ef5350;
-  }
-  img {
-    width: 100%;
-    height: auto;
-    margin: 1rem 0;
-    border-radius: 8px;
-  }
-  strong {
-    display: block;
-    text-align: center;
-    font-weight: bold;
-    font-size: 1.5em;
-    color: #3498db;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-    margin: 20px 0;
-    padding: 10px;
-    border-radius: 8px;
-    background-color: rgba(52, 152, 219, 0.1);
-    transition: all 0.3s ease;
-  }
-  strong:hover {
-    color: #e74c3c;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  }
-  @media (max-width: 600px) {
-    img {
-      max-height: 150px;
-      object-fit: cover;
-    }
-  }
+      /* Contenu principal */
+      .container {
+        max-width: 900px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+      }
+      .container p {
+        text-align: justify;
+        margin-bottom: 1.2rem;
+      }
+      h1 {
+        font-family: "Oswald", sans-serif;
+        font-size: 2.5rem;
+        color: #2e7d32;
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+      .section {
+        margin-bottom: 2rem;
+        padding: 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        transition: box-shadow 0.3s;
+      }
+      .section:hover {
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      }
+      .section:nth-child(odd) {
+        background-color: #e8f5e9; /* Vert clair */
+      }
+      .section:nth-child(even) {
+        background-color: #ffebee; /* Rouge clair */
+      }
+      .section h2 {
+        font-family: "Oswald", sans-serif;
+        font-size: 1.8rem;
+        color: #2e7d32;
+        margin-bottom: 1rem;
+      }
+      .section h3 {
+        font-family: "Oswald", sans-serif;
+        font-size: 1.4rem;
+        color: #2e7d32;
+        margin: 1rem 0;
+      }
+      .quote {
+        font-family: "Roboto", serif;
+        font-style: italic;
+        font-size: 1.2rem;
+        border-left: 4px solid #ef5350;
+        padding: 1rem 1.5rem;
+        margin: 1.5rem 0;
+        background-color: #f4f4f9;
+        color: #555;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+      .styled-list {
+        list-style: none;
+        padding-left: 0;
+      }
+      .styled-list li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
+        padding: 0.5rem;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+      }
+      .styled-list li:hover {
+        background-color: rgba(46, 125, 50, 0.1);
+      }
+      .styled-list .icon {
+        font-size: 1.8rem;
+        margin-right: 0.8rem;
+        color: #ef5350;
+      }
+      img {
+        width: 100%;
+        height: auto;
+        margin: 1rem 0;
+        border-radius: 8px;
+      }
+      strong {
+        display: block;
+        text-align: center;
+        font-weight: bold;
+        font-size: 1.5em;
+        color: #3498db;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        margin: 20px 0;
+        padding: 10px;
+        border-radius: 8px;
+        background-color: rgba(52, 152, 219, 0.1);
+        transition: all 0.3s ease;
+      }
+      strong:hover {
+        color: #e74c3c;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      }
+      @media (max-width: 600px) {
+        img {
+          max-height: 150px;
+          object-fit: cover;
+        }
+      }
 
-  /* Boutons */
-  /* Boutons */
-  .buttons {
-    text-align: center;
-    margin: 2rem 0;
-    display: flex; /* Utilise flexbox pour contrôler la disposition */
-    justify-content: center; /* Centre les boutons */
-    flex-wrap: wrap; /* Permet le retour à la ligne si nécessaire */
-    gap: 0.5rem; /* Espacement entre les boutons */
-    max-width: 700px; /* Limite la largeur totale des boutons */
-    margin-left: auto;
-    margin-right: auto;
-  }
+      /* Boutons */
+      /* Boutons */
+      .buttons {
+        text-align: center;
+        margin: 2rem 0;
+        display: flex; /* Utilise flexbox pour contrôler la disposition */
+        justify-content: center; /* Centre les boutons */
+        flex-wrap: wrap; /* Permet le retour à la ligne si nécessaire */
+        gap: 0.5rem; /* Espacement entre les boutons */
+        max-width: 700px; /* Limite la largeur totale des boutons */
+        margin-left: auto;
+        margin-right: auto;
+      }
 
-  .button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.6rem 1.2rem; /* Réduit le padding pour des boutons plus petits */
-    margin: 0.3rem; /* Réduit la marge */
-    border-radius: 5px;
-    text-decoration: none;
-    font-family: "Oswald", sans-serif;
-    font-weight: 500;
-    font-size: 1rem; /* Taille de police réduite */
-    line-height: 1.4; /* Améliore l'alignement vertical */
-    transition: transform 0.2s, background-color 0.3s, box-shadow 0.3s;
-  }
+      .button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.6rem 1.2rem; /* Réduit le padding pour des boutons plus petits */
+        margin: 0.3rem; /* Réduit la marge */
+        border-radius: 5px;
+        text-decoration: none;
+        font-family: "Oswald", sans-serif;
+        font-weight: 500;
+        font-size: 1rem; /* Taille de police réduite */
+        line-height: 1.4; /* Améliore l'alignement vertical */
+        transition: transform 0.2s, background-color 0.3s, box-shadow 0.3s;
+      }
 
-  .button i {
-    margin-right: 0.3rem; /* Espacement réduit pour l'icône */
-    font-size: 1rem; /* Taille de l'icône réduite */
-    line-height: 1; /* Évite les décalages verticaux */
-    transition: transform 0.3s;
-  }
+      .button i {
+        margin-right: 0.3rem; /* Espacement réduit pour l'icône */
+        font-size: 1rem; /* Taille de l'icône réduite */
+        line-height: 1; /* Évite les décalages verticaux */
+        transition: transform 0.3s;
+      }
 
-  .button:hover i {
-    transform: scale(1.1);
-  }
+      .button:hover i {
+        transform: scale(1.1);
+      }
 
-  .button:hover,
-  .button:focus {
-    transform: translateY(-2px);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-    outline: 2px solid #ef5350;
-    outline-offset: 2px;
-  }
+      .button:hover,
+      .button:focus {
+        transform: translateY(-2px);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        outline: 2px solid #ef5350;
+        outline-offset: 2px;
+      }
 
-  .tipeee-button {
-    background-color: #ef5350;
-    color: white;
-  }
-  .tipeee-button:hover {
-    background-color: #d32f2f;
-  }
+      .tipeee-button {
+        background-color: #ef5350;
+        color: white;
+      }
+      .tipeee-button:hover {
+        background-color: #d32f2f;
+      }
 
-  .pdf-button {
-    background-color: #2e7d32;
-    color: white;
-  }
-  .pdf-button:hover {
-    background-color: #1b5e20;
-  }
+      .pdf-button {
+        background-color: #2e7d32;
+        color: white;
+      }
+      .pdf-button:hover {
+        background-color: #1b5e20;
+      }
 
-  .contact-button {
-    background-color: #0288d1; /* Bleu militant */
-    color: white;
-  }
-  .contact-button:hover {
-    background-color: #01579b;
-  }
+      .contact-button {
+        background-color: #0288d1; /* Bleu militant */
+        color: white;
+      }
+      .contact-button:hover {
+        background-color: #01579b;
+      }
 
-  /* Responsive */
-  @media (max-width: 600px) {
-    .buttons {
-      flex-direction: column; /* Affiche les boutons en colonne sur mobile */
-      align-items: center;
-      gap: 0.4rem;
-    }
-    .button {
-      padding: 0.5rem 1rem; /* Encore plus petit sur mobile */
-      font-size: 0.9rem;
-      width: 100%; /* Occupe la largeur disponible, mais reste compact */
-      max-width: 250px; /* Limite la largeur pour éviter l'étirement */
-    }
-    .button i {
-      font-size: 0.9rem;
-      margin-right: 0.3rem;
-    }
-  }
+      /* Responsive */
+      @media (max-width: 600px) {
+        .buttons {
+          flex-direction: column; /* Affiche les boutons en colonne sur mobile */
+          align-items: center;
+          gap: 0.4rem;
+        }
+        .button {
+          padding: 0.5rem 1rem; /* Encore plus petit sur mobile */
+          font-size: 0.9rem;
+          width: 100%; /* Occupe la largeur disponible, mais reste compact */
+          max-width: 250px; /* Limite la largeur pour éviter l'étirement */
+        }
+        .button i {
+          font-size: 0.9rem;
+          margin-right: 0.3rem;
+        }
+      }
 
-  /* Style pour la justification du bouton contact */
-  .call-to-action .highlight {
-    font-family: "Oswald", sans-serif;
-    font-size: 1.4rem;
-    color: #ef5350;
-    text-align: center;
-    margin-bottom: 0.5rem;
-  }
-  .call-to-action p {
-    font-family: "Roboto", sans-serif;
-    font-size: 1.1rem;
-    color: #2c2c2c;
-    text-align: center;
-    margin-bottom: 1rem;
-  }
+      /* Style pour la justification du bouton contact */
+      .call-to-action .highlight {
+        font-family: "Oswald", sans-serif;
+        font-size: 1.4rem;
+        color: #ef5350;
+        text-align: center;
+        margin-bottom: 0.5rem;
+      }
+      .call-to-action p {
+        font-family: "Roboto", sans-serif;
+        font-size: 1.1rem;
+        color: #2c2c2c;
+        text-align: center;
+        margin-bottom: 1rem;
+      }
 
-  /* Sommaire */
-  .toc {
-    background-color: #f4f4f9;
-    padding: 1rem;
-    border-radius: 8px;
-    margin-bottom: 2rem;
-  }
-  .toc h2 {
-    font-family: "Oswald", sans-serif;
-    font-size: 1.6rem;
-    color: #2e7d32;
-  }
-  .toc ul {
-    list-style: none;
-  }
-  .toc ul li a {
-    color: #ef5350;
-    text-decoration: none;
-  }
-  .toc ul li a:hover,
-  .toc ul li a:focus {
-    text-decoration: underline;
-    outline: 2px solid #ef5350;
-    outline-offset: 2px;
-  }
+      /* Sommaire */
+      .toc {
+        background-color: #f4f4f9;
+        padding: 1rem;
+        border-radius: 8px;
+        margin-bottom: 2rem;
+      }
+      .toc h2 {
+        font-family: "Oswald", sans-serif;
+        font-size: 1.6rem;
+        color: #2e7d32;
+      }
+      .toc ul {
+        list-style: none;
+      }
+      .toc ul li a {
+        color: #ef5350;
+        text-decoration: none;
+      }
+      .toc ul li a:hover,
+      .toc ul li a:focus {
+        text-decoration: underline;
+        outline: 2px solid #ef5350;
+        outline-offset: 2px;
+      }
 
-  /* Bouton retour en haut */
-  .back-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #2e7d32;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    font-size: 1.5rem;
-    cursor: pointer;
-    display: none;
-    transition: opacity 0.3s;
-  }
-  .back-to-top.show {
-    display: block;
-  }
-  .back-to-top:hover,
-  .back-to-top:focus {
-    background-color: #1b5e20;
-    outline: 2px solid #ef5350;
-    outline-offset: 2px;
-  }
+      /* Bouton retour en haut */
+      .back-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #2e7d32;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+        cursor: pointer;
+        display: none;
+        transition: opacity 0.3s;
+      }
+      .back-to-top.show {
+        display: block;
+      }
+      .back-to-top:hover,
+      .back-to-top:focus {
+        background-color: #1b5e20;
+        outline: 2px solid #ef5350;
+        outline-offset: 2px;
+      }
 
-  /* Section commentaires (Disqus/Commento) */
-  .comments {
-    max-width: 900px;
-    margin: 2rem auto;
-    padding: 0 1rem;
-  }
+      /* Section commentaires (Disqus/Commento) */
+      .comments {
+        max-width: 900px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+      }
 
-  /* Footer */
-  footer {
-    background-color: #2e7d32;
-    color: white;
-    text-align: center;
-    padding: 1rem;
-    margin-top: 2rem;
-  }
-  footer a {
-    color: #ef5350;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  footer a:hover,
-  footer a:focus {
-    color: #d32f2f;
-    outline: 2px solid #ef5350;
-    outline-offset: 2px;
-  }
-</style>  </head>
+      /* Footer */
+      footer {
+        background-color: #2e7d32;
+        color: white;
+        text-align: center;
+        padding: 1rem;
+        margin-top: 2rem;
+      }
+      footer a {
+        color: #ef5350;
+        text-decoration: none;
+        font-weight: bold;
+      }
+      footer a:hover,
+      footer a:focus {
+        color: #d32f2f;
+        outline: 2px solid #ef5350;
+        outline-offset: 2px;
+      }
+    </style>
+  </head>
   <body>
     <!-- Menu -->
     <nav aria-label="Menu principal">
@@ -956,7 +958,14 @@
             <li><a href="#defis">Défis</a></li>
           </ul>
         </li>
-        <li><a href="#projet-pilote">Projet pilote</a></li>
+        <li class="dropdown">
+          <a href="#projet-pilote">Projet pilote</a>
+          <ul class="dropdown-content">
+            <li><a href="/statuts.html">statuts</a></li>
+            <li><a href="">règlement intérieur</a></li>
+            <li><a href="">contrat de vente</a></li>
+          </ul>
+        </li>
         <li><a href="social-libertarisme.html">Social-Libertarisme</a></li>
         <li><a href="publication.html">articles</a></li>
         <li><a href="contact.html">Contact</a></li>
@@ -970,179 +979,1260 @@
         menuToggle.setAttribute("aria-expanded", isExpanded);
       });
 
-  // Fermer le menu après un clic sur un lien en mode responsive
-  document.querySelectorAll(".menu a").forEach((link) => {
-    link.addEventListener("click", () => {
-      if (window.innerWidth <= 600) {
-        menu.classList.remove("active");
-        menuToggle.setAttribute("aria-expanded", "false");
-        menuToggle.querySelector("i").classList.add("fa-bars");
-        menuToggle.querySelector("i").classList.remove("fa-times");
-      }
-    });
-  });
+      // Fermer le menu après un clic sur un lien en mode responsive
+      document.querySelectorAll(".menu a").forEach((link) => {
+        link.addEventListener("click", () => {
+          if (window.innerWidth <= 600) {
+            menu.classList.remove("active");
+            menuToggle.setAttribute("aria-expanded", "false");
+            menuToggle.querySelector("i").classList.add("fa-bars");
+            menuToggle.querySelector("i").classList.remove("fa-times");
+          }
+        });
+      });
 
-  // Toggle du menu déroulant sur clic en mode responsive
-  document.querySelectorAll(".dropdown-toggle").forEach((toggle) => {
-    toggle.addEventListener("click", (e) => {
-      if (window.innerWidth <= 600) {
-        e.preventDefault();
-        const dropdownContent = toggle.nextElementSibling;
-        dropdownContent.classList.toggle("active");
-      }
-    });
-  });
-</script>
+      // Toggle du menu déroulant sur clic en mode responsive
+      document.querySelectorAll(".dropdown-toggle").forEach((toggle) => {
+        toggle.addEventListener("click", (e) => {
+          if (window.innerWidth <= 600) {
+            e.preventDefault();
+            const dropdownContent = toggle.nextElementSibling;
+            dropdownContent.classList.toggle("active");
+          }
+        });
+      });
+    </script>
 
-<!-- Bannière -->
-<div class="banner">
-  <div class="slogan">En route pour la<br />révolution libertaire</div>
-</div>
+    <!-- Bannière -->
+    <div class="banner">
+      <div class="slogan">En route pour la<br />révolution libertaire</div>
+    </div>
 
-<!-- Contenu principal -->
-<div class="container">
-  <h1>Statuts de la SCIC SAS COOP DU PANIER</h1>
+    <!-- Contenu principal -->
+    <div class="container">
+      <h1>Statuts de la SCIC SAS COOP DU PANIER</h1>
 
-  <!-- Sommaire -->
-  <div class="toc">
-    <h2>Sommaire</h2>
-    <ul>
-      <li><a href="#preambule">Préambule</a></li>
-      <li><a href="#titre1">Titre I. Forme – Dénomination – Durée – Objet – Siège social</a></li>
-    </ul>
-  </div>
+      <!-- Sommaire -->
+      <div class="toc">
+        <h2>Sommaire</h2>
+        <ul>
+          <li><a href="#preambule">Préambule</a></li>
+          <li>
+            <a href="#titre1"
+              >Titre I. Forme – Dénomination – Durée – Objet – Siège social</a
+            >
+          </li>
+        </ul>
+      </div>
 
-  <div class="section" id="introduction">
-    <p>L’épicerie du peuple</p>
-    <p>SOCIÉTÉ COOPÉRATIVE D'INTÉRÊT COLLECTIF</p>
-    <p>EN SOCIÉTÉ PAR ACTIONS SIMPLIFIÉES, À CAPITAL VARIABLE</p>
-    <p>SIÈGE SOCIAL : YYYYYY</p>
-    <p>Statuts</p>
-    <p>LES SOUSSIGNÉ.E.S (Liste des associé.e.s en annexes 1 des présents statuts) :</p>
-    <p>ONT ÉTABLI AINSI QU’IL SUIT LES STATUTS D’UNE SOCIÉTÉ COOPÉRATIVE D'INTERET COLLECTIF EN FORME DE SOCIÉTÉ PAR ACTIONS SIMPLIFIÉES DEVANT EXISTER ENTRE ELLES ET EUX ET TOUTE PERSONNE QUI VIENDRAIT ULTÉRIEUREMENT A ACQUÉRIR LA QUALITÉ D'ASSOCIÉ.E.</p>
-  </div>
+      <div class="section" id="introduction">
+        <p>L’épicerie du peuple</p>
+        <p>SOCIÉTÉ COOPÉRATIVE D'INTÉRÊT COLLECTIF</p>
+        <p>EN SOCIÉTÉ PAR ACTIONS SIMPLIFIÉES, À CAPITAL VARIABLE</p>
+        <p>SIÈGE SOCIAL : YYYYYY</p>
+        <p>Statuts</p>
+        <p>
+          LES SOUSSIGNÉ.E.S (Liste des associé.e.s en annexes 1 des présents
+          statuts) :
+        </p>
+        <p>
+          ONT ÉTABLI AINSI QU’IL SUIT LES STATUTS D’UNE SOCIÉTÉ COOPÉRATIVE
+          D'INTERET COLLECTIF EN FORME DE SOCIÉTÉ PAR ACTIONS SIMPLIFIÉES DEVANT
+          EXISTER ENTRE ELLES ET EUX ET TOUTE PERSONNE QUI VIENDRAIT
+          ULTÉRIEUREMENT A ACQUÉRIR LA QUALITÉ D'ASSOCIÉ.E.
+        </p>
+      </div>
 
-  <div class="section" id="preambule">
-    <h2>PRÉAMBULE</h2>
-    <p>Le projet est issu de différents constats. Dans un monde où le capitalisme, par sa logique de profit et de surconsommation, aliène les individus, détruit les écosystèmes et creuse les inégalités, notre Société Coopérative d’Intérêt Collectif (SCIC) d’épicerie naît d’une volonté de rupture et de transformation. Ce préambule, pensé pour les prochaines générations, expose le contexte de notre démarche, les objectifs de notre coopérative et les principes qui guident notre action. Il constitue la charte des associé·e·s, un engagement collectif pour bâtir une alternative solidaire, écologique et autosuffisante, ancrée dans l’idéologie affranchiste.</p>
-    <h3>1. Contexte général et historique de la démarche</h3>
-    <p>Au début du XXIe siècle, le capitalisme mondialisé montre ses limites : crises climatiques, inégalités croissantes, précarité des travailleurs, destruction des écosystèmes et perte de sens dans nos sociétés. Ce système, fondé sur la compétition et l’accumulation, privilégie le profit au détriment des besoins essentiels, de la solidarité et de la préservation de la planète. Face à ce constat, l’affranchisme émerge comme une réponse révolutionnaire, non violente mais déterminée, portée par des individus en quête d’émancipation. Inspiré par un retour à la campagne, un engagement militant auprès des travailleurs précaires et une prise de conscience des dérives consuméristes, l’affranchisme propose de remplacer la logique capitaliste par un modèle coopératif, décentralisé et autosuffisant. Notre SCIC, créée en 2025, s’inscrit dans cette dynamique. Issue d’une réflexion personnelle et collective, elle répond à une urgence : reprendre le contrôle de nos moyens de production et de consommation pour garantir l’accès à des biens essentiels, dont les principaux sont le logement et l’alimentation bio, dans un cadre solidaire et respectueux de l’environnement. Notre épicerie affranchiste est née d’un constat local : les épiceries coopératives existantes, bien que prometteuses, restent souvent dépendantes du marché capitaliste et peu abordables aux plus précaires. En nous appuyant sur les principes affranchistes, nous avons imaginé une épicerie qui dépasse ces limites en favorisant l’autosuffisance, la gratuité progressive et la coopération avec des producteurs et associations partageant nos valeurs.</p>
-    <h3>2. Objectifs de notre société coopérative</h3>
-    <p>Notre SCIC a pour ambition de créer un marché coopératif affranchiste, sous la forme d’ une épicerie participative qui garantit l’accès à des produits bio, locaux et abordables, tout en préfigurant un modèle économique alternatif.</p>
-    <p>Nos objectifs sont les suivants :</p>
-    <ul class="styled-list">
-      <li><span class="icon"></span> Assurer l’autosuffisance alimentaire locale, en collaborant avec des coopératives de production affranchistes et des associations partenaires. Nous visons à fournir des produits bio de qualité, au meilleur prix, afin de répondre aux besoins essentiels, sans dépendre du marché capitaliste.</li>
-      <li><span class="icon"></span> Promouvoir la coopération et la solidarité, en impliquant des bénévoles dans la gestion de l’épicerie et des activités partenaires. Nous favorisons l’entraide et la réappropriation collective des moyens de production, notamment chez les travailleurs les plus précaires, privés d’emploi ou retraités.</li>
-      <li><span class="icon"></span> Renforcer la résilience face aux crises, en développant un écosystème local de coopératives affranchistes (agriculture, énergie, transport, logement). Nous créons un modèle économique autonome et insensible aux crises capitalistes, capable de répondre aux besoins de base tout en réduisant l’empreinte écologique.</li>
-      <li><span class="icon"></span> Rediriger la recherche vers l’amélioration du bien commun, du bien être des travailleurs, les solutions libres de droit et accessibles à tous. Une formation est dispensée par chaque fédération sectorielle dans le but d’améliorer la productivité des coopératives et libérer le temps libre. Retrouver du sens en réduisant le temps de travail contraint et en valorisant des activités créatives, solidaires et écologiques, où l’engagement individuel et collectif est primordial.</li>
-    </ul>
-    <h3>3. Finalité d’intérêt collectif de la société</h3>
-    <p>Notre SCIC s’engage à servir l’intérêt collectif en construisant un modèle économique et social qui transcende les logiques capitalistes. Nous agissons selon les principes suivants :</p>
-    <h4>3.1. Le choix du statut SCIC SAS</h4>
-    <p>Le statut de SCIC sous forme de SAS (Société par Actions Simplifiée) a été choisi pour sa capacité à réunir des acteurs diversifiés – coopérateurs, bénévoles, producteurs, associations et collectivités – autour d’un projet commun. Ce statut permet une gouvernance collective et horizontale, où chaque associé·e, quel que soit son apport en capital, dispose d’une voix égale (« une personne, une voix »). La SCIC garantit également que les bénéfices sont intégralement réinvestis dans le projet, pour renforcer l’autonomie de l’épicerie et financer la création d’autres coopératives affranchistes. Ce choix reflète notre volonté de conjuguer efficacité organisationnelle et respect des principes coopératifs, tout en restant ancrés dans une démarche d’intérêt général.</p>
-    <h4>3.2. Les valeurs et principes coopératifs</h4>
-    <p>Notre SCIC repose sur les valeurs fondamentales de l’affranchisme :</p>
-    <ul class="styled-list">
-      <li><span class="icon"></span> Autosuffisance : développer un réseau de coopératives locales produisant et redistribuant leurs excédents pour réduire progressivement la dépendance au marché capitaliste.</li>
-      <li><span class="icon"></span> Solidarité : appliquer le principe « de chacun selon ses capacités, à chacun selon ses besoins », avec une part de production gratuite pour les coopérateur·rice·s actif·ve·s et l’inclusion des plus précaires, lorsque l’écosystème aura atteint l’autosuffisance.</li>
-      <li><span class="icon"></span> Écologie : privilégier des pratiques respectueuses de l’environnement (produits bio, réduction des déchets, permaculture).</li>
-      <li><span class="icon"></span> Décentralisation et mutualisation : instaurer une gouvernance horizontale via des assemblées locales, fédérales et confédérales, suivant une charte évolutive et des consultations régulières (référendums internes) pour garantir une démocratie directe. Mutualiser les ressources (recettes, matériel, formations) et valoriser les surplus alimentaires (transformation, dons, revente, compostage).</li>
-      <li><span class="icon"></span> Gratuité partielle et essaimage : offrir une partie de la production gratuitement, financée par les marges réalisées auprès des consommateurs non affranchistes, avec l’objectif d’une gratuité intégrale. La coopérative affranchiste vise l’autonomie en ressource par la croissance organique, elle soutient donc la création de coopératives affranchistes, en priorité locales,  pour bâtir un réseau autonome et résilient.</li>
-    </ul>
-    <h4>3.3. Adhésion à des démarches de référence</h4>
-    <p>Notre SCIC s’inscrit dans le mouvement affranchiste, une idéologie social-libertaire visant l’émancipation graduelle du capitalisme par la coopération et l’autosuffisance. Tout en s’inspirant de mouvements comme Tierra, Techo y Trabajo (Argentine), le Rojava (Syrie), ou les coopératives intégrales catalanes, il propose une vision originale : une coordination mondiale via neuf fédérations, une gratuité progressive, et une gouvernance  décentralisée ouverte au numérique, pour transcender le capitalisme par la coopération et l’autosuffisance. Des pratiques globales telles que les AMAP ou les SCOP en France, les coopératives intégrales (dont la Coopérative Intégrale Catalane), et les réseaux altermondialistes (Via Campesina, Attac) permettent de confirmer la viablité d’un tel modèle. Nous collaborons avec des associations et coopératives partageant cette charte affranchiste, qui garantit des pratiques écologiques, solidaires et à but non lucratif. Notre épicerie agit comme un marché coopératif hybride, où les bénévoles participent à la production et à la distribution, et où les excédents sont redistribués pour répondre aux besoins essentiels. En adhérant à ces principes, nous contribuons à la construction d’un écosystème affranchiste local, résilient et reproductible, capable de transformer les rapports économiques et sociaux.</p>
-  </div>
+      <div class="section" id="preambule">
+        <h2>PRÉAMBULE</h2>
+        <p>
+          Le projet est issu de différents constats. Dans un monde où le
+          capitalisme, par sa logique de profit et de surconsommation, aliène
+          les individus, détruit les écosystèmes et creuse les inégalités, notre
+          Société Coopérative d’Intérêt Collectif (SCIC) d’épicerie naît d’une
+          volonté de rupture et de transformation. Ce préambule, pensé pour les
+          prochaines générations, expose le contexte de notre démarche, les
+          objectifs de notre coopérative et les principes qui guident notre
+          action. Il constitue la charte des associé·e·s, un engagement
+          collectif pour bâtir une alternative solidaire, écologique et
+          autosuffisante, ancrée dans l’idéologie affranchiste.
+        </p>
+        <h3>1. Contexte général et historique de la démarche</h3>
+        <p>
+          Au début du XXIe siècle, le capitalisme mondialisé montre ses limites
+          : crises climatiques, inégalités croissantes, précarité des
+          travailleurs, destruction des écosystèmes et perte de sens dans nos
+          sociétés. Ce système, fondé sur la compétition et l’accumulation,
+          privilégie le profit au détriment des besoins essentiels, de la
+          solidarité et de la préservation de la planète. Face à ce constat,
+          l’affranchisme émerge comme une réponse révolutionnaire, non violente
+          mais déterminée, portée par des individus en quête d’émancipation.
+          Inspiré par un retour à la campagne, un engagement militant auprès des
+          travailleurs précaires et une prise de conscience des dérives
+          consuméristes, l’affranchisme propose de remplacer la logique
+          capitaliste par un modèle coopératif, décentralisé et autosuffisant.
+          Notre SCIC, créée en 2025, s’inscrit dans cette dynamique. Issue d’une
+          réflexion personnelle et collective, elle répond à une urgence :
+          reprendre le contrôle de nos moyens de production et de consommation
+          pour garantir l’accès à des biens essentiels, dont les principaux sont
+          le logement et l’alimentation bio, dans un cadre solidaire et
+          respectueux de l’environnement. Notre épicerie affranchiste est née
+          d’un constat local : les épiceries coopératives existantes, bien que
+          prometteuses, restent souvent dépendantes du marché capitaliste et peu
+          abordables aux plus précaires. En nous appuyant sur les principes
+          affranchistes, nous avons imaginé une épicerie qui dépasse ces limites
+          en favorisant l’autosuffisance, la gratuité progressive et la
+          coopération avec des producteurs et associations partageant nos
+          valeurs.
+        </p>
+        <h3>2. Objectifs de notre société coopérative</h3>
+        <p>
+          Notre SCIC a pour ambition de créer un marché coopératif affranchiste,
+          sous la forme d’ une épicerie participative qui garantit l’accès à des
+          produits bio, locaux et abordables, tout en préfigurant un modèle
+          économique alternatif.
+        </p>
+        <p>Nos objectifs sont les suivants :</p>
+        <ul class="styled-list">
+          <li>
+            <span class="icon"></span> Assurer l’autosuffisance alimentaire
+            locale, en collaborant avec des coopératives de production
+            affranchistes et des associations partenaires. Nous visons à fournir
+            des produits bio de qualité, au meilleur prix, afin de répondre aux
+            besoins essentiels, sans dépendre du marché capitaliste.
+          </li>
+          <li>
+            <span class="icon"></span> Promouvoir la coopération et la
+            solidarité, en impliquant des bénévoles dans la gestion de
+            l’épicerie et des activités partenaires. Nous favorisons l’entraide
+            et la réappropriation collective des moyens de production, notamment
+            chez les travailleurs les plus précaires, privés d’emploi ou
+            retraités.
+          </li>
+          <li>
+            <span class="icon"></span> Renforcer la résilience face aux crises,
+            en développant un écosystème local de coopératives affranchistes
+            (agriculture, énergie, transport, logement). Nous créons un modèle
+            économique autonome et insensible aux crises capitalistes, capable
+            de répondre aux besoins de base tout en réduisant l’empreinte
+            écologique.
+          </li>
+          <li>
+            <span class="icon"></span> Rediriger la recherche vers
+            l’amélioration du bien commun, du bien être des travailleurs, les
+            solutions libres de droit et accessibles à tous. Une formation est
+            dispensée par chaque fédération sectorielle dans le but d’améliorer
+            la productivité des coopératives et libérer le temps libre.
+            Retrouver du sens en réduisant le temps de travail contraint et en
+            valorisant des activités créatives, solidaires et écologiques, où
+            l’engagement individuel et collectif est primordial.
+          </li>
+        </ul>
+        <h3>3. Finalité d’intérêt collectif de la société</h3>
+        <p>
+          Notre SCIC s’engage à servir l’intérêt collectif en construisant un
+          modèle économique et social qui transcende les logiques capitalistes.
+          Nous agissons selon les principes suivants :
+        </p>
+        <h4>3.1. Le choix du statut SCIC SAS</h4>
+        <p>
+          Le statut de SCIC sous forme de SAS (Société par Actions Simplifiée) a
+          été choisi pour sa capacité à réunir des acteurs diversifiés –
+          coopérateurs, bénévoles, producteurs, associations et collectivités –
+          autour d’un projet commun. Ce statut permet une gouvernance collective
+          et horizontale, où chaque associé·e, quel que soit son apport en
+          capital, dispose d’une voix égale (« une personne, une voix »). La
+          SCIC garantit également que les bénéfices sont intégralement
+          réinvestis dans le projet, pour renforcer l’autonomie de l’épicerie et
+          financer la création d’autres coopératives affranchistes. Ce choix
+          reflète notre volonté de conjuguer efficacité organisationnelle et
+          respect des principes coopératifs, tout en restant ancrés dans une
+          démarche d’intérêt général.
+        </p>
+        <h4>3.2. Les valeurs et principes coopératifs</h4>
+        <p>
+          Notre SCIC repose sur les valeurs fondamentales de l’affranchisme :
+        </p>
+        <ul class="styled-list">
+          <li>
+            <span class="icon"></span> Autosuffisance : développer un réseau de
+            coopératives locales produisant et redistribuant leurs excédents
+            pour réduire progressivement la dépendance au marché capitaliste.
+          </li>
+          <li>
+            <span class="icon"></span> Solidarité : appliquer le principe « de
+            chacun selon ses capacités, à chacun selon ses besoins », avec une
+            part de production gratuite pour les coopérateur·rice·s actif·ve·s
+            et l’inclusion des plus précaires, lorsque l’écosystème aura atteint
+            l’autosuffisance.
+          </li>
+          <li>
+            <span class="icon"></span> Écologie : privilégier des pratiques
+            respectueuses de l’environnement (produits bio, réduction des
+            déchets, permaculture).
+          </li>
+          <li>
+            <span class="icon"></span> Décentralisation et mutualisation :
+            instaurer une gouvernance horizontale via des assemblées locales,
+            fédérales et confédérales, suivant une charte évolutive et des
+            consultations régulières (référendums internes) pour garantir une
+            démocratie directe. Mutualiser les ressources (recettes, matériel,
+            formations) et valoriser les surplus alimentaires (transformation,
+            dons, revente, compostage).
+          </li>
+          <li>
+            <span class="icon"></span> Gratuité partielle et essaimage : offrir
+            une partie de la production gratuitement, financée par les marges
+            réalisées auprès des consommateurs non affranchistes, avec
+            l’objectif d’une gratuité intégrale. La coopérative affranchiste
+            vise l’autonomie en ressource par la croissance organique, elle
+            soutient donc la création de coopératives affranchistes, en priorité
+            locales, pour bâtir un réseau autonome et résilient.
+          </li>
+        </ul>
+        <h4>3.3. Adhésion à des démarches de référence</h4>
+        <p>
+          Notre SCIC s’inscrit dans le mouvement affranchiste, une idéologie
+          social-libertaire visant l’émancipation graduelle du capitalisme par
+          la coopération et l’autosuffisance. Tout en s’inspirant de mouvements
+          comme Tierra, Techo y Trabajo (Argentine), le Rojava (Syrie), ou les
+          coopératives intégrales catalanes, il propose une vision originale :
+          une coordination mondiale via neuf fédérations, une gratuité
+          progressive, et une gouvernance décentralisée ouverte au numérique,
+          pour transcender le capitalisme par la coopération et
+          l’autosuffisance. Des pratiques globales telles que les AMAP ou les
+          SCOP en France, les coopératives intégrales (dont la Coopérative
+          Intégrale Catalane), et les réseaux altermondialistes (Via Campesina,
+          Attac) permettent de confirmer la viablité d’un tel modèle. Nous
+          collaborons avec des associations et coopératives partageant cette
+          charte affranchiste, qui garantit des pratiques écologiques,
+          solidaires et à but non lucratif. Notre épicerie agit comme un marché
+          coopératif hybride, où les bénévoles participent à la production et à
+          la distribution, et où les excédents sont redistribués pour répondre
+          aux besoins essentiels. En adhérant à ces principes, nous contribuons
+          à la construction d’un écosystème affranchiste local, résilient et
+          reproductible, capable de transformer les rapports économiques et
+          sociaux.
+        </p>
+      </div>
 
-  <div class="section" id="titre1">
-    <h2>Titre I. Forme – Dénomination – Durée – Objet – Siège social</h2>
-    <h3>Article 1 – Forme</h3>
-    <p>Il est créé entre les soussigné.e.s et il existe entre eux, et ceux qui deviendront par la suite associé.e.s, une société coopérative d’intérêt collectif forme de société par actions simplifiées, à capital variable régie par :</p>
-    <ul class="styled-list">
-      <li><span class="icon"></span> les présents statuts ;</li>
-      <li><span class="icon"></span> la loi n° 47-1775 du 10 septembre 1947 portant statut de la coopération;</li>
-      <li><span class="icon"></span> la loi 2001-624 du 17 juillet 2001 et le décret n° 2002-241 du 21 février 2002 relatif à la société coopérative d’intérêt collectif ;</li>
-      <li><span class="icon"></span> la loi n° 2014-856 du 31 juillet 2014 relative à l'économie sociale et solidaire;</li>
-      <li><span class="icon"></span> les articles L.231-1 à L.231-8 du Code de commerce applicables aux sociétés à capital variable ;</li>
-      <li><span class="icon"></span> le livre II du Code de commerce et particulièrement les dispositions relatives aux sociétés par actions simplifiées ainsi que le décret du 23 mars 1967 sur les sociétés commerciales codifié dans la partie réglementaire du Code de commerce.</li>
-    </ul>
-    <h3>Article 2 – Dénomination</h3>
-    <p>La dénomination sociale est : SCIC SAS COOP DU PANIER.</p>
-    <p>Son nom commercial est COOP DU PANIER.</p>
-    <p>Tous actes et documents émanant de la société et destinés aux tiers, notamment les lettres, factures, annonces et publications diverses, doivent indiquer la dénomination sociale, précédée ou suivie immédiatement et lisiblement des mots « Société Coopérative d’Intérêt Collectif en société par actions simplifiées à capital variable » ou du signe « Scic SAS à capital variable ».</p>
-    <h3>Article 3 – Durée</h3>
-    <p>La durée de la société est fixée à 99 ans à compter du jour de son immatriculation au Registre du Commerce et des Sociétés, sauf dissolution anticipée ou prorogation.</p>
-    <h3>Article 4 – Objet</h3>
-    <p>La Société Coopérative d’Intérêt Collectif (SCIC) SAS COOP DU PANIER a pour objet, dans une démarche affranchiste et libertaire ancrée dans l’économie sociale et solidaire, de promouvoir un modèle économique et social alternatif, solidaire, écologique et autosuffisant, conformément aux principes énoncés dans la charte en préambule. Cet objet se concrétise à travers les activités suivantes, exercées principalement sur le bassin de Cahors :</p>
-    <ul class="styled-list">
-      <li><span class="icon"></span> Gestion d’un marché coopératif affranchiste : Exploiter un marché coopératif (ex :une épicerie participative), recevant des dons en nature (produits alimentaires bio, produits transformés, services) des coopératives partenaires adhérant à la charte affranchiste. Ces dons contribuent à baisser les prix de vente proposés dans l’épicerie pour tout public, pour garantir l’accès à une alimentation saine, bio et locale, tout en favorisant la gratuité partielle pour les coopérateurs actifs.</li>
-      <li><span class="icon"></span> Fourniture de services complémentaires : Transformer les surplus alimentaires (conserves, plats cuisinés, etc.), revendre les excédents via des plateformes comme Too Good To Go, faire des dons aux associations caritatives, organiser le compostage des déchets organiques, dispenser des formations à l’hygiène alimentaire, à la sobriété alimentaire et à l’autosuffisance, et assurer la logistique (conditionnement, livraison) pour optimiser la distribution.</li>
-      <li><span class="icon"></span> Mutualisation des ressources : Partager les recettes culinaires, prêter du matériel, adopter des pratiques écoresponsables (réduction des déchets, circuits courts, permaculture) pour renforcer l’autonomie alimentaire et économique du territoire.</li>
-      <li><span class="icon"></span> Promotion de l’éducation populaire et du lien social : Organiser des ateliers, formations et événements pour sensibiliser à l’autosuffisance alimentaire, à la coopération décentralisée et à la lutte contre les inégalités. Ces actions visent à mobiliser les citoyens, en particulier les travailleurs précaires, les privés d’emploi et les retraités, autour des valeurs affranchistes, tout en favorisant la cohésion territoriale et l’inclusion sociale.</li>
-      <li><span class="icon"></span> Accompagnement à l’essaimage : Soutenir la création de coopératives affranchistes (agriculture, énergie, logement, transport) adhérant à la charte affranchiste, sur le bassin de Cahors voire au-delà, pour développer un réseau solidaire, résilient et autonome face aux crises capitalistes. Cet essaimage inclut le partage de savoir-faire, de ressources et de formations pour garantir la réplicabilité du modèle.</li>
-      <li><span class="icon"></span> Soutien à l’autonomie alimentaire et économique : Collaborer avec des réseaux affranchistes (AMAP, SCOP, Via Campesina) et des coopératives de production pour développer des circuits courts,</li>
-    </ul>
-  </div>
+      <div class="section" id="titre1">
+        <h2>Titre I. Forme – Dénomination – Durée – Objet – Siège social</h2>
+        <h3>Article 1 – Forme</h3>
+        <p>
+          Il est créé entre les soussigné.e.s et il existe entre eux, et ceux
+          qui deviendront par la suite associé.e.s, une société coopérative
+          d’intérêt collectif forme de société par actions simplifiées, à
+          capital variable régie par :
+        </p>
+        <ul class="styled-list">
+          <li><span class="icon"></span> les présents statuts ;</li>
+          <li>
+            <span class="icon"></span> la loi n° 47-1775 du 10 septembre 1947
+            portant statut de la coopération;
+          </li>
+          <li>
+            <span class="icon"></span> la loi 2001-624 du 17 juillet 2001 et le
+            décret n° 2002-241 du 21 février 2002 relatif à la société
+            coopérative d’intérêt collectif ;
+          </li>
+          <li>
+            <span class="icon"></span> la loi n° 2014-856 du 31 juillet 2014
+            relative à l'économie sociale et solidaire;
+          </li>
+          <li>
+            <span class="icon"></span> les articles L.231-1 à L.231-8 du Code de
+            commerce applicables aux sociétés à capital variable ;
+          </li>
+          <li>
+            <span class="icon"></span> le livre II du Code de commerce et
+            particulièrement les dispositions relatives aux sociétés par actions
+            simplifiées ainsi que le décret du 23 mars 1967 sur les sociétés
+            commerciales codifié dans la partie réglementaire du Code de
+            commerce.
+          </li>
+        </ul>
+        <h3>Article 2 – Dénomination</h3>
+        <p>La dénomination sociale est : SCIC SAS COOP DU PANIER.</p>
+        <p>Son nom commercial est COOP DU PANIER.</p>
+        <p>
+          Tous actes et documents émanant de la société et destinés aux tiers,
+          notamment les lettres, factures, annonces et publications diverses,
+          doivent indiquer la dénomination sociale, précédée ou suivie
+          immédiatement et lisiblement des mots « Société Coopérative d’Intérêt
+          Collectif en société par actions simplifiées à capital variable » ou
+          du signe « Scic SAS à capital variable ».
+        </p>
+        <h3>Article 3 – Durée</h3>
+        <p>
+          La durée de la société est fixée à 99 ans à compter du jour de son
+          immatriculation au Registre du Commerce et des Sociétés, sauf
+          dissolution anticipée ou prorogation.
+        </p>
+        <h3>Article 4 – Objet</h3>
+        <p>
+          La Société Coopérative d’Intérêt Collectif (SCIC) SAS COOP DU PANIER a
+          pour objet, dans une démarche affranchiste et libertaire ancrée dans
+          l’économie sociale et solidaire, de promouvoir un modèle économique et
+          social alternatif, solidaire, écologique et autosuffisant,
+          conformément aux principes énoncés dans la charte en préambule. Cet
+          objet se concrétise à travers les activités suivantes, exercées
+          principalement sur le bassin de (Ville).............. :
+        </p>
+        <ul class="styled-list">
+          <li>
+            <span class="icon"></span> Gestion d’un marché coopératif
+            affranchiste : Exploiter un marché coopératif (ex :une épicerie
+            participative), recevant des dons en nature (produits alimentaires
+            bio, produits transformés, services) des coopératives partenaires
+            adhérant à la charte affranchiste. Ces dons contribuent à baisser
+            les prix de vente proposés dans l’épicerie pour tout public, pour
+            garantir l’accès à une alimentation saine, bio et locale, tout en
+            favorisant la gratuité partielle pour les coopérateurs actifs.
+          </li>
+          <li>
+            <span class="icon"></span> Fourniture de services complémentaires :
+            Transformer les surplus alimentaires (conserves, plats cuisinés,
+            etc.), revendre les excédents via des plateformes comme Too Good To
+            Go, faire des dons aux associations caritatives, organiser le
+            compostage des déchets organiques, dispenser des formations à
+            l’hygiène alimentaire, à la sobriété alimentaire et à
+            l’autosuffisance, et assurer la logistique (conditionnement,
+            livraison) pour optimiser la distribution.
+          </li>
+          <li>
+            <span class="icon"></span> Mutualisation des ressources : Partager
+            les recettes culinaires, prêter du matériel, adopter des pratiques
+            écoresponsables (réduction des déchets, circuits courts,
+            permaculture) pour renforcer l’autonomie alimentaire et économique
+            du territoire.
+          </li>
+          <li>
+            <span class="icon"></span> Promotion de l’éducation populaire et du
+            lien social : Organiser des ateliers, formations et événements pour
+            sensibiliser à l’autosuffisance alimentaire, à la coopération
+            décentralisée et à la lutte contre les inégalités. Ces actions
+            visent à mobiliser les citoyens, en particulier les travailleurs
+            précaires, les privés d’emploi et les retraités, autour des valeurs
+            affranchistes, tout en favorisant la cohésion territoriale et
+            l’inclusion sociale.
+          </li>
+          <li>
+            <span class="icon"></span> Accompagnement à l’essaimage : Soutenir
+            la création de coopératives affranchistes (agriculture, énergie,
+            logement, transport) adhérant à la charte affranchiste, sur le
+            bassin de (Ville).............. voire au-delà, pour développer un
+            réseau solidaire, résilient et autonome face aux crises
+            capitalistes. Cet essaimage inclut le partage de savoir-faire, de
+            ressources et de formations pour garantir la réplicabilité du
+            modèle.
+          </li>
+          <li>
+            <span class="icon"></span> Soutien à l’autonomie alimentaire et
+            économique : Collaborer avec des réseaux affranchistes (AMAP, SCOP,
+            Via Campesina) et des coopératives de production pour développer des
+            circuits courts,
+          </li>
+          <li>
+            <span class="icon"></span>Toutes les activités sont exercées dans le
+            respect des principes coopératifs, de l’économie sociale et
+            solidaire et de la charte confédérale affranchiste annexée aux
+            présents statuts.
+          </li>
+          <li>
+            <span class="icon"></span>La société remplit les conditions pour
+            bénéficier de l’agrément Entreprise Solidaire d’Utilité Sociale
+            (ESUS) au titre de son impact social mesurable (insertion, accès à
+            l’alimentation saine, réduction des inégalités, éducation populaire,
+            transition écologique).
+          </li>
+        </ul>
+        <h3>Article 5 - Siège social</h3>
+        <p>
+          adresse complète, ex. : 123 rue de la Solidarité, 46000
+          (Ville).............., France]. Il peut être transféré en tout autre
+          lieu par simple décision du conseil coopératif.
+        </p>
+      </div>
+      <div class="section" id="titre2">
+        <h2>Titre II. Capital social – Parts sociales</h2>
+        <h3>Article 6 – Capital social</h3>
+        <p>
+          Le capital social initial est fixé à deux mille euros (2 000 €),
+          divisé en deux cents (200) parts sociales d’une valeur nominale de 10
+          € chacune, entièrement libérées. Ce capital minimal permet un
+          démarrage léger et accessible, conformément aux valeurs affranchistes
+          d’inclusion et de désendettement. Il est destiné à être rapidement
+          abondé par des avances en comptes courants d’associés (article 10) et
+          des souscriptions progressives.
+        </p>
+        <p>
+          La répartition initiale des parts entre les collèges (contributeurs,
+          usagers, producteurs) est précisée en annexe 1 des présents statuts.
+          Les fonds ont été déposés sur le compte bloqué ouvert au nom de la
+          société en formation auprès du Crédit Coopératif – Agence de
+          (Ville).............. – sous le n° [à compléter], conformément au
+          certificat du banquier joint aux présentes.
+        </p>
+        <h3>Article 7 – Variabilité du capital</h3>
+        <p>
+          Le capital social est variable conformément aux articles L. 231-1 et
+          suivants du Code de commerce et à l’article 7 de la loi du 10
+          septembre 1947. Il peut augmenter à tout moment :
+        </p>
+        <ul class="styled-list">
+          <li>
+            <span class="icon"></span> par souscription de parts nouvelles
+            (minimum 1 part = 10 €),
+          </li>
+          <li>
+            <span class="icon"></span> par admission de nouveaux associés,
+          </li>
+          <li>
+            <span class="icon"></span> par incorporation d’avances en comptes
+            courants,
+          </li>
+          <li>
+            <span class="icon"></span> par apports en nature ou en industrie
+            (compétences, outils, temps coopératif) évalués en assemblée
+            générale.
+          </li>
+        </ul>
+        <p>
+          Il peut diminuer par le retrait, l’exclusion ou le décès d’associés,
+          ou par remboursement des parts, dans les conditions prévues par la loi
+          et les statuts.
+        </p>
+      </div>
+      <div class="section" id="titre2">
+        <h2>Titre II. Capital social – Parts sociales – Apports</h2>
 
-  <!-- Boutons -->
-  <div class="buttons">
-    <a
-      href="https://fr.tipeee.com/affranchisme/"
-      class="button tipeee-button"
-      target="_blank"
-      ><i class="fas fa-heart"></i> Soutenez sur Tipeee</a
-    >
-    <a
-      href="https://drive.google.com/file/d/1D66-AqOH24cFiCvpMZF_OTLsvHSclD4x/view?usp=sharing"
-      class="button pdf-button"
-      target="_blank"
-      ><i class="fas fa-file-pdf"></i> Téléchargez l'appel</a
-    >
-  </div>
-</div>
+        <div class="article">
+          <h3>Article 8 – Capital minimum et absence de capital maximum</h3>
+          <p>
+            Le capital social ne peut être réduit en dessous de mille euros (1
+            000 €), ni au-dessous du quart du montant le plus élevé atteint
+            depuis la constitution. Conformément à la législation coopérative,
+            aucun capital maximum n’est fixé.
+          </p>
+        </div>
 
-<!-- Section commentaires (Commento) -->
-<div class="comments">
-  <h2>Commentaires</h2>
-  <script defer src="https://cdn.commento.io/js/commento.js"></script>
-  <div id="commento"></div>
-</div>
+        <div class="article">
+          <h3>Article 9 – Parts sociales</h3>
 
-<!-- Bouton retour en haut -->
-<button class="back-to-top" aria-label="Retour en haut">↑</button>
-<script>
-  window.addEventListener("scroll", () => {
-    const backToTop = document.querySelector(".back-to-top");
-    if (window.scrollY > 300) {
-      backToTop.classList.add("show");
-    } else {
-      backToTop.classList.remove("show");
-    }
-  });
-  document.querySelector(".back-to-top").addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
-</script>
+          <h4>Article 9.1 – Valeur nominale</h4>
+          <p>
+            Toutes les parts sociales ont la même valeur nominale, fixée à 10 €
+            (dix euros).<br />
+            Cette valeur peut être modifiée par décision de l’assemblée générale
+            extraordinaire sur proposition du conseil de gestion.<br />
+            Les parts sont nominatives, indivisibles et incessibles hors du
+            cercle des associés, sauf agrément du conseil de gestion. La
+            coopérative ne reconnaît qu’un seul propriétaire par part.<br />
+            La responsabilité de chaque associé est strictement limitée au
+            montant de ses parts.
+          </p>
 
-<!-- Footer -->
-<footer>
-  <p>
-    Contact :
-    <a href="mailto:affranchisme@gmail.com">affranchisme@gmail.com</a> |
-    Rejoignez la révolution : #Affranchisme2025
-  </p>
-  <p><strong>Mentions Légales</strong>
-  Créateur : Laurent Delluc (lodeval).
+          <h4>Article 9.2 – Souscription et libération</h4>
+          <p>
+            Toute souscription est ouverte aux personnes physiques et morales
+            partageant les valeurs affranchistes.<br />
+            Le paiement peut être effectué en une ou plusieurs fois, avec un
+            minimum de 10 € à la souscription.<br />
+            Un bulletin de souscription en deux exemplaires est signé par
+            l’associé et contresigné par le président.<br />
+            Les parts sont inscrites immédiatement au registre des associés.
+          </p>
 
-  Contact : affranchisme@gmail.com
+          <h4>9.3 – Politique d’accessibilité</h4>
+          <p>
+            Pour garantir l’accès des personnes précaires, en insertion ou à
+            faibles revenus :<br />
+            une exonération totale ou partielle de la souscription initiale peut
+            être accordée par décision du conseil de gestion sur présentation de
+            justificatifs (RSA, AAH, chômage, etc.),<br />
+            la part peut être remboursée à tout moment sans délai ni pénalité en
+            cas de difficulté financière.
+          </p>
+        </div>
 
-  Hébergeur : GitHub, Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA
+        <div class="article">
+          <h3>Article 10 – Apport en comptes courants</h3>
+          <p>
+            Les associés, quels que soient leur collège et leurs moyens, peuvent
+            consentir à la SCIC des avances en comptes courants remboursables,
+            avec ou sans intérêts (plafonnés au taux légal). Ces avances
+            constituent le levier principal de financement du projet
+            (acquisition ou location de locaux, achat d’outils mutualisés,
+            trésorerie, etc.). Elles sont encouragées et valorisées comme acte
+            militant affranchiste.
+          </p>
+          <p>
+            Chaque avance fait l’objet d’une convention bipartite précisant :
+          </p>
+          <ul>
+            <li>le montant,</li>
+            <li>la durée (recommandée : 3 à 7 ans),</li>
+            <li>
+              les modalités de remboursement (échéancier ou à la demande avec
+              préavis de 6 mois),
+            </li>
+            <li>
+              l’éventuelle rémunération (max. 1,5 % l’an, non cumulable avec les
+              intérêts sur parts),
+            </li>
+            <li>la priorité de remboursement en cas de difficultés.</li>
+          </ul>
+          <p>
+            Les avances en comptes courants sont inscrites dans un registre
+            public consultable par tous les associés et font l’objet d’un suivi
+            annuel en assemblée générale. En cas de départ ou de décès d’un
+            associé, les avances sont remboursées prioritairement sur les parts
+            sociales.
+          </p>
+        </div>
+      </div>
 
-  Ce site n'utilise pas de cookies ni ne collecte de données personnelles.
+      <div class="section" id="titre3">
+        <h2>Titre III : ASSOCIÉ·E·S, COLLÈGES ET DROITS DE VOTE</h2>
 
-  Contenu sous licence <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.
+        <div class="article">
+          <h3>
+            Article 11 – Conditions générales d’association et multi-sociétariat
+          </h3>
+          <p>
+            La SCIC comprend obligatoirement au minimum trois collèges
+            d’associé·e·s, conformément à l’article L. 210-10 du Code de
+            commerce et à la loi du 10 septembre 1947, dont :<br />
+            les bénéficiaires des activités (usagers et contributeurs),<br />
+            les producteurs de biens ou services,<br />
+            toute autre personne contribuant à l’activité.<br />
+            Les collectivités territoriales et leurs groupements ne peuvent
+            détenir ensemble plus de 50 % du capital.
+          </p>
+        </div>
 
-  <em>Disclaimer : Ce guide est une réflexion personnelle. Il ne constitue pas un conseil juridique ou financier. L'affranchisme est une idée, pas une obligation !</em></p>
+        <div class="article">
+          <h3>Article 12 – Les trois collèges (catégories d’associé·e·s)</h3>
+          <p>
+            Les associé·e·s sont répartis en trois collèges exclusifs, reflétant
+            leur lien principal à l’activité :
+          </p>
+
+          <table>
+            <tr>
+              <th>Collège</th>
+              <th>Répartition des voix</th>
+              <th>Composition et conditions</th>
+            </tr>
+            <tr>
+              <td>Contributeurs</td>
+              <td>50 %</td>
+              <td>
+                Personnes physiques ou morales effectuant au moins 1 heure par
+                mois de temps coopératif (accueil, logistique, formation,
+                entretien, etc.). Dispense totale ou partielle possible pour
+                précarité, santé ou âge, décidée par le conseil de gestion.
+              </td>
+            </tr>
+            <tr>
+              <td>Usagers</td>
+              <td>30 %</td>
+              <td>
+                Clients réguliers ou sympathisants consommant ou soutenant
+                l’épicerie (adhésion annuelle 20-50 €, exonérable sur
+                justificatif).
+              </td>
+            </tr>
+            <tr>
+              <td>Producteurs</td>
+              <td>20 %</td>
+              <td>
+                Auto-entrepreneurs, fermes, SCOP, associations utilisant les
+                moyens mutualisés. Contre adhésion annuelle modérée (50-200 €
+                selon moyens, exonérable) + engagement de vente prioritaire à la
+                SCIC sur 20 à 40 % de leur production à prix juste négocié
+                chaque année en AG (prix ≥ coûts + marge raisonnable). Le reste
+                (60-80 %) est vendu librement avec 100 % des bénéfices
+                personnels.
+              </td>
+            </tr>
+          </table>
+
+          <p>
+            Chaque associé·e n’appartient qu’à un seul collège. Le changement de
+            collège est possible une fois par an sur demande motivée, validée
+            par le conseil de gestion.
+          </p>
+          <p>
+            La création ou suppression de collèges est de la compétence de
+            l’assemblée générale extraordinaire à la majorité des 75 %.
+          </p>
+        </div>
+
+        <div class="article">
+          <h3>Article 13 – Admission des associé·e·s</h3>
+          <p>
+            Toute personne physique ou morale partageant les valeurs
+            affranchistes peut devenir associé·e.
+          </p>
+          <p><strong>Procédure :</strong></p>
+          <ul>
+            <li>Demande écrite (ou formulaire en magasin/site),</li>
+            <li>
+              Souscription d’au moins 1 part sociale (10 €) – exonération
+              possible pour les précaires sur décision du conseil,
+            </li>
+            <li>
+              Versement de l’adhésion annuelle correspondant au collège choisi
+              (exonérable),
+            </li>
+            <li>Admission provisoire immédiate dès paiement,</li>
+            <li>
+              Ratification définitive à la plus proche assemblée générale.
+            </li>
+          </ul>
+          <p>
+            La souscription emporte adhésion aux statuts, à la charte
+            affranchiste et au règlement intérieur.
+          </p>
+        </div>
+
+        <div class="article">
+          <h3>Article 14 – Perte de la qualité d’associé·e</h3>
+          <p>La qualité d’associé·e se perd par :</p>
+          <ul>
+            <li>
+              Démission (préavis 3 mois, effet immédiat en cas de précarité
+              justifiée),
+            </li>
+            <li>
+              Exclusion (décidée en AG à 2/3 pour faute grave ou non-respect
+              prolongé de la charte, après audition),
+            </li>
+            <li>Décès (personne physique) ou dissolution (personne morale),</li>
+            <li>
+              Perte des conditions d’appartenance au collège (avec possibilité
+              de transfert vers un autre collège).
+            </li>
+          </ul>
+          <p>
+            Les parts sociales sont annulées. Les avances en comptes courants
+            sont remboursées prioritairement (article 10).
+          </p>
+        </div>
+
+        <div class="article">
+          <h3>Article 15 – Transmission et inaliénabilité des parts</h3>
+          <p>
+            <strong>Clause d’inaliénabilité :</strong> les parts sociales sont
+            incessibles pendant 5 ans à compter de leur souscription, sauf
+            dérogation exceptionnelle accordée par le conseil de gestion (ex.
+            précarité grave).
+          </p>
+          <p>
+            <strong>Clause d’agrément :</strong> toute cession (même entre
+            associé·e·s) est soumise à l’agrément préalable du conseil de
+            gestion. En cas de refus, la SCIC ou les associé·e·s restants
+            doivent racheter les parts à leur valeur nominale (10 €).
+          </p>
+          <p>
+            En cas de décès, les héritiers peuvent demander le remboursement des
+            parts à valeur nominale ; ils ne deviennent pas automatiquement
+            associé·e·s.
+          </p>
+        </div>
+
+        <div class="article">
+          <h3>Article 16 – Remboursement des parts et avances</h3>
+          <p>
+            Le remboursement des parts sociales s’effectue à la valeur nominale
+            (10 €), après clôture de l’exercice et dans l’ordre chronologique
+            des sorties.
+          </p>
+          <p>
+            Aucun remboursement ne peut faire descendre le capital sous le
+            minimum légal (1 000 €).<br />
+            Les avances en comptes courants sont remboursées selon la convention
+            signée, avec priorité absolue sur les parts sociales.
+          </p>
+        </div>
+
+        <div class="article">
+          <h3>Article 17 – Droits de vote et collèges de vote</h3>
+          <p>
+            <strong>Principe :</strong> 1 personne = 1 voix, quel que soit le
+            nombre de parts détenues.<br />
+            Les voix sont pondérées par collège lors du dépouillement :<br />
+            Collège contributeurs : 50 %<br />
+            Collège usagers : 30 %<br />
+            Collège producteurs : 20 %
+          </p>
+          <p>
+            Un collège ne comportant aucun membre voit ses voix réparties
+            également entre les collèges existants, sans qu’aucun ne dépasse 50
+            %.
+          </p>
+          <p>
+            La modification de cette répartition nécessite une assemblée
+            générale extraordinaire à la majorité qualifiée de 75 %.
+          </p>
+        </div>
+      </div>
+
+      <div class="section" id="titre4">
+        <h2>
+          Titre IV : Activités, mutualisation des moyens et gratuité progressive
+        </h2>
+
+        <div class="article">
+          <h3>
+            Article 18 – Activités, mutualisation des moyens et gratuité
+            progressive
+          </h3>
+
+          <h4>18.1 – Activités principales</h4>
+          <p>
+            La SCIC exerce principalement, sur le bassin de
+            (Ville).............. et au-delà, les activités suivantes :
+          </p>
+          <ol type="a">
+            <li>
+              Exploitation d’une épicerie participative et de tout lieu de
+              distribution (stands, food-truck, drive, etc.) proposant des
+              produits frais, transformés, locaux et biologiques à des prix
+              systématiquement inférieurs aux prix du marché conventionnel.
+            </li>
+            <li>
+              Transformation et valorisation des surplus alimentaires
+              (conserves, plats cuisinés, glaces, pâtisseries, etc.) ainsi que
+              la revente anti-gaspi ou le don à des associations caritatives.
+            </li>
+            <li>
+              Prestation de services logistiques (conditionnement, stockage,
+              livraison) et mise à disposition gratuite ou quasi gratuite de
+              moyens de production lourds (cuisine professionnelle agréée,
+              atelier de transformation, machine à glace, atelier couture,
+              chambre froide, véhicule réfrigéré, outils numériques, etc.).
+            </li>
+            <li>
+              Dispensation de formations gratuites ou à prix libre (hygiène et
+              sécurité alimentaire, transformation, permaculture, sobriété
+              alimentaire, autosuffisance, commercialisation,...).
+            </li>
+            <li>
+              Organisation d’ateliers, événements et actions d’éducation
+              populaire autour des valeurs affranchistes.
+            </li>
+          </ol>
+
+          <h4>18.2 – Mutualisation des moyens de production</h4>
+          <p>
+            Les moyens de production acquis ou loués par la SCIC (cuisine
+            partagée, atelier couture, machine à glace, équipements
+            photovoltaïques, chanvrière, véhicules, etc.) constituent des biens
+            communs de la coopérative.
+          </p>
+          <p>
+            Ils sont mis à disposition prioritaire et quasi gratuite des
+            associé·e·s du collège producteurs et, dans la limite des
+            disponibilités, des autres associé·e·s, selon les modalités fixées
+            par le règlement intérieur (planning partagé, émargement, assurance
+            collective).
+          </p>
+          <p>
+            Tout usage non conforme ou absence prolongée de contrepartie (vente
+            prioritaire ou temps coopératif) peut entraîner une suspension
+            temporaire d’accès d’un mois, décidée par le conseil de gestion.
+          </p>
+
+          <h4>18.3 – Gratuité progressive des besoins essentiels</h4>
+          <p>
+            Dès que l’équilibre économique le permet (objectif : 3 à 5 ans après
+            création), la SCIC met en place une gratuité partielle puis
+            croissante (alimentaire, outils, formations, logement collectif
+            éventuel) :<br />
+            en priorité pour les associé·e·s contributeurs les plus actifs,<br />
+            puis pour les associé·e·s en situation de précarité (RSA, AAH,
+            chômage, etc.).<br />
+            Cette gratuité est financée exclusivement par les marges réalisées
+            sur les ventes aux consommateurs extérieurs au mouvement
+            affranchiste.
+          </p>
+
+          <h4>18.4 – Développement de l’autosuffisance territoriale</h4>
+          <p>
+            La SCIC réinvestit systématiquement ses excédents dans des projets
+            d’autosuffisance :<br />
+            acquisition ou rénovation d’une ferme ou d’un lieu de vie
+            collectif,<br />
+            développement de filières locales (chanvre, énergie renouvelable,
+            refuge animalier, etc.),<br />
+            achat de nouveaux outils mutualisés ou de véhicules propres.<br />
+            Ces projets sont validés en assemblée générale après consultation
+            des neuf fédérations affranchistes.
+          </p>
+
+          <h4>18.5 – Respect des normes et responsabilité</h4>
+          <p>
+            Toutes les activités de transformation et de distribution respectent
+            les normes d’hygiène et de sécurité alimentaire en vigueur.
+          </p>
+          <p>
+            Un plan de maîtrise sanitaire mutualisé est établi et tenu à jour
+            collectivement.
+          </p>
+          <p>
+            La responsabilité civile et les risques professionnels sont couverts
+            par des assurances collectives souscrites par la SCIC.
+          </p>
+        </div>
+      </div>
+      <div class="section" id="article19-formation">
+        <h2>
+          Article 19 – Formation intégrale et transmission des savoirs (droit
+          fondamental affranchiste)
+        </h2>
+
+        <h4>19.1 – Principe</h4>
+        <p>
+          La transmission intégrale et gratuite des savoirs et des métiers
+          constitue un droit inaliénable de tout·e adhérent·e de la SCIC, sans
+          distinction de collège, d’ancienneté ou de situation personnelle.
+        </p>
+
+        <h4>19.2 – Offre de formation</h4>
+        <p>
+          La SCIC garantit à tout adhérent qui en fait la demande écrite ou
+          orale :
+        </p>
+        <ul>
+          <li>
+            une formation complète à l’utilisation de tous les moyens de
+            production mutualisés (cuisine professionnelle, machine à glace,
+            atelier couture, transformation alimentaire, chanvre,
+            photovoltaïque, etc.),
+          </li>
+          <li>
+            une formation intégrale à un ou plusieurs métiers exercés dans
+            l’écosystème (maraîchage permacole, transformation-conserves,
+            logistique, animation de marché, comptabilité coopérative, etc.),
+          </li>
+          <li>
+            l’accompagnement nécessaire jusqu’à l’autonomie complète dans le
+            métier choisi.
+          </li>
+        </ul>
+
+        <h4>19.3 – Modalités pratiques</h4>
+        <p>
+          La demande est déposée au Conseil de gestion ou via le cahier/forme en
+          magasin.<br />
+          Réponse et mise en place de la formation sous 30 jours maximum.<br />
+          Les formateurs sont prioritairement des associé·e·s bénévoles ou des
+          producteurs partenaires.
+        </p>
+        <p>
+          Toute formation est gratuite ; les frais pédagogiques (matières
+          premières, énergie) sont pris en charge par la SCIC (budget dédié issu
+          des excédents).
+        </p>
+        <p>
+          Un « passeport de compétences affranchistes » (registre numérique et
+          physique) recense les savoirs acquis par chaque personne.
+        </p>
+
+        <h4>19.4 – Objectif stratégique</h4>
+        <p>Cette politique de formation intégrale vise :</p>
+        <ul>
+          <li>
+            à rendre chaque coopérateur·trice capable de produire lui/elle-même
+            ses besoins essentiels,
+          </li>
+          <li>
+            à créer une main-d’œuvre qualifiée et autonome pour l’essaimage
+            rapide de nouvelles SCIC affranchistes,
+          </li>
+          <li>
+            à briser définitivement la division capitaliste entre « ceux qui
+            savent » et « ceux qui exécutent ».
+          </li>
+        </ul>
+
+        <h4>19.5 – Indicateur annuel</h4>
+        <p>Le rapport d’impact publie chaque année :</p>
+        <ul>
+          <li>nombre de personnes formées,</li>
+          <li>nombre de métiers transmis intégralement,</li>
+          <li>
+            nombre de personnes devenues autonomes dans un métier grâce à la
+            SCIC.
+          </li>
+        </ul>
+      </div>
+
+      <div class="section" id="titre5">
+        <h2>Titre V – ADMINISTRATION ET DIRECTION</h2>
+
+        <div class="article">
+          <h3>Article 19 – Conseil de gestion</h3>
+          <!-- Oui, l’article 19 existe déjà plus haut, mais vous l’avez renuméroté ainsi, je conserve votre numérotation telle quelle -->
+
+          <h4>19.1 – Composition et élection</h4>
+          <p>
+            La SCIC est administrée par un Conseil de gestion composé de 6 à 12
+            membres personnes physiques, associé·e·s ou non. Les sièges sont
+            répartis strictement selon la pondération des collèges :
+          </p>
+
+          <table>
+            <tr>
+              <th>Collège</th>
+              <th>Pourcentage de sièges (arrondi à l’entier supérieur)</th>
+            </tr>
+            <tr>
+              <td>Contributeurs</td>
+              <td>50 %</td>
+            </tr>
+            <tr>
+              <td>Usagers</td>
+              <td>30 %</td>
+            </tr>
+            <tr>
+              <td>Producteurs</td>
+              <td>20 %</td>
+            </tr>
+          </table>
+
+          <p>
+            Un siège au minimum est réservé à une personne en situation de
+            précarité ou bénéficiant d’une dispense de temps coopératif. Les
+            membres sont élus pour 3 ans par l’assemblée générale ordinaire, au
+            scrutin secret et à la majorité des voix exprimées (pondérées par
+            collèges). Le mandat est renouvelable deux fois consécutives maximum
+            (soit 9 ans au total). Ils sont révocables à tout moment par
+            l’assemblée générale à la majorité simple.
+          </p>
+
+          <h4>19.2 – Renouvellement et vacance</h4>
+          <p>
+            Le Conseil est renouvelé par tiers chaque année.<br />
+            En cas de vacance, le Conseil pourvoit provisoirement au
+            remplacement (même collège) ; ratification obligatoire à la plus
+            proche assemblée générale.<br />
+            Si le nombre de membres descend sous 6, l’assemblée générale
+            extraordinaire doit être convoquée dans les 2 mois pour compléter
+            l’effectif.
+          </p>
+
+          <h4>19.3 – Fonctions et pouvoirs</h4>
+          <p>
+            Le Conseil de gestion dispose des pouvoirs les plus étendus pour
+            agir en toute circonstance au nom de la SCIC, dans la limite de
+            l’objet social et des décisions réservées à l’assemblée générale.<br />
+            Il veille notamment à :<br />
+            • la mise en œuvre de la charte affranchiste,<br />
+            • la négociation annuelle des prix d’achat avec les producteurs,<br />
+            • l’admission provisoire des associé·e·s,<br />
+            • la gestion courante et la préparation des budgets,<br />
+            • la transparence totale (comptes trimestriels accessibles à tous
+            les associé·e·s).
+          </p>
+        </div>
+
+        <div class="article">
+          <h3>
+            Article 20 – Fonctionnement du Conseil de gestion, présidence et
+            conventions
+          </h3>
+
+          <h4>20.1 – Réunions du Conseil de gestion</h4>
+          <p>
+            Le Conseil se réunit au minimum une fois par mois et chaque fois que
+            l’intérêt de la SCIC l’exige.
+          </p>
+          <p>
+            Il est convoqué par le/la président·e ou à la demande d’au moins
+            quatre de ses membres, par tout moyen laissant trace écrite.
+          </p>
+          <p>
+            Les réunions peuvent se tenir en présentiel, en visioconférence ou
+            audioconférence.
+          </p>
+          <p>
+            Toutefois, une réunion physique obligatoire est prévue pour :<br />
+            l’arrêté des comptes annuels et du rapport de gestion,<br />
+            toute décision d’exclusion d’associé·e,<br />
+            toute opération de fusion, scission ou cession d’actifs
+            importants,<br />
+            toute modification de la charte affranchiste ou du règlement
+            intérieur.
+          </p>
+          <p>
+            Toutes les réunions sont ouvertes à l’ensemble des associé·e·s en
+            qualité d’observateurs (sans voix délibérative). L’ordre du jour et
+            les documents sont publiés 8 jours à l’avance sur l’espace numérique
+            partagé.
+          </p>
+
+          <h4>20.2 – Quorum et prise de décision</h4>
+          <p>
+            Quorum : présence ou représentation de 50 % des membres.<br />
+            Les décisions sont prises par consentement chaque fois que possible.
+            À défaut, à la majorité simple des présents et représentés. En cas
+            de partage égal, la voix du/de la président·e est prépondérante.
+          </p>
+
+          <h4>20.3 – Présidence</h4>
+          <p>
+            Le Conseil élit parmi ses membres un·e président·e pour 3 ans,
+            renouvelable une seule fois consécutivement.<br />
+            Le/la président·e représente la SCIC en justice et dans tous les
+            actes de la vie civile, ordonnance les dépenses, convoque le Conseil
+            et les assemblées, veille à l’application stricte de la charte
+            affranchiste.
+          </p>
+
+          <h4>20.4 – Gratuité absolue des mandats</h4>
+          <p>
+            Les fonctions de président·e et de membre du Conseil de gestion sont
+            strictement bénévoles. Aucune rémunération, aucun jeton de présence,
+            aucun avantage en nature. Seuls les frais réels sont remboursés sur
+            justificatifs.
+          </p>
+
+          <h4>20.5 – Interdiction de direction générale salariée</h4>
+          <p>
+            Il n’existe ni directeur général, ni directeur général délégué, ni
+            aucune fonction exécutive rémunérée.<br />
+            La gestion opérationnelle est assurée collégialement par le Conseil
+            et les associé·e·s dans le cadre du temps coopératif.
+          </p>
+
+          <h4>20.6 – Conventions réglementées et interdictions</h4>
+          <p>
+            Toute convention entre la SCIC et un membre du Conseil ou un proche
+            est interdite sauf autorisation expresse de l’AGE à 75 %. Il est
+            formellement interdit de contracter emprunt, avance rémunérée ou
+            découvert auprès de la SCIC. Violation = révocation automatique +
+            éventuelle exclusion.
+          </p>
+        </div>
+      </div>
+
+      <div class="section" id="titre6">
+        <h2>
+          Titre VI – Exercice social, comptes et affectation des résultats
+        </h2>
+
+        <div class="article">
+          <h3>Article 21 – Exercice social</h3>
+          <p>
+            L’exercice social commence le 1er janvier et se termine le 31
+            décembre de chaque année.
+          </p>
+        </div>
+
+        <div class="article">
+          <h3>Article 22 – Comptabilité</h3>
+          <p>
+            Les comptes sont tenus de façon transparente et participative : dans
+            un premier temps par les coopérateurs bénévoles, puis par une
+            coopérative de comptabilité affranchiste partenaire ou mutualisée au
+            niveau confédéral.<br />
+            Tous les documents financiers sont accessibles en permanence via
+            l’espace numérique partagé.
+          </p>
+        </div>
+
+        <div class="article">
+          <h3>
+            Article 23 – Affectation des excédents – Principe de non-lucrativité
+            absolue
+          </h3>
+          <p>
+            Aucun excédent n’est distribué aux associé·e·s sous quelque forme
+            que ce soit.
+          </p>
+
+          <table>
+            <tr>
+              <th>Rang</th>
+              <th>Affectation</th>
+              <th>Pourcentage indicatif</th>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Réserve légale et réserves impartageables</td>
+              <td>25 % minimum</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>
+                Réinvestissement dans moyens de production et autosuffisance
+              </td>
+              <td>50 % minimum</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Fonds de gratuité progressive</td>
+              <td>15 % minimum</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Fonds de solidarité confédéral affranchiste</td>
+              <td>solde</td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="article">
+          <h3>Article 24 – Financement de la gratuité</h3>
+          <p>
+            Les marges réalisées sur les ventes constituent la seule source
+            légitime de financement de la gratuité partielle puis intégrale des
+            besoins essentiels.
+          </p>
+        </div>
+
+        <div class="article">
+          <h3>Article 25 – Dissolution et boni de liquidation</h3>
+          <p>
+            En cas de dissolution, l’actif net est dévolu en priorité à une ou
+            plusieurs SCIC affranchistes ou, à défaut, à une structure d’intérêt
+            général poursuivant des buts similaires. Les réserves impartageables
+            restent définitivement affectées à l’intérêt collectif.
+          </p>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>DISPOSITIONS DIVERSES</h2>
+
+        <div class="article">
+          <h3>Article 26 – Charte confédérale affranchiste</h3>
+          <p>
+            La charte confédérale affranchiste (annexe 1) est le document
+            fondateur et évolutif de la SCIC. Elle est révisée tous les 3 ans ou
+            sur demande de 10 % des associé·e·s.
+          </p>
+        </div>
+
+        <div class="article">
+          <h3>Article 27 – Règlement intérieur</h3>
+          <p>
+            Adopté et modifiable à tout moment par l’AGO à majorité simple. Il
+            précise temps coopératif, usage des moyens mutualisés, procédures de
+            démocratie directe, gestion des surplus, etc.
+          </p>
+        </div>
+
+        <div class="article">
+          <h3>Article 28 – Transparence et communication</h3>
+          <p>
+            Transparence absolue : tous les documents accessibles en permanence
+            + rapport d’impact annuel public.
+          </p>
+        </div>
+
+        <div class="article">
+          <h3>Article 29 – Litiges et médiation</h3>
+          <p>
+            Médiation libertaire en premier lieu, puis décision en AG, enfin
+            Tribunal de commerce de (Ville)...............
+          </p>
+        </div>
+
+        <div class="article">
+          <h3>Article 30 – Protection des données</h3>
+          <p>
+            Respect strict du RGPD ; données utilisées uniquement pour la
+            gestion coopérative.
+          </p>
+        </div>
+
+        <div class="article">
+          <h3>Article 31 – Dissolution et dévolution de l’actif</h3>
+          <p>Identique à l’article 25.</p>
+        </div>
+
+        <div class="article">
+          <h3>Article 32 – Entrée en vigueur</h3>
+          <p>
+            Les présents statuts entrent en vigueur dès l’immatriculation au
+            Registre du Commerce et des Sociétés de (Ville)...............
+          </p>
+
+          <p style="margin-top: 60px; text-align: center">
+            Fait à (Ville).............., le _____________________<br /><br />
+            En autant d’originaux que nécessaire<br /><br /><br />
+            <em>Signatures de tous les associé·e·s fondateurs·trices</em>
+          </p>
+        </div>
+      </div>
+
+      <!-- Boutons -->
+      <div class="buttons">
+        <a
+          href="https://fr.tipeee.com/affranchisme/"
+          class="button tipeee-button"
+          target="_blank"
+          ><i class="fas fa-heart"></i> Soutenez sur Tipeee</a
+        >
+        <a
+          href="https://drive.google.com/file/d/1D66-AqOH24cFiCvpMZF_OTLsvHSclD4x/view?usp=sharing"
+          class="button pdf-button"
+          target="_blank"
+          ><i class="fas fa-file-pdf"></i> Téléchargez l'appel</a
+        >
+      </div>
+    </div>
+
+    <!-- Section commentaires (Commento) -->
+    <div class="comments">
+      <h2>Commentaires</h2>
+      <script defer src="https://cdn.commento.io/js/commento.js"></script>
+      <div id="commento"></div>
+    </div>
+
+    <!-- Bouton retour en haut -->
+    <button class="back-to-top" aria-label="Retour en haut">↑</button>
+    <script>
+      window.addEventListener("scroll", () => {
+        const backToTop = document.querySelector(".back-to-top");
+        if (window.scrollY > 300) {
+          backToTop.classList.add("show");
+        } else {
+          backToTop.classList.remove("show");
+        }
+      });
+      document.querySelector(".back-to-top").addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    </script>
+
+    <!-- Footer -->
+    <footer>
+      <p>
+        Contact :
+        <a href="mailto:affranchisme@gmail.com">affranchisme@gmail.com</a> |
+        Rejoignez la révolution : #Affranchisme2025
+      </p>
+      <p>
+        <strong>Mentions Légales</strong> Créateur : Laurent Delluc (lodeval).
+        Contact : affranchisme@gmail.com Hébergeur : GitHub, Inc., 88 Colin P
+        Kelly Jr St, San Francisco, CA 94107, USA Ce site n'utilise pas de
+        cookies ni ne collecte de données personnelles. Contenu sous licence
+        <a href="https://creativecommons.org/licenses/by-sa/4.0/"
+          >CC BY-SA 4.0</a
+        >.
+
+        <em
+          >Disclaimer : Ce guide est une réflexion personnelle. Il ne constitue
+          pas un conseil juridique ou financier. L'affranchisme est une idée,
+          pas une obligation !</em
+        >
+      </p>
     </footer>
   </body>
 </html>
-
